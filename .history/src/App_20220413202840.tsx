@@ -4,10 +4,8 @@ import Routing from './routing';
 const App = () => {
 
   return (
-    <div className={style.wrapper}>
-      <div className={style.container}>
-        <Routing />
-      </div>
+    <div className="App">
+      <Routing />
     </div>
   );
 }
