@@ -1,11 +1,10 @@
 import React from 'react';
-import './App.scss';
-import Routing from './routing';
+import './App.css';
 function App() {
 
   return (
     <div className="App">
-      <Routing />
+      123
     </div>
   );
 }
