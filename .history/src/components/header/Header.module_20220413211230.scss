@@ -1,9 +1,6 @@
 .header{
     width: 100%;
     padding: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     .headerLeftSide{
         display: flex;
@@ -11,14 +8,7 @@
         h3{
             margin-right: 30px;
         }
-        
-    }
-
-    .headerRightSide{
-        display: flex;
-        align-items: center;
-
-        .icon:hover{
+        i:hover{
             cursor: pointer;
         }
     }

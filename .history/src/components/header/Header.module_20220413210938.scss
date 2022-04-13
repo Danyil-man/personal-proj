@@ -1,0 +1,12 @@
+.header{
+    width: 100%;
+    padding: 30px;
+
+    .headerLeftSide{
+        display: flex;
+        align-items: center;
+        h3{
+            margin-right: 30px;
+        }
+    }
+}

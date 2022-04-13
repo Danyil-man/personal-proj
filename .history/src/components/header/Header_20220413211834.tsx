@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Header.module.scss";
-import { Cart2, Heart, HeartFill, Translate } from "react-bootstrap-icons";
+import { Cart, Cart2, Cart3, Cart4, CartFill, CartPlus, Heart, HeartArrow, HeartFill, Translate } from "react-bootstrap-icons";
 
 const Header = () => {
     return (
@@ -10,9 +10,8 @@ const Header = () => {
                 <Translate size={30} role="button" />
             </div>
             <div className={style.headerRightSide}>
-                <Heart size={20} className={`mr-4 fa-2x ${style.icon}`} />
-                <Cart2 size={20} className={`mr-4 ${style.icon}`} />
-                Signed in, as Danyil
+                <Heart size={20} />
+                <CartPlus size={20} />
             </div>
         </header>
     )

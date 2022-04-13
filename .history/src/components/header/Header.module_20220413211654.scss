@@ -3,23 +3,13 @@
     padding: 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
     .headerLeftSide{
         display: flex;
-        align-items: center;
+        
         h3{
             margin-right: 30px;
         }
         
-    }
-
-    .headerRightSide{
-        display: flex;
-        align-items: center;
-
-        .icon:hover{
-            cursor: pointer;
-        }
     }
 }

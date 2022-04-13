@@ -15,11 +15,8 @@
     }
 
     .headerRightSide{
-        display: flex;
-        align-items: center;
-
-        .icon:hover{
-            cursor: pointer;
+        &:first-child{
+            margin-right: 10px;
         }
     }
 }

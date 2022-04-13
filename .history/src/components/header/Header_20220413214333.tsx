@@ -10,7 +10,7 @@ const Header = () => {
                 <Translate size={30} role="button" />
             </div>
             <div className={style.headerRightSide}>
-                <Heart size={20} className={`mr-4 fa-2x ${style.icon}`} />
+                <Heart size={20} className={`mr-4 ${style.icon ? <HeartFill /> : <HeartFill />}`} />
                 <Cart2 size={20} className={`mr-4 ${style.icon}`} />
                 Signed in, as Danyil
             </div>
