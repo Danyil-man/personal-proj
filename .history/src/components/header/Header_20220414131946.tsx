@@ -13,7 +13,7 @@ const Header = () => {
                     <h3>ReadBook</h3>
                 </Link>
                 <Translate size={30} role="button" />
-                <img width={260} src="https://res.cloudinary.com/wunu/image/upload/v1649933115/personalproject/book1_dwzdpq.jpg" alt="photo" />
+                <img width={260} src="https://res.cloudinary.com/wunu/image/upload/v1649931524/cld-sample.jpg" alt="photo" />
             </div>
             <div className={style.headerRightSide}>
                 <Heart size={20} className={`mr-4 fa-2x ${style.icon}`} />
