@@ -1,0 +1,12 @@
+{
+    "admin": {
+        "name": "Danyil",
+        "email": "demyanyuk76@gmail.com"
+    },
+    "books": [
+        {
+            "id": 1,
+            "name": "Sherlock"
+        }
+    ]
+}

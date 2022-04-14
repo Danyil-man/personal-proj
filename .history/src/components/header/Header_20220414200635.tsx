@@ -1,7 +1,7 @@
-import React from 'react';
-import style from './Header.module.scss';
-import { Cart2, Heart, Translate } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
+import React from "react";
+import style from "./Header.module.scss";
+import { Cart2, Heart, Translate } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
