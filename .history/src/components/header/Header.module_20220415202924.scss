@@ -1,0 +1,30 @@
+.header{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #65ccb8;
+
+    .headerLeftSide{
+        display: flex;
+        align-items: center;
+        h3{
+            margin-right: 30px;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        
+    }
+
+    .headerRightSide{
+        display: flex;
+        align-items: center;
+
+        .icon:hover{
+            cursor: pointer;
+        }
+    }
+}
