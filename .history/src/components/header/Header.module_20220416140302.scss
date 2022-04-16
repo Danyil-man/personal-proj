@@ -15,10 +15,6 @@
         h3{
             margin-right: 30px;
             font-family: 'Lato-italic';
-            transition: $iconDuration;
-            &:hover{
-                color: $white;
-            }
         }
         a{
             text-decoration: none;
@@ -30,9 +26,10 @@
     .headerRightSide{
         display: flex;
         align-items: center;
+
         .icon:hover{
             cursor: pointer;
-            transition: $iconDuration;
+            
             &:first-child{
                 color: $heart;
             }

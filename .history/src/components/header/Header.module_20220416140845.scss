@@ -30,9 +30,10 @@
     .headerRightSide{
         display: flex;
         align-items: center;
+
         .icon:hover{
             cursor: pointer;
-            transition: $iconDuration;
+            
             &:first-child{
                 color: $heart;
             }
