@@ -1,5 +1,4 @@
 import React from 'react';
-import Categories from '../../components/categories/Categories';
 
 import style from './Home.module.scss'
 
@@ -7,8 +6,7 @@ const Home = () => {
     return (
         <div className={style.wrapper}>
             <div className={style.container}>
-                <img src='https://res.cloudinary.com/wunu/image/upload/v1650108776/personalproject/baner_irfxbq.jpg' alt="" />
-                <Categories />
+                <img src='https://www.freepik.com/premium-photo/banner-with-books-row-isolated-white-background-space-text-books-border-education-reading_25357766.htm?query=bookstore%20banner' alt="" />
             </div>
         </div>
     )
