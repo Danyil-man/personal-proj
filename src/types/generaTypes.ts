@@ -1,0 +1,16 @@
+import React from 'react';
+
+//                                  BOOKS-REDUCER GENERAL TYPES
+
+export type bookType = {
+    id: number,
+    author: string,
+    name: string,
+    description: string,
+    genre: string,
+    price: number,
+    image: string,
+    category: number,
+    isFavorite: boolean,
+    isCart: boolean
+}

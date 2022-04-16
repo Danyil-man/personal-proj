@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import Categories from '../../components/categories/Categories';
-import { getAllBooks } from '../../store/redux/reducers/booksReducer';
 
 
 import style from './Home.module.scss'
@@ -10,6 +9,9 @@ import style from './Home.module.scss'
 const Home = () => {
     const dispatch = useDispatch()
 
+    useEffect(() => {
+        dispatch()
+    }, [])
     return (
         <div className={style.wrapper}>
             <div className={style.container}>

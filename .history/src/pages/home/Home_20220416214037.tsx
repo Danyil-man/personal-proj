@@ -10,6 +10,9 @@ import style from './Home.module.scss'
 const Home = () => {
     const dispatch = useDispatch()
 
+    useEffect(() => {
+        dispatch(getAllBooks())
+    }, [])
     return (
         <div className={style.wrapper}>
             <div className={style.container}>
