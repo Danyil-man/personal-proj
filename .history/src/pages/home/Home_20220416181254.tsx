@@ -13,35 +13,36 @@ const Home = () => {
                 <Carousel >
                     <Carousel.Item>
                         <img
-
+                            className="d-block w-100"
                             src="https://res.cloudinary.com/wunu/image/upload/v1650121903/personalproject/banner2_mnjovs.jpg"
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3 className={style.carouselHeadText}>Welcome to ReadBook Store</h3>
+                            <h3>Welcome to ReadBook Store</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-
+                            className="d-block w-100"
                             src="https://res.cloudinary.com/wunu/image/upload/v1650121903/personalproject/banner1_qmdqjf.jpg"
                             alt="Second slide"
                         />
 
                         <Carousel.Caption>
-                            <h3>Read magic book will make you feel better</h3>
+                            <h3>Second slide label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-
+                            className="d-block w-100"
                             src="https://res.cloudinary.com/wunu/image/upload/v1650121903/personalproject/banner3_dzmrl9.jpg"
                             alt="Third slide"
                         />
 
                         <Carousel.Caption>
-                            <h3>Monday - Friday</h3>
-                            <p>From 9a.m. to 9p.m.</p>
+                            <h3>Third slide label</h3>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

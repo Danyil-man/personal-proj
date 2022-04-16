@@ -29,7 +29,7 @@ const Home = () => {
                         />
 
                         <Carousel.Caption>
-                            <h3>Read magic book will make you feel better</h3>
+                            <h3>Read magic book will make you feel better.</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>

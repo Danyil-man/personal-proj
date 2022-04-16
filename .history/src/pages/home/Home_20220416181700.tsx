@@ -29,7 +29,7 @@ const Home = () => {
                         />
 
                         <Carousel.Caption>
-                            <h3>Read magic book will make you feel better</h3>
+                            <h3>Read magic book will make you feel better.</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -40,8 +40,8 @@ const Home = () => {
                         />
 
                         <Carousel.Caption>
-                            <h3>Monday - Friday</h3>
-                            <p>From 9a.m. to 9p.m.</p>
+                            <h3>Third slide label</h3>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
