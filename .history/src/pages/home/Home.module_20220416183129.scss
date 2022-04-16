@@ -1,0 +1,22 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    img{
+        width: 100%;
+    }
+    .carousel{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .carouselHeadText{
+        
+    }
+}

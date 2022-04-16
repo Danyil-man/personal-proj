@@ -9,9 +9,10 @@ const Home = () => {
     return (
         <div className={style.wrapper}>
             <div className={style.container}>
-                <Carousel className={style.carousel}>
+                <Carousel>
                     <Carousel.Item >
                         <img
+
                             src="https://res.cloudinary.com/wunu/image/upload/v1650121903/personalproject/banner2_mnjovs.jpg"
                             alt="First slide"
                         />

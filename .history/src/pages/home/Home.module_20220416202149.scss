@@ -9,10 +9,11 @@
 
 .container{
     width: 100%;
+    .carousel{
         img{
-            width: 100%;
+            max-width: 100%;
         }
-    
+    }
     .carouselHeadText{
         font-family: 'Paper';
     }

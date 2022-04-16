@@ -9,16 +9,18 @@ const Home = () => {
     return (
         <div className={style.wrapper}>
             <div className={style.container}>
+                {/* <img src='https://res.cloudinary.com/wunu/image/upload/v1650108776/personalproject/baner_irfxbq.jpg' alt="" /> */}
                 <Carousel className={style.carousel}>
-                    <Carousel.Item >
+                    <Carousel.Item>
                         <img
+
                             src="https://res.cloudinary.com/wunu/image/upload/v1650121903/personalproject/banner2_mnjovs.jpg"
                             alt="First slide"
                         />
-                        <Carousel.Caption style={{ top: 110 }}>
-                            <h1 className={style.carouselHeadText}>Welcome to ReadBook</h1>
-                            <h2 className={`${style.carouselHeadText} mt-4`}>Monday - Friday</h2>
-                            <h4 className={`${style.carouselHeadText} mt-1`}>9a.m. - 9p.m.</h4>
+                        <Carousel.Caption>
+                            <h2 className={style.carouselHeadText}>Welcome to ReadBook Store</h2>
+                            <h3 className={style.carouselHeadText}>Monday - Friday</h3>
+                            <h5 className={style.carouselHeadText}>From 9a.m. to 9p.m.</h5>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -28,8 +30,8 @@ const Home = () => {
                             alt="Second slide"
                         />
 
-                        <Carousel.Caption style={{ top: 130 }}>
-                            <h1 className={style.carouselHeadText}>Reading magic book will make you feel better</h1>
+                        <Carousel.Caption>
+                            <h3 className={style.carouselHeadText}>Read magic book will make you feel better</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -38,7 +40,7 @@ const Home = () => {
                             alt="Third slide"
                         />
                         <Carousel.Caption>
-                            <h1 className={`${style.carouselHeadText} mb-3`}>in ReadBook Store</h1>
+                            <h3 className={style.carouselHeadText}>in ReadBook Store</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
