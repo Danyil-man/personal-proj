@@ -1,0 +1,14 @@
+@import '../../styles/styles.scss';
+
+.card{
+    width: 100%;
+    border: 1px solid $text;
+    padding: 20px;
+    .imgBlock{
+        width: 360px;
+        img{
+            height: 100%;
+            max-width: 100%;
+        }
+    }
+}

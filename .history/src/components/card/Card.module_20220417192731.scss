@@ -1,0 +1,11 @@
+@import '../../styles/styles.scss';
+
+.card{
+    border: 1px solid $text;
+    padding: 20px;
+    cursor: pointer;
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
+}

@@ -1,0 +1,12 @@
+@import '../../styles/styles.scss';
+
+.card{
+  width: 100%;
+  border: 1px solid $text;
+  cursor: pointer;
+  img{
+    width: 100%;
+    max-width: 260px;
+
+  }
+}

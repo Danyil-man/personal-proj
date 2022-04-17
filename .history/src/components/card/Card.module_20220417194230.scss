@@ -1,0 +1,9 @@
+@import '../../styles/styles.scss';
+
+.card{
+  border: 1px solid $text;
+  cursor: pointer;
+  img{
+    width: 360px;
+  }
+}

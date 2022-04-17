@@ -1,0 +1,24 @@
+@import '../../styles/styles.scss';
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+        img{
+            width: 100%;
+        }
+    
+    .carouselHeadText{
+        font-family: 'Paper';
+    }
+
+    .carouselCaption{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
