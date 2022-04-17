@@ -34,13 +34,12 @@ const actions = {
     })
 }
 
-
-type ActionCreatoreType = InfernActionType<typeof actions>
-type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreatoreType>
-
 export const getAllBooks = ():ThunkType => async (dispatch) => {
     const response = await booksAPI.getAllBooks()
     dispatch(actions.setBooks(response.data))
 }
+
+type ActionCreatoreType = InfernActionType<typeof actions>
+type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreatoreType>
 
 export default booksReducer;

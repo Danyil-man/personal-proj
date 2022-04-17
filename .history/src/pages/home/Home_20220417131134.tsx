@@ -43,7 +43,7 @@ const Home = () => {
                             src="https://res.cloudinary.com/wunu/image/upload/v1650121903/personalproject/banner3_dzmrl9.jpg"
                             alt="Third slide"
                         />
-                        <Carousel.Caption>
+                        <Carousel.Caption className={style.carouselCaption}>
                             <h1 className={`${style.carouselHeadText}`}>in ReadBook Store</h1>
                         </Carousel.Caption>
                     </Carousel.Item>

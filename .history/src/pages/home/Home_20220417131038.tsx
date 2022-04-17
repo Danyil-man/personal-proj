@@ -34,7 +34,7 @@ const Home = () => {
                             alt="Second slide"
                         />
 
-                        <Carousel.Caption className={style.carouselCaption} >
+                        <Carousel.Caption >
                             <h1 className={style.carouselHeadText}>Reading magic book will make you feel better</h1>
                         </Carousel.Caption>
                     </Carousel.Item>
