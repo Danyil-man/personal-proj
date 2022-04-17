@@ -40,22 +40,13 @@
 
   .interactBlock{
     display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    align-items: center;
+    justify-content: space-around;
     p{
       font-size: 18px;
       font-family: 'Oswald';
     }
-    .icon:hover{
-      cursor: pointer;
-      transition: $iconDuration;
-      &:first-child{
-          color: $heart;
-      }
-      &:last-child{
-          color: $buy;
-      }
-  }
+.purchaseBlock{
+
+}
   }
 }

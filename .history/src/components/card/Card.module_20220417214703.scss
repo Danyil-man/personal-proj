@@ -47,15 +47,9 @@
       font-size: 18px;
       font-family: 'Oswald';
     }
-    .icon:hover{
-      cursor: pointer;
-      transition: $iconDuration;
-      &:first-child{
-          color: $heart;
-      }
-      &:last-child{
-          color: $buy;
-      }
-  }
+.purchaseBlock{
+display: flex;
+justify-content: space-between;
+}
   }
 }

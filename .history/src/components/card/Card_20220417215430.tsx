@@ -23,7 +23,7 @@ const Card: FC<CardType> = ({ book }) => {
             <div className={style.interactBlock}>
                 <p>Ціна: {book.price}</p>
                 <div className='d-flex'>
-                    <Heart className={`mr-4 ${style.icon}`} size={20} />
+                    <Heart className={`mr-4 ${style.icon}`} size={18} />
                     <Cart2 size={20} className={`${style.icon}`} />
                 </div>
             </div>

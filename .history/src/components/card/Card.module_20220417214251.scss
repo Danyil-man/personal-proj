@@ -27,7 +27,7 @@
   .infoBlock{
     padding: 10px;
     h6{
-      font-size: 18px;
+      font-size: 17px;
       font-family: "Oswald";
       margin-bottom: 15px;
     }
@@ -39,23 +39,12 @@
   }
 
   .interactBlock{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    align-items: center;
     p{
       font-size: 18px;
       font-family: 'Oswald';
     }
-    .icon:hover{
-      cursor: pointer;
-      transition: $iconDuration;
-      &:first-child{
-          color: $heart;
-      }
-      &:last-child{
-          color: $buy;
-      }
-  }
+.purchaseBlock{
+
+}
   }
 }

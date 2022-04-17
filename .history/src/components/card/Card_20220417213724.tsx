@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Cart2, Heart } from 'react-bootstrap-icons';
 import { bookType } from '../../types/generaTypes';
 import style from './Card.module.scss';
 
@@ -21,11 +20,7 @@ const Card: FC<CardType> = ({ book }) => {
             </div>
 
             <div className={style.interactBlock}>
-                <p>Ціна: {book.price}</p>
-                <div className='d-flex'>
-                    <Heart className={`mr-4 ${style.icon}`} size={20} />
-                    <Cart2 size={20} className={`${style.icon}`} />
-                </div>
+                <span>Ціна: {book.price}</span>
             </div>
 
         </div>
