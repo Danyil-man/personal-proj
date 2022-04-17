@@ -7,16 +7,18 @@ import style from './Categories.module.scss'
 
 const Categories = () => {
     const dispatch = useDispatch()
+    const categories = useSelector((state: AppStateType) => state.filter.categories)
     useEffect(() => {
         dispatch(getAllCategories())
     }, [])
-    const categories = useSelector((state: AppStateType) => state.filter.categories)
     return (
         <div className={style.container}>
             <ul>
-                {categories.map((category, index) => (
-                    <li key={category}>{category}</li>
-                ))}
+                {categories && categories.map(category => {
+                    <li key={category}>
+                        {category}
+                    </li>
+                })}
             </ul>
         </div>
     )

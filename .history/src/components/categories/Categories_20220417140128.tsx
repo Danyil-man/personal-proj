@@ -2,21 +2,23 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategories } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
-import style from './Categories.module.scss'
 
 
 const Categories = () => {
     const dispatch = useDispatch()
+    const categories = useSelector((state: AppStateType) => state.filter.categories)
     useEffect(() => {
         dispatch(getAllCategories())
     }, [])
-    const categories = useSelector((state: AppStateType) => state.filter.categories)
+    console.log(categories.map(category => category))
     return (
-        <div className={style.container}>
+        <div>
             <ul>
-                {categories.map((category, index) => (
-                    <li key={category}>{category}</li>
-                ))}
+                {categories.map(category => {
+                    <li>
+                        {category}
+                    </li>
+                })}
             </ul>
         </div>
     )

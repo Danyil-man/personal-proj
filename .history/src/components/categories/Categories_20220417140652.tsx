@@ -14,9 +14,11 @@ const Categories = () => {
     return (
         <div className={style.container}>
             <ul>
-                {categories.map((category, index) => (
-                    <li key={category}>{category}</li>
-                ))}
+                {categories && categories.map(category => {
+                    <li key={category}>
+                        {category}
+                    </li>
+                })}
             </ul>
         </div>
     )

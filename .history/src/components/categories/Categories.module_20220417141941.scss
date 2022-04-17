@@ -1,0 +1,12 @@
+.container{
+    width: 100%;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        li{
+            padding: 40px;
+        }
+    }
+}

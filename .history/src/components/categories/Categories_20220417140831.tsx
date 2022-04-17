@@ -13,11 +13,13 @@ const Categories = () => {
     const categories = useSelector((state: AppStateType) => state.filter.categories)
     return (
         <div className={style.container}>
-            <ul>
-                {categories.map((category, index) => (
-                    <li key={category}>{category}</li>
-                ))}
-            </ul>
+
+            {categories && categories.map(category => {
+                <p key={category}>
+                    {category}
+                </p>
+            })}
+
         </div>
     )
 }

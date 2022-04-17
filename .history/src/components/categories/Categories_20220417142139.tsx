@@ -15,7 +15,7 @@ const Categories = () => {
         <div className={style.container}>
             <ul>
                 {categories.map((category, index) => (
-                    <li key={category}>{category}</li>
+                    <li key={category}>{category && categories.length > 3 ? '<br>' : null}</li>
                 ))}
             </ul>
         </div>

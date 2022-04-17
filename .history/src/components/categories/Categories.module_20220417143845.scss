@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    ul{
+        list-style: none;
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap;
+        li{
+            padding: 40px;
+        }
+    }
+}

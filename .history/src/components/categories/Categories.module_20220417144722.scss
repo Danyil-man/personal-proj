@@ -1,0 +1,22 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    ul{
+        max-width: 720px;
+        list-style: none;
+        display: flex;
+        text-align: center;
+        flex-wrap: wrap;
+        li{
+            margin: 40px 0px 0px 0px;
+            width: 240px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 20px;
+            &:last-child{
+                margin-right: 0px;
+            }
+        }
+    }
+}

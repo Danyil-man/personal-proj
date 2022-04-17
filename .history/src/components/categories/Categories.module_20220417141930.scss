@@ -1,0 +1,11 @@
+.container{
+    width: 100%;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        li{
+            padding: 40px;
+        }
+    }
+}

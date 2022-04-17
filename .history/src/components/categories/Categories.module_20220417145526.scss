@@ -14,13 +14,10 @@
             width: 220px;
             margin: 40px 10px 0px 10px;
             padding: 5px;
-            border: 1px solid $text;
+            border: 1px solid black;
             border-radius: 20px;
-            cursor: pointer;
             &:hover{
-                color: $bezh;
-                background-color: $text;
-                transition: $iconDuration;
+
             }
         }
     }

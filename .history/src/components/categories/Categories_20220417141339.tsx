@@ -11,13 +11,14 @@ const Categories = () => {
         dispatch(getAllCategories())
     }, [])
     const categories = useSelector((state: AppStateType) => state.filter.categories)
+    const categori = [
+        'Фантастика', 'Історія', 'Наукова', 'Роман', 'Детектив', 'Бізнес'
+    ]
+    console.log(categori)
     return (
         <div className={style.container}>
-            <ul>
-                {categories.map((category, index) => (
-                    <li key={category}>{category}</li>
-                ))}
-            </ul>
+            dasd
+
         </div>
     )
 }
