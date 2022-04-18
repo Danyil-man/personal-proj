@@ -11,7 +11,7 @@ app.use(express.json());
 const db = mysql.createConnection({
   user: "root",
   host: "localhost",
-  password: "password",
+  password: "",
   database: "personalproject",
 });
 
@@ -33,6 +33,16 @@ app.post("/create", (req, res) => {
   );
 });
 
+app.get("/users", (req, res) => {
+  db.query("SELECT * FROM users", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 app.listen(3002, () => {
-  console.log("SERVER");
+  console.log("SERVER STARTED");
 });
