@@ -12,7 +12,7 @@ const Categories = () => {
         <div className={style.container}>
             <ul className={style.ulBlock}>
                 {categories.map((category, index) => (
-                    <li className={style.liBlock} key={category}>{category}</li>
+                    <li key={category}>{category}</li>
                 ))}
             </ul>
         </div>

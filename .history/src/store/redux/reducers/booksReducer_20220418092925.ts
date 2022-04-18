@@ -2,7 +2,7 @@ import { ThunkAction } from 'redux-thunk'
 import { bookType } from '../../../types/generaTypes'
 import { booksAPI } from '../../api/booksAPI'
 import { AppStateType, InfernActionType } from '../store'
-import { GET_BOOKS } from '../variables/actionsType'
+import { GET_BOOKS } from '../variables/variables'
 
 
 

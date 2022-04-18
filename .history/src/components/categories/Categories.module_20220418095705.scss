@@ -1,16 +1,17 @@
-@import '../../styles/variables.scss';
+@import '../../styles/styles.scss';
+//add class
 
 .container{
     width: 100%;
     display: flex;
     justify-content: center;
-    .ulBlock{
+    ul{
         max-width: 720px;
         list-style: none;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        .liBlock{
+        li{
             width: 220px;
             margin: 40px 10px 0px 10px;
             padding: 5px;
