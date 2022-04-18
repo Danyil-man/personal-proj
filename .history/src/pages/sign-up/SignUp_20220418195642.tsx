@@ -42,7 +42,7 @@ const SignUp = () => {
     //     id: number;
     //     name: string }
     return (
-        <div >
+        <div>
 
         </div>
     )

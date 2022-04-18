@@ -40,12 +40,13 @@ const SignUp = () => {
 
     // type user = {
     //     id: number;
-    //     name: string }
+    //     name: string
+    // }
+
     return (
-        <div >
+        <div>
 
         </div>
     )
 }
-
 export default SignUp
