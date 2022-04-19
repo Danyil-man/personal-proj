@@ -15,7 +15,6 @@ const errorHandler = require("./middleware/ErrorMiddleware");
 
 app.use(cors());
 app.use(express.json());
-app.use(fileUpload({}));
 app.use("/api", router);
 
 //Check for errors, last middleware
