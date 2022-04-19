@@ -10,14 +10,9 @@ const sequelize = require("./db");
 const models = require("./models/models");
 const cors = require("cors");
 const router = require("./routes/index");
-const errorHandler = require("./middleware/ErrorMiddleware");
 
 app.use(cors());
 app.use(express.json());
-app.use("/api", router);
-
-//Check for errors, last middleware
-app.use(errorHandler);
 
 const start = async () => {
   try {

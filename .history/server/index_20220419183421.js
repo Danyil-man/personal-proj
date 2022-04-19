@@ -16,9 +16,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/api", router);
 
-//Check for errors, last middleware
-app.use(errorHandler);
-
 const start = async () => {
   try {
     await sequelize.authenticate();
