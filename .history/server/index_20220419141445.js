@@ -13,8 +13,6 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-app.get();
-
 const start = async () => {
   try {
     await sequelize.authenticate();
