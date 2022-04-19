@@ -10,8 +10,13 @@ class GenreController {
     return res.json(genre);
   }
   async getALl(req, res) {
-    const genres = await Genre.findAll();
-    return res.json(genres);
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(result);
+      }
+    };
   }
 }
 
