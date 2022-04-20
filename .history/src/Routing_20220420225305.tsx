@@ -12,10 +12,10 @@ const Routing = () => {
             <Header />
             <Switch>
                 {isAuth && signedRoutes.map((route) => {
-                    <Route key={route.path} exact path={route.path} component={route.component} />
+                    <Route exact path={route.path} component={route.Component} />
                 })}
-                {publicRoutes.map((route) => {
-                    <Route exact path={route.path} component={route.component} />
+                {publicRoutes.map(({ path, Component }) => {
+                    <Route exact path={path} component={Component} />
                 })}
             </Switch>
         </BrowserRouter>

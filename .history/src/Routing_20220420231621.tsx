@@ -6,7 +6,7 @@ import SignUp from './pages/signUp/SignUp';
 import { publicRoutes, signedRoutes } from './routings/MainRoutes';
 
 const Routing = () => {
-    const isAuth = false
+    const isAuth = true
     return (
         <BrowserRouter>
             <Header />

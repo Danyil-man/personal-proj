@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './pages/home/Home';
 import SignUp from './pages/signUp/SignUp';
-import { publicRoutes, signedRoutes } from './routings/MainRoutes';
+import { signedRoutes } from './routings/MainRoutes';
 
 const Routing = () => {
     const isAuth = false
@@ -11,12 +11,10 @@ const Routing = () => {
         <BrowserRouter>
             <Header />
             <Switch>
-                {isAuth && signedRoutes.map((route) => {
-                    <Route key={route.path} exact path={route.path} component={route.component} />
+                {isAuth && signedRoutes.map(({ path, Component }) => {
+                    <Route exact path={path} component={Component} />
                 })}
-                {publicRoutes.map((route) => {
-                    <Route exact path={route.path} component={route.component} />
-                })}
+
             </Switch>
         </BrowserRouter>
     )

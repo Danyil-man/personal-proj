@@ -9,30 +9,30 @@ import { ADMIN_ROUTE, CART_ROUTE, FAVORITE_ROUTE, HOME_ROUTE, LOGIN_ROUTE, SIGNU
 export const signedRoutes = [
     {
         path: ADMIN_ROUTE,
-        component: Admin
+        Component: Admin
     },
     {
         path: CART_ROUTE,
-        component: Cart
+        Component: Cart
     },
     {
         path: FAVORITE_ROUTE,
-        component: Favorite
+        Component: Favorite
     },
 ]
 
 export const publicRoutes = [
     {
         path: HOME_ROUTE,
-        component: Home
+        Component: Home
     },
     {
         path: LOGIN_ROUTE,
-        component: LogIn
+        Component: LogIn
     },
     {
         path: SIGNUP_ROUTE,
-        component: SignUp
+        Component: SignUp
     },
 ]
 
