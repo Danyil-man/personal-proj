@@ -5,9 +5,6 @@ const jwt = require("jsonwebtoken");
 const ApiError = require("../error/ApiError");
 const { User, Cart } = require("../models/models");
 
-const generateJWT = (id, email, role) => {
-  return jwt.sign({ id, email, role });
-};
 class UserController {
   async signUp(req, res, next) {
     try {
@@ -20,9 +17,11 @@ class UserController {
         return next(ApiError.badRequest("User with this email already exist"));
       }
       const hashPassword = await bcrypt.hash(password, 5);
-      const user = await User.create({ email, role, password: hashPassword });
+      const user = await User.create({ email, password: hashPassword, role });
       const cart = await Cart.create({ userId: user.id });
-      const token = generateJWT(user.id, user.email, user.role);
+      const token = jwt.sign({ id: user.id, email, role }, process.env.KEY, {
+        expiresIn: "24h",
+      });
       return res.json({ token });
     } catch (e) {
       next(ApiError.badRequest(e.message));
