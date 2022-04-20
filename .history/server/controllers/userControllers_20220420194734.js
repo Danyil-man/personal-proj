@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const ApiError = require("../error/ApiError");
 const { User, Cart } = require("../models/models");
+const authMiddleWare = require("../middleware/authMiddleWare");
 
 const generateJWT = (id, email, role) => {
   return jwt.sign({ id, email, role }, process.env.KEY, { expiresIn: "24h" });
@@ -42,8 +43,11 @@ class UserController {
     return res.json({ token });
   }
   async checkAuth(req, res, next) {
-    const token = generateJWT(req.user.id, req.user.email, req.user.role);
-    return res.json({ token });
+    const { id } = req.query;
+    if (!id) {
+      return next(ApiError.badRequest("no id"));
+    }
+    res.json(id);
   }
 }
 

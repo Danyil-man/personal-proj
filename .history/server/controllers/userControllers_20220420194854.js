@@ -42,8 +42,11 @@ class UserController {
     return res.json({ token });
   }
   async checkAuth(req, res, next) {
-    const token = generateJWT(req.user.id, req.user.email, req.user.role);
-    return res.json({ token });
+    const { id } = req.query;
+    if (!id) {
+      return next(ApiError.badRequest("no id"));
+    }
+    res.json(id);
   }
 }
 
