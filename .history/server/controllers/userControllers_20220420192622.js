@@ -34,12 +34,6 @@ class UserController {
     if (!user) {
       return next(ApiError.badRequest("User not found"));
     }
-    let checkPassword = bcrypt.compareSync(password, user.password);
-    if (!checkPassword) {
-      return next(ApiError.badRequest("User not found"));
-    }
-    const token = generateJWT(user.id, user.email, user.role);
-    return res.json({ token });
   }
   async checkAuth(req, res, next) {
     const { id } = req.query;
