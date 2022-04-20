@@ -27,12 +27,9 @@ class BookController {
   async getAll(req, res) {
     const { genreId } = req.query;
     let books;
-    //Get all books
     if (!genreId) {
       books = await Book.findAll();
-    }
-    //Sort by genre
-    else {
+    } else {
       books = await Book.findAll({ where: { genreId } });
     }
     return res.json(books);

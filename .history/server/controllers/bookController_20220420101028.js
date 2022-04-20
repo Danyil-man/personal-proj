@@ -19,23 +19,14 @@ class BookController {
         genreId,
         image: fileName,
       });
+      console.log(image);
       return res.json(book);
     } catch (e) {
       next(ApiError.badRequest(e.message));
     }
   }
   async getAll(req, res) {
-    const { genreId } = req.query;
-    let books;
-    //Get all books
-    if (!genreId) {
-      books = await Book.findAll();
-    }
-    //Sort by genre
-    else {
-      books = await Book.findAll({ where: { genreId } });
-    }
-    return res.json(books);
+    return 0;
   }
   async getOne(req, res) {
     return 0;

@@ -31,7 +31,7 @@ class BookController {
     if (!genreId) {
       books = await Book.findAll();
     }
-    //Sort by genre
+    //Sort with genre
     else {
       books = await Book.findAll({ where: { genreId } });
     }
