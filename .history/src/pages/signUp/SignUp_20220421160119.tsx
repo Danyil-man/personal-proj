@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { HOME_ROUTE } from '../../routings/pathVariables';
+import { Button, Form, FormLabel } from 'react-bootstrap';
+import { Formik } from 'formik';
 
 const SignUp = () => {
     const [name, setName] = useState('')
@@ -23,19 +25,15 @@ const SignUp = () => {
     }
     return (
         <div>
-            <form onSubmit={submit}>
-                <label>Name: </label>
-                <input type="text" onChange={(e) => { setName(e.target.value) }} />
-                <label>Email: </label>
-                <input type="text" onChange={(e) => { setEmail(e.target.value) }} />
-                <label>Password: </label>
-                <input type="text" onChange={(e) => { setPassword(e.target.value) }} />
-                <button type='submit'>Submit</button>
-            </form>
-            <hr />
-            <p>Users:</p>
-            <button onClick={getUsers}>Show Users</button>
-            {users.map(user => <p key={user.id}>{user.id}{user.name}</p>)}
+            <Formik initialValues={{
+                email: '',
+                password: ''
+            }}
+                onSubmit={submit}>
+                <Form>
+                    <label>dasd</label>
+                </Form>
+            </Formik>
         </div>
     )
 }
