@@ -7,7 +7,6 @@ import { Field, Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import { userAPI } from '../../store/api/userAPI';
 import { signUp } from '../../store/redux/reducers/userReducer';
-import { useDispatch } from 'react-redux';
 
 const Auth = () => {
     const [email, setEmail] = useState('')
@@ -16,7 +15,7 @@ const Auth = () => {
     const location = useLocation()
     const LogIn = location.pathname === LOGIN_ROUTE
 
-    const auth = () => {
+    const auth = async (values: any) => {
         // if (LogIn) {
         //     const response = await userAPI.logIn(values.email, values.password)
         //     // eslint-disable-next-line no-debugger
@@ -27,9 +26,8 @@ const Auth = () => {
         //     const response = await userAPI.signUp(values.email, values.password)
         //     console.log('signup res', response)
         // }
-        const dispatch = useDispatch()
-        dispatch(signUp(email, password))
-        console.log(email, password)
+        signUp(values.email, values.password)
+        console.log('values res', values)
     }
 
     return (
@@ -45,13 +43,13 @@ const Auth = () => {
                         <div >
                             <label >Email</label>
                             <div>
-                                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" placeholder="example@mail.com" required />
+                                <Field type="email" name="email" placeholder="example@mail.com" required />
                             </div>
                         </div>
                         <div >
                             <label>Password</label>
                             <div>
-                                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" placeholder="Type" required />
+                                <Field type="password" name="password" placeholder="Type" required />
                             </div>
                         </div>
                         <div >

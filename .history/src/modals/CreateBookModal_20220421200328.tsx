@@ -2,13 +2,12 @@ import { Field, Form, Formik } from 'formik';
 import React, { FC } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
-type CreateGenreModalType = {
+type CreateBookModalType = {
     show: boolean
     onHide: () => void
 }
 
-const CreateGenreModal: FC<CreateGenreModalType> = ({ show, onHide }) => {
-
+const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
     return (
         <>
             <Modal
@@ -18,16 +17,20 @@ const CreateGenreModal: FC<CreateGenreModalType> = ({ show, onHide }) => {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        Додати новий Жанр
+                        Додати нову книгу
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Formik initialValues={{
-                        genre: ''
+                        name: ''
                     }} onSubmit={() => console.log('Genre name is')}>
                         <Form>
-                            <label>Назва жанру</label>
-                            <Field placeholder='назва жанру' name="genre" />
+                            <label>Назва книги</label>
+                            <Field type="text" name="name" placeholder='назва книги' />
+                            <label>ціна</label>
+                            <Field type="number" placeholder='назва жанру' />
+                            <label>фото</label>
+                            <input type="file" />
                         </Form>
                     </Formik>
                 </Modal.Body>
@@ -39,4 +42,5 @@ const CreateGenreModal: FC<CreateGenreModalType> = ({ show, onHide }) => {
         </>
     )
 }
-export default CreateGenreModal
+
+export default CreateBookModal

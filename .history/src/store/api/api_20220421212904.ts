@@ -7,3 +7,11 @@ export const instanceAPI = axios.create({
         Accept: 'application/json',
       },
 })
+
+export const publicAPI = axios.create({
+  baseURL: 'http://localhost:5000/'
+})
+
+export const signedAPI = axios.create({
+  
+})

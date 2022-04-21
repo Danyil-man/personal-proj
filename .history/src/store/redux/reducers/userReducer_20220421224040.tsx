@@ -28,7 +28,7 @@ const userReducer = (state = initialState, action: ActionCreatorType): initialSt
             return {
                 ...state,
                 user: action.user,
-
+                isAuth: false
             }
 
 
@@ -38,10 +38,10 @@ const userReducer = (state = initialState, action: ActionCreatorType): initialSt
 }
 
 const actions = {
-    setUserData: (user: userType) => ({
+    setUserData: (user: userType, isAuth: boolean) => ({
         type: SET_USER_DATA,
         user,
-
+        isAuth
     } as const),
 
 }
@@ -53,8 +53,8 @@ type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreator
 
 export const signUp = (email: string, password: string): ThunkType => async (dispatch) => {
     const response = await userAPI.signUp(email, password)
-    dispatch(actions.setUserData(response.data))
-
-
+    dispatch(actions.setUserData(response.data, true))
+    // eslint-disable-next-line no-debugger
+    debugger
 }
 export default userReducer

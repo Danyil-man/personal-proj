@@ -7,7 +7,6 @@ import { Field, Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import { userAPI } from '../../store/api/userAPI';
 import { signUp } from '../../store/redux/reducers/userReducer';
-import { useDispatch } from 'react-redux';
 
 const Auth = () => {
     const [email, setEmail] = useState('')
@@ -27,8 +26,7 @@ const Auth = () => {
         //     const response = await userAPI.signUp(values.email, values.password)
         //     console.log('signup res', response)
         // }
-        const dispatch = useDispatch()
-        dispatch(signUp(email, password))
+        signUp(email, password)
         console.log(email, password)
     }
 
