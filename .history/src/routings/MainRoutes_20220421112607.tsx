@@ -24,15 +24,15 @@ export const signedRoutes = [
 export const publicRoutes = [
     {
         path: HOME_ROUTE,
-        component: Home,
+        component: Home
     },
     {
         path: LOGIN_ROUTE,
-        component: LogIn,
+        component: LogIn
     },
     {
         path: SIGNUP_ROUTE,
-        component: SignUp,
+        component: SignUp
     },
 ]
 

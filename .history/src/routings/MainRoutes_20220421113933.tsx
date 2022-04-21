@@ -25,14 +25,17 @@ export const publicRoutes = [
     {
         path: HOME_ROUTE,
         component: Home,
+        authRequire: false
     },
     {
         path: LOGIN_ROUTE,
         component: LogIn,
+        authRequire: false
     },
     {
         path: SIGNUP_ROUTE,
         component: SignUp,
+        authRequire: false
     },
 ]
 

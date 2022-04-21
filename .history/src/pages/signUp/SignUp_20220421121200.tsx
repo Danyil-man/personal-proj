@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { HOME_ROUTE } from '../../routings/pathVariables';
 
 const SignUp = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [users, setUsers] = useState<Array<user>>([])
 
+    const [users, setUsers] = useState<Array<user>>([])
+    const navigate = useNavigate()
     const getUsers = async () => {
         const resposne = await axios.get('http://localhost:3002/users')
         setUsers(resposne.data)
@@ -19,7 +20,7 @@ const SignUp = () => {
             { name: name, email: email, password: password }).then(() => {
                 console.log('Response success')
             })
-
+        navigate(HOME_ROUTE)
     }
     return (
         <div>

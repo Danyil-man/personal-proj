@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
-import { HOME_ROUTE } from '../../routings/pathVariables';
 
 const SignUp = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
     const [users, setUsers] = useState<Array<user>>([])
 
     const getUsers = async () => {
@@ -19,7 +18,6 @@ const SignUp = () => {
             { name: name, email: email, password: password }).then(() => {
                 console.log('Response success')
             })
-
     }
     return (
         <div>
