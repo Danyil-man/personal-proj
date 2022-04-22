@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.form{
+    border: $standartBoard;
+    border-radius: 18px;
+    margin-top: 100px;
+    padding: 40px;
+    width: 720px;
+    box-shadow: 10px 10px 40px $text;
+.mainText{
+    font-family: 'Typo';
+    text-align: center;
+}
+    .formItem{
+        margin-top: 20px;
+        .label{
+            font-family: 'Oswald';
+        }
+        .inputItem{
+
+        }
+    }
+
+    .formFooter{
+
+
+        .formFooterNavigation{
+
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.form{
+    border: 1px solid black;
+    margin-top: 100px;
+    padding: 40px;
+    width: 720px;
+
+    .formItem{
+
+    }
+
+    .formFooter{
+
+
+        .formFooterNavigation{
+
+        }
+    }
+}
