@@ -12,12 +12,9 @@ const App = () => {
   const user = useSelector((state: AppStateType) => state.user)
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    setTimeout(() => {
-      checkAuth().then(data => {
-        user.isAuth = true
-      }).finally(() => setLoading(false))
-    }, 1000)
-
+    checkAuth().then(data => {
+      user.isAuth = true
+    }).finally(() => setLoading(false))
   }, [])
   if (loading) {
     return <Spinner animation={'grow'} />

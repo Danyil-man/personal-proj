@@ -97,7 +97,7 @@ export const checkAuth = async () => {
 
 export const logOut = (): ThunkType => async (dispatch) => {
     try {
-        dispatch(actions.deleteUserData('', '', false))
+        dispatch(actions.setUserData('', '', false))
         localStorage.removeItem('token')
     } catch (e: any) {
         alert(e.response.data.message)

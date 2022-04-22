@@ -6,7 +6,7 @@ import { HOME_ROUTE } from '../../../routings/pathVariables';
 import { userType } from '../../../types/generalTypes';
 import { userAPI } from '../../api/userAPI';
 import { AppStateType, InfernActionType } from '../store';
-import { DELETE_USER_DATA, SET_USER_DATA } from '../variables/actionsType';
+import { SET_USER_DATA } from '../variables/actionsType';
 
 
 
@@ -32,13 +32,6 @@ const userReducer = (state = initialState, action: ActionCreatorType): initialSt
                 password: action.data.password,
                 isAuth: true
             }
-        case DELETE_USER_DATA:
-            return {
-                ...state,
-                email: action.data.email,
-                password: action.data.password,
-                isAuth: false
-            }
 
 
         default:
@@ -53,11 +46,6 @@ const actions = {
             data: { email, password, isAuth }
 
         } as const),
-    deleteUserData: (email: string,
-        password: string, isAuth: boolean) => ({
-            type: DELETE_USER_DATA,
-            data: { email, password, isAuth }
-        } as const)
 
 }
 
@@ -95,12 +83,4 @@ export const checkAuth = async () => {
     return jwtDecode(response.data.token)
 }
 
-export const logOut = (): ThunkType => async (dispatch) => {
-    try {
-        dispatch(actions.deleteUserData('', '', false))
-        localStorage.removeItem('token')
-    } catch (e: any) {
-        alert(e.response.data.message)
-    }
-}
 export default userReducer

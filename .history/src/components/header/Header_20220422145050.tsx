@@ -33,7 +33,7 @@ const Header = () => {
                 <Button variant='dark' onClick={() => { navigate(ADMIN_ROUTE) }}>Адмін</Button>
                 <Button variant='dark' onClick={LogOut}>Вийти</Button>
             </div> : <div className={style.headerRightSide}>
-                <Button variant='dark' onClick={() => navigate(LOGIN_ROUTE)} >Увійти</Button>
+                <Button variant='dark'>Увійти</Button>
             </div>}
 
         </header>

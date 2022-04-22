@@ -55,7 +55,7 @@ const actions = {
         } as const),
     deleteUserData: (email: string,
         password: string, isAuth: boolean) => ({
-            type: DELETE_USER_DATA,
+            type: SET_USER_DATA,
             data: { email, password, isAuth }
         } as const)
 
@@ -97,7 +97,7 @@ export const checkAuth = async () => {
 
 export const logOut = (): ThunkType => async (dispatch) => {
     try {
-        dispatch(actions.deleteUserData('', '', false))
+        dispatch(actions.setUserData('', '', false))
         localStorage.removeItem('token')
     } catch (e: any) {
         alert(e.response.data.message)
