@@ -2,59 +2,60 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { HOME_ROUTE, LOGIN_ROUTE, SIGNUP_ROUTE } from '../../routings/pathVariables';
-import { Field, Form, Formik } from 'formik';
+import { Button, Form, FormLabel } from 'react-bootstrap';
+import { Field, Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import { userAPI } from '../../store/api/userAPI';
-import { logIn, signUp } from '../../store/redux/reducers/userReducer';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppStateType } from '../../store/redux/store';
+import { signUp } from '../../store/redux/reducers/userReducer';
+import { useDispatch } from 'react-redux';
 
 const Auth = () => {
-    const [emailAuth, setEmail] = useState('')
-    const [passwordAuth, setPassword] = useState('')
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
-    const { email, password } = useSelector((state: AppStateType) => state.user)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     const location = useLocation()
     const LogIn = location.pathname === LOGIN_ROUTE
 
-
-    const auth = (values: any) => {
-        if (LogIn) {
-            dispatch(logIn(values.email, values.password))
-            navigate(HOME_ROUTE)
-        } else {
-            dispatch(signUp(values.email, values.password))
-            navigate(HOME_ROUTE)
-        }
+    const auth = () => {
+        // if (LogIn) {
+        //     const response = await userAPI.logIn(values.email, values.password)
+        //     // eslint-disable-next-line no-debugger
+        //     debugger
+        // } else {
+        //     // eslint-disable-next-line no-debugger
+        //     debugger
+        //     const response = await userAPI.signUp(values.email, values.password)
+        //     console.log('signup res', response)
+        // }
+        const dispatch = useDispatch()
+        dispatch(signUp(email, password))
+        console.log(email, password)
     }
-    console.log('usestate: ', emailAuth, passwordAuth)
-    console.log('reduxstate: ', email, password)
+    console.log(email, password)
     return (
         <div>
             <Formik initialValues={{
                 email: '',
                 password: ''
             }}
-
-                onSubmit={auth} >
+                onSubmit={auth}>
                 <Form >
                     <div>
                         <h1>{LogIn ? 'Log In' : 'Sign Up'}</h1>
                         <div >
                             <label >Email</label>
                             <div>
-                                <Field name="email" placeholder="example@mail.com" required />
+                                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" placeholder="example@mail.com" required />
                             </div>
                         </div>
                         <div >
                             <label>Password</label>
                             <div>
-                                <Field name="password" placeholder="Type" type="password" required />
+                                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="password" placeholder="Type" required />
                             </div>
                         </div>
                         <div >
-                            <button type="submit">
+                            <button type="submit" >
                                 {LogIn ? 'Log In' : 'Sign Up'}
                             </button>
                             <div >
@@ -70,7 +71,6 @@ const Auth = () => {
                     </div>
                 </Form>
             </Formik>
-
         </div>
     )
 }

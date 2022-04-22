@@ -1,8 +1,6 @@
 import jwtDecode from 'jwt-decode';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { ThunkAction } from 'redux-thunk';
-import { HOME_ROUTE } from '../../../routings/pathVariables';
 import { userType } from '../../../types/generalTypes';
 import { userAPI } from '../../api/userAPI';
 import { AppStateType, InfernActionType } from '../store';
@@ -21,7 +19,6 @@ const initialState: initialStateType = {
     password: '',
     isAuth: false
 }
-
 
 const userReducer = (state = initialState, action: ActionCreatorType): initialStateType => {
     switch (action.type) {

@@ -22,6 +22,7 @@ const initialState: initialStateType = {
     isAuth: false
 }
 
+const navigate = useNavigate()
 
 const userReducer = (state = initialState, action: ActionCreatorType): initialStateType => {
     switch (action.type) {
@@ -59,6 +60,7 @@ export const signUp = (email: string, password: string): ThunkType => async (dis
         const response = await userAPI.signUp(email, password)
         dispatch(actions.setUserData(email, password, true))
         return jwtDecode(response.data.token)
+        navigate(HOME_ROUTE)
     } catch (e: any) {
         alert(e.response.data.message)
     }
@@ -70,6 +72,7 @@ export const logIn = (email: string, password: string): ThunkType => async (disp
         const response = await userAPI.logIn(email, password)
         dispatch(actions.setUserData(email, password, true))
         return jwtDecode(response.data.token)
+        navigate(HOME_ROUTE)
     } catch (e: any) {
         alert(e.response.data.message)
     }

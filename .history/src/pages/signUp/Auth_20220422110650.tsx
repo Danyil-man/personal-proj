@@ -13,19 +13,24 @@ const Auth = () => {
     const [emailAuth, setEmail] = useState('')
     const [passwordAuth, setPassword] = useState('')
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const { email, password } = useSelector((state: AppStateType) => state.user)
     const location = useLocation()
     const LogIn = location.pathname === LOGIN_ROUTE
 
+    // const auth = async () => {
+    //     if (LogIn) {
+    //         const response = await userAPI.logIn(email, password)
+    //         console.log('log res', response)
+    //     } else {
+
+    //         const response = await userAPI.signUp(email, password)
+    //         console.log('signup res', response)
+    //     }
+    // }
 
     const auth = (values: any) => {
         if (LogIn) {
-            dispatch(logIn(values.email, values.password))
-            navigate(HOME_ROUTE)
-        } else {
-            dispatch(signUp(values.email, values.password))
-            navigate(HOME_ROUTE)
+            dispatch(logIn())
         }
     }
     console.log('usestate: ', emailAuth, passwordAuth)
@@ -50,11 +55,11 @@ const Auth = () => {
                         <div >
                             <label>Password</label>
                             <div>
-                                <Field name="password" placeholder="Type" type="password" required />
+                                <Field name="password" placeholder="Type" required />
                             </div>
                         </div>
                         <div >
-                            <button type="submit">
+                            <button type="submit" onClick={auth} >
                                 {LogIn ? 'Log In' : 'Sign Up'}
                             </button>
                             <div >

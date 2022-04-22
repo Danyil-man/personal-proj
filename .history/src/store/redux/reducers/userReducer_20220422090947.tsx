@@ -1,8 +1,5 @@
-import jwtDecode from 'jwt-decode';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { ThunkAction } from 'redux-thunk';
-import { HOME_ROUTE } from '../../../routings/pathVariables';
 import { userType } from '../../../types/generalTypes';
 import { userAPI } from '../../api/userAPI';
 import { AppStateType, InfernActionType } from '../store';
@@ -19,18 +16,16 @@ type initialStateType = {
 const initialState: initialStateType = {
     email: '',
     password: '',
-    isAuth: false
+    isAuth: true
 }
-
 
 const userReducer = (state = initialState, action: ActionCreatorType): initialStateType => {
     switch (action.type) {
         case SET_USER_DATA:
             return {
                 ...state,
-                email: action.data.email,
-                password: action.data.password,
-                isAuth: true
+                email: action.,
+
             }
 
 
@@ -41,9 +36,9 @@ const userReducer = (state = initialState, action: ActionCreatorType): initialSt
 
 const actions = {
     setUserData: (email: string,
-        password: string, isAuth: boolean) => ({
+        password: string,) => ({
             type: SET_USER_DATA,
-            data: { email, password, isAuth }
+            user,
 
         } as const),
 
@@ -55,25 +50,9 @@ type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreator
 
 
 export const signUp = (email: string, password: string): ThunkType => async (dispatch) => {
-    try {
-        const response = await userAPI.signUp(email, password)
-        dispatch(actions.setUserData(email, password, true))
-        return jwtDecode(response.data.token)
-    } catch (e: any) {
-        alert(e.response.data.message)
-    }
+    const response = await userAPI.signUp(email, password)
+    dispatch(actions.setUserData(response.data))
+
 
 }
-
-export const logIn = (email: string, password: string): ThunkType => async (dispatch) => {
-    try {
-        const response = await userAPI.logIn(email, password)
-        dispatch(actions.setUserData(email, password, true))
-        return jwtDecode(response.data.token)
-    } catch (e: any) {
-        alert(e.response.data.message)
-    }
-
-}
-
 export default userReducer
