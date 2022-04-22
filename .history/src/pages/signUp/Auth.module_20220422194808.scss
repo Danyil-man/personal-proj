@@ -188,15 +188,29 @@
         margin: 0px 0px 50px 0px;
         padding: 15px;
         width: 360px;
-        box-shadow: 2px 2px 15px $text;
     .mainText{
-        font-size: 22px;
+        font-size: 28px;
     }
-        .formFooter{
-            margin-top: 15px;
 
+        .formFooter{
+            margin-top: 20px;
+    
+            .submitBtn{
+                padding: 6px;
+                font-size: 12px;
+            }
             .formFooterNavigation{
-                margin-top: 4px;
+                margin-top: 6px;
+
+                .formNavigation{
+                    .questionTag{
+                        margin-right: 5px;
+                        font-size: 10px;
+                    }
+                    .link{
+                        font-size: 10px;
+                    }
+                }
             }
         }
     }

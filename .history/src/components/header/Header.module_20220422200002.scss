@@ -12,8 +12,7 @@
     .headerLeftSide{
         display: flex;
         align-items: center;
-        
-        .logoName{
+        h3{
             margin-right: 30px;
             font-family: 'Lato-italic';
             transition: $iconDuration;
@@ -24,9 +23,6 @@
         a{
             text-decoration: none;
             color: inherit;
-        }
-        .translateIcon{
-            font-size: 28px;
         }
         
     }
@@ -50,18 +46,34 @@
 //LapTop 
 @media screen and (max-width: 992px){
     .header{
-        padding: 35px;
+        width: 100%;
+        padding: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $text;
+    
         .headerLeftSide{
-            .logoName{
-                margin-right: 20px;
-                font-size: 24px;
+            display: flex;
+            align-items: center;
+            h3{
+                margin-right: 30px;
+                font-family: 'Lato-italic';
+                transition: $iconDuration;
+                &:hover{
+                    color: $white;
+                }
             }
-            .translateIcon{
-                font-size: 22px;
+            a{
+                text-decoration: none;
+                color: inherit;
             }
+            
         }
     
         .headerRightSide{
+            display: flex;
+            align-items: center;
             .icon:hover{
                 cursor: pointer;
                 transition: $iconDuration;
@@ -78,27 +90,32 @@
 
 //Tablet 
 @media screen and (max-width: 768px) {
-    .header{
-        padding: 30px;
-        .headerLeftSide{
-            .logoName{
-                margin-right: 20px;
-                font-size: 24px;
-            }
-            .translateIcon{
-                font-size: 20px;
-            }
-        }
+    .form{
+        margin: 0px 0px 100px 0px;
+        padding: 20px;
+        width: 450px;
+    .mainText{
+        font-size: 28px;
+    }
+
+        .formFooter{
+            margin-top: 20px;
     
-        .headerRightSide{
-            .icon:hover{
-                cursor: pointer;
-                transition: $iconDuration;
-                &:first-child{
-                    color: $heart;
-                }
-                &:last-child{
-                    color: $buy;
+            .submitBtn{
+                padding: 6px;
+                font-size: 12px;
+            }
+            .formFooterNavigation{
+                margin-top: 6px;
+
+                .formNavigation{
+                    .questionTag{
+                        margin-right: 5px;
+                        font-size: 10px;
+                    }
+                    .link{
+                        font-size: 10px;
+                    }
                 }
             }
         }
@@ -107,28 +124,19 @@
 
 //Phome
 @media screen and (max-width: 600px){
-    .header{
-        padding: 20px;
-        .headerLeftSide{
-            .logoName{
-                margin-right: 15px;
-                font-size: 22px;
-            }
-            .translateIcon{
-                font-size: 18px;
-            }
-        }
-    
-        .headerRightSide{
-            .icon:hover{
-                cursor: pointer;
-                transition: $iconDuration;
-                &:first-child{
-                    color: $heart;
-                }
-                &:last-child{
-                    color: $buy;
-                }
+    .form{
+        margin: 0px 0px 50px 0px;
+        padding: 15px;
+        width: 360px;
+        box-shadow: 2px 2px 15px $text;
+    .mainText{
+        font-size: 22px;
+    }
+        .formFooter{
+            margin-top: 15px;
+
+            .formFooterNavigation{
+                margin-top: 4px;
             }
         }
     }

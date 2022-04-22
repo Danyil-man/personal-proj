@@ -50,7 +50,6 @@
 //LapTop 
 @media screen and (max-width: 992px){
     .header{
-        padding: 35px;
         .headerLeftSide{
             .logoName{
                 margin-right: 20px;
@@ -79,7 +78,6 @@
 //Tablet 
 @media screen and (max-width: 768px) {
     .header{
-        padding: 30px;
         .headerLeftSide{
             .logoName{
                 margin-right: 20px;
@@ -108,14 +106,10 @@
 //Phome
 @media screen and (max-width: 600px){
     .header{
-        padding: 20px;
         .headerLeftSide{
             .logoName{
                 margin-right: 15px;
                 font-size: 22px;
-            }
-            .translateIcon{
-                font-size: 18px;
             }
         }
     

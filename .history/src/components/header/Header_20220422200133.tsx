@@ -24,7 +24,7 @@ const Header = () => {
                 <Link to='/'>
                     <h3 className={style.logoName}>ReadBook</h3>
                 </Link>
-                <Translate role="button" className={style.translateIcon} />
+                <Translate size={30} role="button" />
             </div>
             {isAuth ? <div className={style.headerRightSide}>
                 <Heart size={20} className={`mr-4 ${style.icon}`} />

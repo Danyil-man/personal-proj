@@ -25,9 +25,6 @@
             text-decoration: none;
             color: inherit;
         }
-        .translateIcon{
-            font-size: 28px;
-        }
         
     }
 
@@ -50,14 +47,10 @@
 //LapTop 
 @media screen and (max-width: 992px){
     .header{
-        padding: 35px;
         .headerLeftSide{
             .logoName{
                 margin-right: 20px;
                 font-size: 24px;
-            }
-            .translateIcon{
-                font-size: 22px;
             }
         }
     
@@ -79,14 +72,10 @@
 //Tablet 
 @media screen and (max-width: 768px) {
     .header{
-        padding: 30px;
         .headerLeftSide{
             .logoName{
                 margin-right: 20px;
                 font-size: 24px;
-            }
-            .translateIcon{
-                font-size: 20px;
             }
         }
     
@@ -108,14 +97,10 @@
 //Phome
 @media screen and (max-width: 600px){
     .header{
-        padding: 20px;
         .headerLeftSide{
             .logoName{
-                margin-right: 15px;
-                font-size: 22px;
-            }
-            .translateIcon{
-                font-size: 18px;
+                margin-right: 20px;
+                font-size: 24px;
             }
         }
     

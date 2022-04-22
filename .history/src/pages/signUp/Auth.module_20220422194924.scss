@@ -188,7 +188,6 @@
         margin: 0px 0px 50px 0px;
         padding: 15px;
         width: 360px;
-        box-shadow: 2px 2px 15px $text;
     .mainText{
         font-size: 22px;
     }
@@ -197,6 +196,16 @@
 
             .formFooterNavigation{
                 margin-top: 4px;
+
+                .formNavigation{
+                    .questionTag{
+                        margin-right: 5px;
+                        font-size: 8px;
+                    }
+                    .link{
+                        font-size: 10px;
+                    }
+                }
             }
         }
     }

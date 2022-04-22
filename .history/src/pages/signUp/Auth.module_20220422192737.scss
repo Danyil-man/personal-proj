@@ -1,13 +1,18 @@
 @import '../../styles/variables.scss';
 @import '../../styles/fonts.scss';
 
-.content{
+.wrapper{
+    width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.content{
+    display: flex;
     align-items: center;
     width: 100%;
     max-width: 1440px;
-    padding: 40px;
+    padding: 0px 40px 0px 40px;
 }
 
 .form{
@@ -96,107 +101,89 @@
     }
 }
 
-//LapTop 
 @media screen and (max-width: 992px){
     .form{
-        margin: 50px 0px 150px 0px;
-        padding: 30px;
+        border: $standartBoard;
+        border-radius: 18px;
+        margin: 100px 0px 200px 0px;
+        padding: 40px;
         width: 570px;
+        box-shadow: 10px 10px 40px $text;
     .mainText{
-        font-size: 32px;
+        font-family: 'Typo';
+        text-align: center;
     }
         .formItem{
-            margin-top: 10px;
+            margin-top: 20px;
+            .error{
+                color: $heart;
+            }
             .label{
-                font-size: 12px;
+                font-family: 'Monserat-italic';
+                font-size: 14px;
+                margin-left: 5px;
+                margin-bottom: 3px;
             }
             .inputItem{
-                padding: 8px;
-                font-size: 14px;
+                width: 100%;
+                border-radius: 14px;
+                border: $standartBoard;
+                padding: 10px;
+                font-family: 'Monserat-italic';
             }
             .inputField{
+                position: relative;
                 .hidePassword{
                     position: absolute;
-                    top: 6px;
-                    right: 15px;
+                    top: 10px;
+                    right: 20px;
                 }
             }
             
         }
     
         .formFooter{
-            margin-top: 25px;
+            margin-top: 30px;
     
             .submitBtn{
-                padding: 8px;
-                font-size: 14px;
-            }
-            .formFooterNavigation{
-                margin-top: 8px;
-
-                .formNavigation{
-                    .questionTag{
-                        margin-right: 5px;
-                        font-size: 12px;
-                    }
-                    .link{
-                        font-size: 12px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-//Tablet 
-@media screen and (max-width: 768px) {
-    .form{
-        margin: 0px 0px 100px 0px;
-        padding: 20px;
-        width: 450px;
-    .mainText{
-        font-size: 28px;
-    }
-
-        .formFooter{
-            margin-top: 20px;
+                width: 100%;
+                padding: 10px;
+                border-radius: 14px;
+                background: none;
+                background-color: $text;
+                color: $white;
+                border: none;
+                font-size: 18px;
+                font-family: 'Monserat';
     
-            .submitBtn{
-                padding: 6px;
-                font-size: 12px;
-            }
-            .formFooterNavigation{
-                margin-top: 6px;
-
-                .formNavigation{
-                    .questionTag{
-                        margin-right: 5px;
-                        font-size: 10px;
-                    }
-                    .link{
-                        font-size: 10px;
-                    }
+                &:hover{
+                    transition: $iconDuration;
+                    background-color: $white;
+                    color: $text;
                 }
             }
-        }
-    }
-}
-
-//Phome
-@media screen and (max-width: 600px){
-    .form{
-        margin: 0px 0px 50px 0px;
-        padding: 15px;
-        width: 360px;
-        box-shadow: 2px 2px 15px $text;
-    .mainText{
-        font-size: 22px;
-    }
-        .formFooter{
-            margin-top: 15px;
-
             .formFooterNavigation{
-                margin-top: 4px;
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+    
+                .formNavigation{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .questionTag{
+                        margin-right: 5px;
+                        font-size: 14px;
+                        font-family: 'Monserat-italic';
+                    }
+                    .link{
+                        font-size: 14px;
+                        &:hover{
+                            transition: $iconDuration;
+                            color: $text;
+                        }
+                    }
+                }
             }
         }
     }

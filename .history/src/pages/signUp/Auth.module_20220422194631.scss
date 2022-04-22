@@ -186,17 +186,49 @@
 @media screen and (max-width: 600px){
     .form{
         margin: 0px 0px 50px 0px;
-        padding: 15px;
-        width: 360px;
-        box-shadow: 2px 2px 15px $text;
+        padding: 30px;
+        width: 570px;
     .mainText{
-        font-size: 22px;
+        font-size: 32px;
     }
+        .formItem{
+            margin-top: 10px;
+            .label{
+                font-size: 12px;
+            }
+            .inputItem{
+                padding: 8px;
+                font-size: 14px;
+            }
+            .inputField{
+                .hidePassword{
+                    position: absolute;
+                    top: 6px;
+                    right: 15px;
+                }
+            }
+            
+        }
+    
         .formFooter{
-            margin-top: 15px;
-
+            margin-top: 25px;
+    
+            .submitBtn{
+                padding: 8px;
+                font-size: 14px;
+            }
             .formFooterNavigation{
-                margin-top: 4px;
+                margin-top: 8px;
+
+                .formNavigation{
+                    .questionTag{
+                        margin-right: 5px;
+                        font-size: 12px;
+                    }
+                    .link{
+                        font-size: 12px;
+                    }
+                }
             }
         }
     }
