@@ -15,7 +15,7 @@ const AuthSchema = Yup.object().shape({
         .min(10, 'Too Short')
         .max(50, 'Too Long'),
     password: Yup.string()
-        .min(4, 'Too Short')
+        .min(8, 'Too Short')
         .max(20, 'Too Long'),
 })
 const Auth = () => {
@@ -44,21 +44,21 @@ const Auth = () => {
                 }}
                     validationSchema={AuthSchema}
                     onSubmit={auth} >
-                    {({ errors }) => (<Form>
+                    {({ errors, touched }) => (<Form>
                         <div className={style.form}>
                             <h1 className={style.mainText}>{LogIn ? 'Log In' : 'Sign Up'}</h1>
                             <div className={style.formItem} >
                                 <label className={style.label} >Email</label>
                                 <div>
                                     <Field className={style.inputItem} name="email" type="email" placeholder="example@mail.com" required />
-                                    <p className={style.error}>{errors.email}</p>
+                                    <p>{errors.email}</p>
                                 </div>
                             </div>
                             <div className={style.formItem}>
                                 <label className={style.label}>Password</label>
                                 <div className={style.inputField}>
                                     <Field className={style.inputItem} name="password" placeholder="Your password" type={`${showPassword ? 'text' : 'password'}`} required />
-                                    <p className={style.error}>{errors.password}</p>
+                                    <p>{errors.password}</p>
                                     <div className={style.hidePassword}>
                                         {showPassword ? <EyeFill size={18} onClick={() => setShowPassword(!showPassword)} /> : <EyeSlashFill size={18} onClick={() => setShowPassword(!showPassword)} />}
                                     </div>
@@ -80,7 +80,8 @@ const Auth = () => {
                                 </div>
                             </div>
                         </div>
-                    </Form>)}
+                    </Form>)
+                    
                 </Formik>
             </div>
         </div>
