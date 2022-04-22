@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppStateType } from '../../store/redux/store';
 
 const Auth = () => {
+    const [emailAuth, setEmail] = useState('')
+    const [passwordAuth, setPassword] = useState('')
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { email, password } = useSelector((state: AppStateType) => state.user)
@@ -17,19 +19,15 @@ const Auth = () => {
 
     const auth = (values: any) => {
         if (LogIn) {
-
             dispatch(logIn(values.email, values.password))
             navigate(HOME_ROUTE)
-
-
         } else {
-
             dispatch(signUp(values.email, values.password))
             navigate(HOME_ROUTE)
-
-
         }
     }
+    console.log('usestate: ', emailAuth, passwordAuth)
+    console.log('reduxstate: ', email, password)
     return (
         <div>
             <Formik initialValues={{

@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Error from './components/error/Error';
 import Header from './components/header/Header';
 import Home from './pages/home/Home';
-import Auth from './pages/signUp/Auth';
 import SignUp from './pages/signUp/Auth';
 import { publicRoutes, signedRoutes } from './routings/MainRoutes';
 import { AppStateType } from './store/redux/store';
@@ -25,7 +24,7 @@ const Routing = () => {
                     <Route key={route.path} path={route.path} element={<route.component />} />
                 ))}
 
-                <Route path='*' element={<Auth />} />
+                <Route path='*' element={<Error />} />
             </Routes>
         </Router>
     )

@@ -17,16 +17,20 @@ const Auth = () => {
 
     const auth = (values: any) => {
         if (LogIn) {
-
-            dispatch(logIn(values.email, values.password))
-            navigate(HOME_ROUTE)
-
+            try {
+                dispatch(logIn(values.email, values.password))
+                navigate(HOME_ROUTE)
+            } catch {
+                navigate(LOGIN_ROUTE)
+            }
 
         } else {
-
-            dispatch(signUp(values.email, values.password))
-            navigate(HOME_ROUTE)
-
+            try {
+                dispatch(signUp(values.email, values.password))
+                navigate(HOME_ROUTE)
+            } catch {
+                navigate(LOGIN_ROUTE)
+            }
 
         }
     }
