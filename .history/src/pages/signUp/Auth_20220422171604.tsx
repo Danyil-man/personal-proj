@@ -39,18 +39,15 @@ const Auth = () => {
                             <h1 className={style.mainText}>{LogIn ? 'Log In' : 'Sign Up'}</h1>
                             <div className={style.formItem} >
                                 <label className={style.label} >Email</label>
-                                <div>
+                                <div >
                                     <Field className={style.inputItem} name="email" type="email" placeholder="example@mail.com" required />
                                 </div>
                             </div>
                             <div className={style.formItem}>
                                 <label className={style.label}>Password</label>
-                                <div className={style.inputField}>
-                                    <Field className={style.inputItem} name="password" placeholder="Your password" type={`${showPassword ? 'text' : 'password'}`} required />
-                                    <div className={style.hidePassword}>
-                                        {showPassword ? <EyeFill size={18} onClick={() => setShowPassword(!showPassword)} /> : <EyeSlashFill size={18} onClick={() => setShowPassword(!showPassword)} />}
-                                    </div>
-
+                                <div>
+                                    <Field className={style.inputItem} name="password" placeholder="Your password" type="password" required />
+                                    {showPassword ? <EyeFill onClick={() => setShowPassword(!showPassword)} /> : <EyeSlashFill onClick={() => setShowPassword(!showPassword)} />}
                                 </div>
                             </div>
                             <div className={style.formFooter} >

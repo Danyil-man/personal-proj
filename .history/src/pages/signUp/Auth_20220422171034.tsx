@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 import { logIn, signUp } from '../../store/redux/reducers/userReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import style from './Auth.module.scss'
-import { EyeFill, EyeSlashFill } from 'react-bootstrap-icons';
 
 const Auth = () => {
-    const [showPassword, setShowPassword] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const location = useLocation()
@@ -32,27 +30,29 @@ const Auth = () => {
                     email: '',
                     password: ''
                 }}
-
+                    validationSchema={ }
                     onSubmit={auth} >
                     <Form>
                         <div className={style.form}>
                             <h1 className={style.mainText}>{LogIn ? 'Log In' : 'Sign Up'}</h1>
                             <div className={style.formItem} >
                                 <label className={style.label} >Email</label>
-                                <div>
+                                <div >
                                     <Field className={style.inputItem} name="email" type="email" placeholder="example@mail.com" required />
                                 </div>
                             </div>
                             <div className={style.formItem}>
                                 <label className={style.label}>Password</label>
-                                <div className={style.inputField}>
-                                    <Field className={style.inputItem} name="password" placeholder="Your password" type={`${showPassword ? 'text' : 'password'}`} required />
-                                    <div className={style.hidePassword}>
-                                        {showPassword ? <EyeFill size={18} onClick={() => setShowPassword(!showPassword)} /> : <EyeSlashFill size={18} onClick={() => setShowPassword(!showPassword)} />}
-                                    </div>
-
+                                <div >
+                                    <Field className={style.inputItem} name="password" placeholder="Your password" type="password" required />
                                 </div>
                             </div>
+                            {LogIn ? null : <div className={style.formItem} >
+                                <label className={style.label} >Confirm password</label>
+                                <div >
+                                    <Field className={style.inputItem} type="password" placeholder="Confirm uour password" required />
+                                </div>
+                            </div>}
                             <div className={style.formFooter} >
                                 <button className={style.submitBtn} type="submit">
                                     {LogIn ? 'Log In' : 'Sign Up'}
