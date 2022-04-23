@@ -15,8 +15,8 @@ const AuthSchema = Yup.object().shape({
         .min(10, 'Too Short! Minimum 10 letters')
         .max(50, 'Too Long! Maximum 50 letters'),
     password: Yup.string()
-        .min(4, 'Too Short! Minimum 4 characters')
-        .max(20, 'Too Long! Miximum 20 characters'),
+        .min(4, 'Too Short')
+        .max(20, 'Too Long'),
 })
 const Auth = () => {
     const [showPassword, setShowPassword] = useState(false)
