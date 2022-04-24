@@ -6,7 +6,6 @@ import { AppStateType, InfernActionType } from '../store';
 import { GET_CATEGORIES, SELECTED_CATEGORY } from '../variables/actionsType';
 
 type GenresType = {
-    id: number
     name: string
 }
 

@@ -5,9 +5,13 @@ import {  genresAPI } from '../../api/genresAPI';
 import { AppStateType, InfernActionType } from '../store';
 import { GET_CATEGORIES, SELECTED_CATEGORY } from '../variables/actionsType';
 
-type GenresType = {
+type genreType = {
     id: number
     name: string
+}
+
+type GenresType = {
+    genre: genreType
 }
 
 type initialStateType = {

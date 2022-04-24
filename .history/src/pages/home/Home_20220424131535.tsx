@@ -14,6 +14,7 @@ const Home = () => {
         //dispatch(getAllBooks())
         dispatch(getAllGenres())
     }, [])
+    console.log('Home')
     return (
         <div className={style.wrapper}>
             <div className={style.container}>

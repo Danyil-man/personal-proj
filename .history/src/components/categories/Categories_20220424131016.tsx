@@ -6,13 +6,12 @@ import style from './Categories.module.scss'
 
 const Categories = () => {
 
-    const genres = useSelector((state: AppStateType) => state.filter.genres)
-    console.log(genres.map(genre => genre.name))
+    const categories = useSelector((state: AppStateType) => state.filter.categories)
     return (
         <div className={style.container}>
             <ul className={style.ulBlock}>
-                {genres.map((genre, index) => (
-                    <li className={style.liBlock} key={genre.id}>{genre.name}</li>
+                {categories.map((category, index) => (
+                    <li className={style.liBlock} key={category.name}>{category}</li>
                 ))}
             </ul>
         </div>

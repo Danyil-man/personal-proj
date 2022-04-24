@@ -6,12 +6,11 @@ import { AppStateType, InfernActionType } from '../store';
 import { GET_CATEGORIES, SELECTED_CATEGORY } from '../variables/actionsType';
 
 type GenresType = {
-    id: number
     name: string
 }
 
 type initialStateType = {
-    genres: Array<GenresType>
+    genres: Array<string>
     selectedCategories: selectedCategory
 }
 
@@ -45,7 +44,7 @@ const filterReducer = (state=initialState, action:ActionCreatorType):initialStat
 type ActionCreatorType = InfernActionType<typeof actions>
 
 const actions = {
-    getAllGenres: (genres: Array<GenresType>) => ({
+    getAllGenres: (genres: Array<string>) => ({
         type: GET_CATEGORIES,
         genres
     } as const),

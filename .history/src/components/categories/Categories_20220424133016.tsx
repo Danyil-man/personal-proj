@@ -7,14 +7,14 @@ import style from './Categories.module.scss'
 const Categories = () => {
 
     const genres = useSelector((state: AppStateType) => state.filter.genres)
-    console.log(genres.map(genre => genre.name))
+    console.log(genres.map(genre => genre.id))
     return (
         <div className={style.container}>
-            <ul className={style.ulBlock}>
+            {/* <ul className={style.ulBlock}>
                 {genres.map((genre, index) => (
-                    <li className={style.liBlock} key={genre.id}>{genre.name}</li>
+                    <li className={style.liBlock} key={genre.id}>{genre}</li>
                 ))}
-            </ul>
+            </ul> */}
         </div>
     )
 }

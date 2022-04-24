@@ -7,7 +7,7 @@ import { GET_CATEGORIES, SELECTED_CATEGORY } from '../variables/actionsType';
 
 type GenresType = {
     id: number
-    name: string
+    genre: string
 }
 
 type initialStateType = {

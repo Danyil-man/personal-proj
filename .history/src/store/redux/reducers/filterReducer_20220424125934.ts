@@ -5,18 +5,13 @@ import {  genresAPI } from '../../api/genresAPI';
 import { AppStateType, InfernActionType } from '../store';
 import { GET_CATEGORIES, SELECTED_CATEGORY } from '../variables/actionsType';
 
-type GenresType = {
-    id: number
-    name: string
-}
-
 type initialStateType = {
-    genres: Array<GenresType>
+    categories: Array<string>
     selectedCategories: selectedCategory
 }
 
 const initialState:initialStateType = {
-    genres: [],
+    categories: [],
     selectedCategories: {
         id: undefined,
         name: undefined
@@ -28,7 +23,7 @@ const filterReducer = (state=initialState, action:ActionCreatorType):initialStat
         case GET_CATEGORIES:
             return{
                 ...state,
-                genres: action.genres
+                categories: action.categories
             }
 
         case SELECTED_CATEGORY:
@@ -45,9 +40,9 @@ const filterReducer = (state=initialState, action:ActionCreatorType):initialStat
 type ActionCreatorType = InfernActionType<typeof actions>
 
 const actions = {
-    getAllGenres: (genres: Array<GenresType>) => ({
+    getAllGenres: (categories: Array<string>) => ({
         type: GET_CATEGORIES,
-        genres
+        categories
     } as const),
     setCategory: (category: selectedCategory) => ({
         type: SELECTED_CATEGORY,
@@ -59,7 +54,7 @@ type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreator
 
 
 export const getAllGenres = ():ThunkType => async (dispatch) => {
-    const response = await genresAPI.getAllGenres()
+    const response = await genresAPI.getAllCategory()
     dispatch(actions.getAllGenres(response.data))
 }
 
