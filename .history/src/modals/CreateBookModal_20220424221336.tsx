@@ -31,7 +31,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
         formData.append('price', `${values.price}`)
         formData.append('image', values.image)
         formData.append('genreId', values.genreId)
-        createBook(formData)
+        createBook(values)
     }
 
 

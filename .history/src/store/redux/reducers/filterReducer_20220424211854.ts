@@ -1,19 +1,25 @@
 import React from 'react';
 import { ThunkAction } from 'redux-thunk';
-import { addGenre, GenresType, selectedCategory } from '../../../types/generalTypes';
+import { addGenre, selectedCategory } from '../../../types/generalTypes';
 import {  genresAPI } from '../../api/genresAPI';
 import { AppStateType, InfernActionType } from '../store';
 import { CHOOSE_GENRE, GET_CATEGORIES, SELECTED_CATEGORY } from '../variables/actionsType';
 
+type GenresType = {
+    id: number
+    name: string
+}
 
 type initialStateType = {
     genres: Array<GenresType>
     genre: addGenre
+    genreBook: GenresType
 }
 
 const initialState:initialStateType = {
     genres: [],
-    genre: {name: ''}
+    genre: {name: ''},
+    genreBook: {id: 0, name: ''}
 }
 
 const filterReducer = (state=initialState, action:ActionCreatorType):initialStateType => {
@@ -30,6 +36,11 @@ const filterReducer = (state=initialState, action:ActionCreatorType):initialStat
                 genre: action.genre
             }
 
+        case CHOOSE_GENRE:
+            return{
+                ...state,
+                genreBook:  action.genreBook
+            }
         default:
             return state
     }
@@ -45,6 +56,10 @@ const actions = {
     setGenre: (genre: addGenre) => ({
         type: SELECTED_CATEGORY,
         genre
+    } as const),
+    chooseGenre: (genreBook:GenresType ) => ({
+        type: CHOOSE_GENRE,
+        genreBook
     } as const)
 }
 
@@ -59,6 +74,12 @@ export const getAllGenres = ():ThunkType => async (dispatch) => {
 export const createGenre = (genre: addGenre):ThunkType => async (dispatch) => {
     const response = await genresAPI.createGenre(genre)
     dispatch(actions.setGenre(response.data))
+}
+
+export const chooseGenre = (genreBook: GenresType):ThunkType => async (dispatch) => {
+    dispatch(actions.chooseGenre(genreBook))
+    // eslint-disable-next-line no-debugger
+    debugger
 }
 
 export default filterReducer;

@@ -13,15 +13,6 @@ export type bookType = {
     genreId: number,
 }
 
-export type createBookType = {
-    name: string,
-    author: string,
-    description: string,
-    price: number,
-    image: string,
-    genreId: number
-}
-
 export type userType ={
     id?: number,
     email?: string,

@@ -24,14 +24,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
     }
 
     const addBook = (values: any) => {
-        const formData = new FormData()
-        formData.append('name', values.name)
-        formData.append('author', values.author)
-        formData.append('description', values.description)
-        formData.append('price', `${values.price}`)
-        formData.append('image', values.image)
-        formData.append('genreId', values.genreId)
-        createBook(formData)
+        createBook(values)
     }
 
 

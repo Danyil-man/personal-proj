@@ -2,10 +2,8 @@ import { Field, Form, Formik } from 'formik';
 import React, { FC, useEffect, useState } from 'react';
 import { Button, Dropdown, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { chooseGenreBook, createBook } from '../store/redux/reducers/booksReducer';
-import { getAllGenres } from '../store/redux/reducers/filterReducer';
+import { chooseGenre, getAllGenres } from '../store/redux/reducers/filterReducer';
 import { AppStateType } from '../store/redux/store';
-import { createBookType } from '../types/generalTypes';
 
 type CreateBookModalType = {
     show: boolean
@@ -14,8 +12,7 @@ type CreateBookModalType = {
 
 const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
     const [file, setFile] = useState(null)
-    const { genres } = useSelector((state: AppStateType) => state.filter)
-    const { genreBook } = useSelector((state: AppStateType) => state.books)
+    const { genres, genreBook } = useSelector((state: AppStateType) => state.filter)
 
     const dispatch = useDispatch()
 
@@ -23,23 +20,18 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
         setFile(e.target.files[0])
     }
 
-    const addBook = (values: any) => {
-        const formData = new FormData()
-        formData.append('name', values.name)
-        formData.append('author', values.author)
-        formData.append('description', values.description)
-        formData.append('price', `${values.price}`)
-        formData.append('image', values.image)
-        formData.append('genreId', values.genreId)
-        createBook(formData)
+    const chooseBook = (genre) => {
+        chooseGenre(genre)
     }
 
-
+    const addBook = () => {
+        alert('dd')
+    }
 
     useEffect(() => {
         dispatch(getAllGenres())
-    }, [genreBook])
-    console.log(genreBook.id)
+    }, [chooseGenre, genreBook])
+    console.log(genreBook)
     return (
         <>
             <Modal
@@ -59,7 +51,6 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                         description: '',
                         price: 0,
                         image: file,
-                        genreId: genreBook.id
                     }} onSubmit={addBook}>
                         <Form>
                             <div>
@@ -91,7 +82,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
                                     <Dropdown.Menu>
                                         {genres.map(genre => <Dropdown.Item
-                                            onClick={() => chooseGenreBook(genre)}
+                                            onClick={chooseBook(genre)}
                                             key={genre.id}>{genre.name}</Dropdown.Item>)}
 
                                     </Dropdown.Menu>

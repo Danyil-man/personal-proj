@@ -1,4 +1,4 @@
-import { bookType, createBookType } from '../../types/generalTypes'
+import { bookType } from '../../types/generalTypes'
 import { publicAPI, signedAPI } from './api'
 
 
@@ -7,7 +7,7 @@ export const booksAPI = {
     getAllBooks(){
         return publicAPI.get('api/book')
     },
-    createBook(book: createBookType){
+    createBook(book: bookType){
         return signedAPI.post('api/book/create', book)
     },
     getBook(id:number){

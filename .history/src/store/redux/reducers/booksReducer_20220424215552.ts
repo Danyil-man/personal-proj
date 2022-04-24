@@ -49,7 +49,7 @@ const actions = {
         type: GET_BOOKS,
         books
     } as const),
-    createBook: (book: createBookType) => ({
+    createBook: (book: bookType) => ({
         type: CREATE_BOOK,
         book
     } as const),
@@ -68,7 +68,7 @@ export const getAllBooks = ():ThunkType => async (dispatch) => {
     dispatch(actions.setBooks(response.data.rows))
 }
 
-export const createBook = (book: createBookType):ThunkType => async (dispatch) => {
+export const createBook = (book: bookType):ThunkType => async (dispatch) => {
     const response = await booksAPI.createBook(book)
     dispatch(actions.createBook(response.data))
 }
