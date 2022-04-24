@@ -73,7 +73,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                             <div>
                                 <Dropdown>
                                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        {genreBook.name}
+                                        {genreBook.name ? genreBook : 'Вибрати книгу'}
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>

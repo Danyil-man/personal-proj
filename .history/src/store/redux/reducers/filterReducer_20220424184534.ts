@@ -77,7 +77,7 @@ export const createGenre = (genre: addGenre):ThunkType => async (dispatch) => {
 }
 
 export const chooseGenre = (genreBook: GenresType):ThunkType => async (dispatch) => {
-    dispatch(actions.chooseGenre(genreBook))
+    dispatch(actions.setGenre(genreBook))
 }
 
 export default filterReducer;

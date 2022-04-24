@@ -1,8 +1,8 @@
 import { Field, Form, Formik } from 'formik';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Button, Dropdown, Modal } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { chooseGenre, getAllGenres } from '../store/redux/reducers/filterReducer';
+import { useSelector } from 'react-redux';
+import { chooseGenre } from '../store/redux/reducers/filterReducer';
 import { AppStateType } from '../store/redux/store';
 
 type CreateBookModalType = {
@@ -12,9 +12,7 @@ type CreateBookModalType = {
 
 const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
     const [file, setFile] = useState(null)
-    const { genres, genreBook } = useSelector((state: AppStateType) => state.filter)
-
-    const dispatch = useDispatch()
+    const genres = useSelector((state: AppStateType) => state.filter.genres)
 
     const addFile = (e: any) => {
         setFile(e.target.files[0])
@@ -24,10 +22,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
         alert('dd')
     }
 
-    useEffect(() => {
-        dispatch(getAllGenres())
-    }, [chooseGenre])
-    console.log(genreBook)
+
     return (
         <>
             <Modal
@@ -73,7 +68,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                             <div>
                                 <Dropdown>
                                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        {genreBook.name}
+                                        Вибрати жанр
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>

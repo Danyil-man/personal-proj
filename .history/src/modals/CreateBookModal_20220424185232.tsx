@@ -26,8 +26,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
     useEffect(() => {
         dispatch(getAllGenres())
-    }, [chooseGenre])
-    console.log(genreBook)
+    }, [])
     return (
         <>
             <Modal
@@ -73,7 +72,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                             <div>
                                 <Dropdown>
                                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        {genreBook.name}
+                                        Вибрати жанр
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>

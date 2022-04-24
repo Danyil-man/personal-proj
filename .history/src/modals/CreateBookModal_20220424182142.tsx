@@ -1,9 +1,6 @@
 import { Field, Form, Formik } from 'formik';
-import React, { FC, useEffect, useState } from 'react';
-import { Button, Dropdown, Modal } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { chooseGenre, getAllGenres } from '../store/redux/reducers/filterReducer';
-import { AppStateType } from '../store/redux/store';
+import React, { FC, useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 
 type CreateBookModalType = {
     show: boolean
@@ -12,9 +9,6 @@ type CreateBookModalType = {
 
 const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
     const [file, setFile] = useState(null)
-    const { genres, genreBook } = useSelector((state: AppStateType) => state.filter)
-
-    const dispatch = useDispatch()
 
     const addFile = (e: any) => {
         setFile(e.target.files[0])
@@ -24,10 +18,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
         alert('dd')
     }
 
-    useEffect(() => {
-        dispatch(getAllGenres())
-    }, [chooseGenre])
-    console.log(genreBook)
+
     return (
         <>
             <Modal
@@ -46,7 +37,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                         author: '',
                         description: '',
                         price: 0,
-                        image: file,
+                        genreId: null
                     }} onSubmit={addBook}>
                         <Form>
                             <div>
@@ -67,22 +58,12 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                             </div>
                             <div>
                                 <label>Фото</label>
-                                <input type='file' name='image' onChange={addFile} />
+                                <input type='file' onChange={addFile} />
                             </div>
 
                             <div>
-                                <Dropdown>
-                                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        {genreBook.name}
-                                    </Dropdown.Toggle>
-
-                                    <Dropdown.Menu>
-                                        {genres.map(genre => <Dropdown.Item
-                                            onClick={() => chooseGenre(genre)}
-                                            key={genre.id}>{genre.name}</Dropdown.Item>)}
-
-                                    </Dropdown.Menu>
-                                </Dropdown>
+                                <label>genreId</label>
+                                <Field type='number' name="genreId" placeholder='Код жанру' />
                             </div>
                             <Button type='submit'>Добавити</Button>
                         </Form>

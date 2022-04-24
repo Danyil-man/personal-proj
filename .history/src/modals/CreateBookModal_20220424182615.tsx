@@ -1,9 +1,6 @@
 import { Field, Form, Formik } from 'formik';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Button, Dropdown, Modal } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { chooseGenre, getAllGenres } from '../store/redux/reducers/filterReducer';
-import { AppStateType } from '../store/redux/store';
 
 type CreateBookModalType = {
     show: boolean
@@ -12,9 +9,6 @@ type CreateBookModalType = {
 
 const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
     const [file, setFile] = useState(null)
-    const { genres, genreBook } = useSelector((state: AppStateType) => state.filter)
-
-    const dispatch = useDispatch()
 
     const addFile = (e: any) => {
         setFile(e.target.files[0])
@@ -24,10 +18,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
         alert('dd')
     }
 
-    useEffect(() => {
-        dispatch(getAllGenres())
-    }, [chooseGenre])
-    console.log(genreBook)
+
     return (
         <>
             <Modal
@@ -71,18 +62,19 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                             </div>
 
                             <div>
+                                <label>Жанр</label>
                                 <Dropdown>
                                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        {genreBook.name}
+                                        Dropdown Button
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        {genres.map(genre => <Dropdown.Item
-                                            onClick={() => chooseGenre(genre)}
-                                            key={genre.id}>{genre.name}</Dropdown.Item>)}
-
+                                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
+                                <Field type='number' name="genreId" placeholder='Код жанру' />
                             </div>
                             <Button type='submit'>Добавити</Button>
                         </Form>
