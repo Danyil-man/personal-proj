@@ -36,10 +36,8 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
         dispatch(createBook(book))
     }
 
-    const chooseGenre = (genre: GenresType) => {
-        dispatch(chooseGenreBook(genre))
-    }
-
+    const chooseGenre = (genre: GenresType) => _
+    dispatch(chooseGenreBook(genre))
 
     useEffect(() => {
         dispatch(getAllGenres())
@@ -96,7 +94,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
                                     <Dropdown.Menu>
                                         {genres.map(genre => <Dropdown.Item
-                                            onClick={() => chooseGenre(genre)}
+                                            onClick={chooseGenre(genre)}
                                             key={genre.id}>{genre.name}</Dropdown.Item>)}
 
                                     </Dropdown.Menu>

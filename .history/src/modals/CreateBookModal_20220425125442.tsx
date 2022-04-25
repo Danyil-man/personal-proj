@@ -96,7 +96,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
                                     <Dropdown.Menu>
                                         {genres.map(genre => <Dropdown.Item
-                                            onClick={() => chooseGenre(genre)}
+                                            onClick={chooseGenre(genre)}
                                             key={genre.id}>{genre.name}</Dropdown.Item>)}
 
                                     </Dropdown.Menu>

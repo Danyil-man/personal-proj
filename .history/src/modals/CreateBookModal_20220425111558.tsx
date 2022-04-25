@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { chooseGenreBook, createBook } from '../store/redux/reducers/booksReducer';
 import { getAllGenres } from '../store/redux/reducers/filterReducer';
 import { AppStateType } from '../store/redux/store';
-import { createBookType, GenresType } from '../types/generalTypes';
+import { createBookType } from '../types/generalTypes';
 
 type CreateBookModalType = {
     show: boolean
@@ -25,25 +25,20 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
     const addBook = (values: any) => {
         const formData = new FormData()
-        const book: createBookType = {
-            name: formData.append('name', values.name),
-            author: formData.append('author', values.author),
-            description: formData.append('description', values.description),
-            price: formData.append('price', values.price),
-            image: formData.append('image', values.image),
-            genreId: formData.append('genreId', values.genreId)
-        }
-        dispatch(createBook(book))
+        formData.append('name', values.name as Blob)
+        formData.append('author', values.author as Blob)
+        formData.append('description', values.description as Blob)
+        formData.append('price', values.price as Blob)
+        formData.append('image', values.image as Blob)
+        formData.append('genreId', values.genreId as Blob)
+        createBook(formData)
     }
 
-    const chooseGenre = (genre: GenresType) => {
-        dispatch(chooseGenreBook(genre))
-    }
 
 
     useEffect(() => {
         dispatch(getAllGenres())
-    }, [])
+    }, [genreBook])
     console.log(genreBook.id)
     return (
         <>
@@ -96,13 +91,13 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
                                     <Dropdown.Menu>
                                         {genres.map(genre => <Dropdown.Item
-                                            onClick={() => chooseGenre(genre)}
+                                            onClick={() => chooseGenreBook(genre)}
                                             key={genre.id}>{genre.name}</Dropdown.Item>)}
 
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </div>
-                            <button type='submit'>Добавити</button>
+                            <Button type='submit'>Добавити</Button>
                         </Form>
                     </Formik>
                 </Modal.Body>

@@ -14,12 +14,12 @@ export type bookType = {
 }
 
 export type createBookType = {
-    name: void,
-    author: void,
-    description: void,
-    price: void,
-    image: void,
-    genreId: void
+    name: ()=>void,
+    author: string,
+    description: string,
+    price: number,
+    image: string,
+    genreId: number
 }
 
 export type userType ={

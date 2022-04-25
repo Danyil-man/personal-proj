@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { chooseGenreBook, createBook } from '../store/redux/reducers/booksReducer';
 import { getAllGenres } from '../store/redux/reducers/filterReducer';
 import { AppStateType } from '../store/redux/store';
-import { createBookType, GenresType } from '../types/generalTypes';
+import { createBookType } from '../types/generalTypes';
 
 type CreateBookModalType = {
     show: boolean
@@ -33,12 +33,9 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
             image: formData.append('image', values.image),
             genreId: formData.append('genreId', values.genreId)
         }
-        dispatch(createBook(book))
+        createBook(book)
     }
 
-    const chooseGenre = (genre: GenresType) => {
-        dispatch(chooseGenreBook(genre))
-    }
 
 
     useEffect(() => {
@@ -96,7 +93,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
                                     <Dropdown.Menu>
                                         {genres.map(genre => <Dropdown.Item
-                                            onClick={() => chooseGenre(genre)}
+                                            onClick={() => chooseGenreBook(genre)}
                                             key={genre.id}>{genre.name}</Dropdown.Item>)}
 
                                     </Dropdown.Menu>
