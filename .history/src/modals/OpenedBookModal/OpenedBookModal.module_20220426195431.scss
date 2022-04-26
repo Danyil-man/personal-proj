@@ -44,28 +44,23 @@
           margin-top: 30px;
           text-align: start;
           font-family: 'Monserat';
-          font-size: 18px;
         }
         .bookPrice{
           font-family: 'Oswald';
           text-align: start;
-          margin-bottom: 20px;
+          margin-bottom: 25px;
         }
         .bookDescription{
           margin-top: 10px;
           font-family: 'Monserat';
           text-align: start;
-          font-size: 14px;
         }
         .blockDescription{
-          height: 280px;
-          overflow: scroll;
-          overflow-x: hidden;
+          height: 500px;
         }
         .interactBlock{
           width: 100%;
           position: absolute;
-          background-color: $bezh;
           bottom: 0;
           left: 0;
           padding-left:20px;

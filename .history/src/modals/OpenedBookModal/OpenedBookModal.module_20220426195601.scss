@@ -49,7 +49,7 @@
         .bookPrice{
           font-family: 'Oswald';
           text-align: start;
-          margin-bottom: 20px;
+          margin-bottom: 25px;
         }
         .bookDescription{
           margin-top: 10px;
@@ -58,9 +58,8 @@
           font-size: 14px;
         }
         .blockDescription{
-          height: 280px;
+          height: 400px;
           overflow: scroll;
-          overflow-x: hidden;
         }
         .interactBlock{
           width: 100%;

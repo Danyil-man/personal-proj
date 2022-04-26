@@ -21,9 +21,10 @@ const OpenedBookModal: FC<OpenBookModalType> = ({ close, book, onClose }) => {
                 <div className={style.infoBlock}>
                     <h4 className={style.nameBook}>{book.name}</h4>
                     <p className={style.bookAuthor}>Автор: {book.author}</p>
-                    <div className={style.blockDescription}>
+                    <div>
                         <p className={style.bookDescription}>Опис: {book.description}</p>
                     </div>
+
                     <div className={style.interactBlock}>
                         <p className={style.bookPrice}>Ціна: {book.price}</p>
                         <button className={style.closeBtn} onClick={() => onClose(!close)}>Закрити</button>
