@@ -87,5 +87,13 @@
           }
         }
 }
-.blockDescription::-webkit-scrollbar {
-  background: none;}
+.wrapper::-webkit-scrollbar {
+  background-color: black;
+  border-radius: 5px;
+  height: 8px;
+  width: 100%;
+}
+
+.wrapper::-webkit-scrollbar:hover {
+  background: linear-gradient(#5156e6 55%, #74edf2);
+}

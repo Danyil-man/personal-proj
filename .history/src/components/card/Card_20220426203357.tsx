@@ -20,13 +20,7 @@ const Card: FC<CardType> = ({ book }) => {
                 <div className={style.infoBlock}>
                     <h6>{book.name}</h6>
                     <p>Автор: {book.author}</p>
-                    <p>Жанр: {book.genreId === 1 ?
-                        'Фантастика' : book.genreId === 2 ?
-                            'Історія' : book.genreId === 3 ?
-                                'Наукова література' : book.genreId === 4 ?
-                                    'Роман' : book.genreId === 5 ?
-                                        'Детектив' : book.genreId === 6 ?
-                                            'Бізнес' : ''}</p>
+                    <p>Жанр: {book.genreId === 1 ? 'Фантастика' : book.genreId === 2 ? 'Історія' : book.genreId === 3 ? 'Наукова література' : book.genreId === 4 ? 'Роман' : book.genreId === 5 ? 'Детектив' : book.genreId === 6 ? 'Бізнес' : ''}</p>
                 </div>
 
                 <div className={style.interactBlock}>
