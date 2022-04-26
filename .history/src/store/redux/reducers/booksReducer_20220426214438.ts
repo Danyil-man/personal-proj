@@ -116,8 +116,8 @@ export const chooseGenreBook = (genreBook: GenresType):ThunkType => async (dispa
     dispatch(actions.chooseGenre(genreBook))
 }
 
-export const setPageItem = (page:number):ThunkType => async (dispatch) => {
-    dispatch( actions.setPage(page))
+export const setPageItem = (page:number) => {
+    actions.setPage(page)
 }
 
 export default booksReducer;

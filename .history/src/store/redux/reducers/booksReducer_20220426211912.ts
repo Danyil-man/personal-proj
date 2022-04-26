@@ -2,7 +2,7 @@ import { ThunkAction } from 'redux-thunk'
 import { bookType, createBookType, GenresType } from '../../../types/generalTypes'
 import { booksAPI } from '../../api/booksAPI'
 import { AppStateType, InfernActionType } from '../store'
-import { CHOOSE_GENRE, CREATE_BOOK, GET_BOOKS, SET_LIMIT, SET_PAGE, SET_TOTAL_COUNT } from '../variables/actionsType'
+import { CHOOSE_GENRE, CREATE_BOOK, GET_BOOKS } from '../variables/actionsType'
 
 type initialStateType = {
     books: Array<bookType>
@@ -49,22 +49,6 @@ const booksReducer = (state=initialState, action:ActionCreatoreType):initialStat
                 ...state,
                 genreBook: action.genreBook
             }
-        case SET_PAGE:
-            return{
-                ...state,
-                page: action.page
-            }
-
-        case SET_TOTAL_COUNT:
-            return{
-                ...state,
-                totalCount: action.totalCount
-            }
-        case SET_LIMIT:
-            return{
-                ...state,
-                limit: action.limit
-            }
         
         default:
             return state
@@ -83,28 +67,15 @@ const actions = {
     chooseGenre: (genreBook:GenresType ) => ({
         type: CHOOSE_GENRE,
         genreBook
-    } as const),
-    setPage: (page:number) => ({
-        type: SET_PAGE,
-        page
-    } as const),
-    setTotalCount: (totalCount:number) => ({
-        type: SET_TOTAL_COUNT,
-        totalCount
-    } as const),
-    setLimit: (limit:number) => ({
-        type: SET_LIMIT,
-        limit
     } as const)
 }
 
 type ActionCreatoreType = InfernActionType<typeof actions>
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreatoreType>
 
-export const getAllBooks = (genreId:number, page:number, limit:number):ThunkType => async (dispatch) => {
-    const response = await booksAPI.getAllBooks(genreId, page,limit)
+export const getAllBooks = ():ThunkType => async (dispatch) => {
+    const response = await booksAPI.getAllBooks()
     dispatch(actions.setBooks(response.data.rows))
-    dispatch(actions.setTotalCount(response.data.count))
 }
 
 export const createBook = (book: any):ThunkType => async (dispatch) => {
@@ -114,10 +85,6 @@ export const createBook = (book: any):ThunkType => async (dispatch) => {
 
 export const chooseGenreBook = (genreBook: GenresType):ThunkType => async (dispatch) => {
     dispatch(actions.chooseGenre(genreBook))
-}
-
-export const setPageItem = (page:number):ThunkType => async (dispatch) => {
-    dispatch( actions.setPage(page))
 }
 
 export default booksReducer;

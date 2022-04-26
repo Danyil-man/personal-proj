@@ -101,8 +101,8 @@ const actions = {
 type ActionCreatoreType = InfernActionType<typeof actions>
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreatoreType>
 
-export const getAllBooks = (genreId:number, page:number, limit:number):ThunkType => async (dispatch) => {
-    const response = await booksAPI.getAllBooks(genreId, page,limit)
+export const getAllBooks = ():ThunkType => async (dispatch) => {
+    const response = await booksAPI.getAllBooks()
     dispatch(actions.setBooks(response.data.rows))
     dispatch(actions.setTotalCount(response.data.count))
 }
@@ -116,8 +116,8 @@ export const chooseGenreBook = (genreBook: GenresType):ThunkType => async (dispa
     dispatch(actions.chooseGenre(genreBook))
 }
 
-export const setPageItem = (page:number):ThunkType => async (dispatch) => {
-    dispatch( actions.setPage(page))
+export const setPageItem = (page:number) => {
+    actions.setPage(page)
 }
 
 export default booksReducer;

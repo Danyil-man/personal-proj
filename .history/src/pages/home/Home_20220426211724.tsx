@@ -1,22 +1,20 @@
 import React, { FC, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Cards from '../../components/cards/Cards';
 import Categories from '../../components/categories/Categories';
 import PaginationBar from '../../components/Pagination/Pagination';
 import { getAllBooks } from '../../store/redux/reducers/booksReducer';
 import { getAllGenres } from '../../store/redux/reducers/filterReducer';
-import { AppStateType } from '../../store/redux/store';
 import style from './Home.module.scss'
 
 
 const Home = () => {
     const dispatch = useDispatch()
-    const { genreBook, page, limit } = useSelector((state: AppStateType) => state.books)
     useEffect(() => {
-        dispatch(getAllBooks(genreBook.id, page, limit))
+        dispatch(getAllBooks())
         dispatch(getAllGenres())
-    }, [page, genreBook])
+    }, [])
     return (
         <div className={style.wrapper}>
             <div className={style.container}>

@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import { Button, CloseButton, Modal } from 'react-bootstrap';
+import { CloudSlash } from 'react-bootstrap-icons';
 import { bookType } from '../../types/generalTypes';
 import style from './OpenedBookModal.module.scss'
 

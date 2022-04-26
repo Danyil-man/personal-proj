@@ -12,11 +12,12 @@ import style from './Home.module.scss'
 
 const Home = () => {
     const dispatch = useDispatch()
-    const { genreBook, page, limit } = useSelector((state: AppStateType) => state.books)
+    const { genreBook, page, limit, totalCount } = useSelector((state: AppStateType) => state.books)
     useEffect(() => {
         dispatch(getAllBooks(genreBook.id, page, limit))
         dispatch(getAllGenres())
-    }, [page, genreBook])
+    }, [])
+    console.log(totalCount)
     return (
         <div className={style.wrapper}>
             <div className={style.container}>

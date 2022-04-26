@@ -5,7 +5,7 @@ import { publicAPI, signedAPI } from './api'
 
 export const booksAPI = {
     getAllBooks(genreId:number, page:number, limit: number){
-        const checkGenreId = `${genreId === 0 ? '' : genreId}` //no genre with id 0
+        const checkGenreId = `${genreId === 0 ? '' : genreId}`
         return publicAPI.get('api/book', {params:{
             checkGenreId, page, limit
         }})
