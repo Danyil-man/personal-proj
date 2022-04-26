@@ -21,7 +21,7 @@ const initialState:initialStateType = {
             author: undefined,
             description: undefined,
             price: undefined,
-            image: '',
+            image: undefined,
             genreId: undefined
     }
 }

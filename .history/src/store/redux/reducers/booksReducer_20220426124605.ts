@@ -21,7 +21,7 @@ const initialState:initialStateType = {
             author: undefined,
             description: undefined,
             price: undefined,
-            image: '',
+            image: undefined,
             genreId: undefined
     }
 }
@@ -56,7 +56,7 @@ const actions = {
         type: GET_BOOKS,
         books
     } as const),
-    createBook: (book: any) => ({
+    createBook: (book: createBookType) => ({
         type: CREATE_BOOK,
         book
     } as const),
@@ -75,9 +75,9 @@ export const getAllBooks = ():ThunkType => async (dispatch) => {
     dispatch(actions.setBooks(response.data.rows))
 }
 
-export const createBook = (book: any):ThunkType => async (dispatch) => {
+export const createBook = (book: createBookType):ThunkType => async (dispatch) => {
     const response = await booksAPI.createBook(book)
-
+    debugger
     dispatch(actions.createBook(response.data))
     
 }

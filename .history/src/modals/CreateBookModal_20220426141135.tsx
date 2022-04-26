@@ -13,7 +13,7 @@ type CreateBookModalType = {
 }
 
 const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
-    const [file, setFile] = useState('')
+    const [file, setFile] = useState(null)
     const [name, setName] = useState('')
     const [author, setAuthor] = useState('')
     const [description, setDescription] = useState('')
@@ -35,7 +35,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
             formData.append('author', author),
             formData.append('description', description),
             formData.append('price', `${price}`),
-            formData.append('image', file),
+            formData.append('image', `${file}`),
             formData.append('genreId', `${genreBook.id}`)
 
         dispatch(createBook(formData))

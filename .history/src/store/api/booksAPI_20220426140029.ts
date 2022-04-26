@@ -8,7 +8,7 @@ export const booksAPI = {
         return publicAPI.get('api/book')
     },
     createBook(book: any){
-        return signedAPI.post('api/book/create', book)
+        return signedAPI.post('api/book', book)
     },
     getBook(id:number){
         return publicAPI.get(`api/book/${id}`)

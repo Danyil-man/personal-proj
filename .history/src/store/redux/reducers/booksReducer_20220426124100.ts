@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import { ThunkAction } from 'redux-thunk'
 import { bookType, createBookType, GenresType } from '../../../types/generalTypes'
 import { booksAPI } from '../../api/booksAPI'
@@ -21,7 +20,7 @@ const initialState:initialStateType = {
             author: undefined,
             description: undefined,
             price: undefined,
-            image: '',
+            image: undefined,
             genreId: undefined
     }
 }
@@ -56,7 +55,7 @@ const actions = {
         type: GET_BOOKS,
         books
     } as const),
-    createBook: (book: any) => ({
+    createBook: (book: createBookType) => ({
         type: CREATE_BOOK,
         book
     } as const),
@@ -75,11 +74,10 @@ export const getAllBooks = ():ThunkType => async (dispatch) => {
     dispatch(actions.setBooks(response.data.rows))
 }
 
-export const createBook = (book: any):ThunkType => async (dispatch) => {
+export const createBook = (book: createBookType):ThunkType => async (dispatch) => {
     const response = await booksAPI.createBook(book)
-
     dispatch(actions.createBook(response.data))
-    
+    debugger
 }
 
 export const chooseGenreBook = (genreBook: GenresType):ThunkType => async (dispatch) => {

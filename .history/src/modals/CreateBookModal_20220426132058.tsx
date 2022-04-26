@@ -13,7 +13,7 @@ type CreateBookModalType = {
 }
 
 const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
-    const [file, setFile] = useState('')
+    const [file, setFile] = useState(null)
     const [name, setName] = useState('')
     const [author, setAuthor] = useState('')
     const [description, setDescription] = useState('')
@@ -35,11 +35,11 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
             formData.append('author', author),
             formData.append('description', description),
             formData.append('price', `${price}`),
-            formData.append('image', file),
+            formData.append('image', `${file}`),
             formData.append('genreId', `${genreBook.id}`)
 
         dispatch(createBook(formData))
-        console.log(name, author, description, price, file, genreBook.id)
+        console.log(formData)
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
@@ -50,7 +50,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
     useEffect(() => {
         dispatch(getAllGenres())
-    }, [])
+    }, [genreBook])
     return (
         <>
             <Modal
@@ -64,7 +64,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div >
+                    <form onSubmit={addBook}>
                         <label>Name</label>
                         <input type='text' onChange={(e: any) => setName(e.target.value)} />
                         <label>Author</label>
@@ -89,10 +89,10 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
-                        <button type='submit' onClick={addBook}>
+                        <button type='submit'>
                             Submit
                         </button>
-                    </div>
+                    </form>
                     {/* <Formik initialValues={{
                         name: '',
                         author: '',

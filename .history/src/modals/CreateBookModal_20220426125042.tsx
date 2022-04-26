@@ -13,12 +13,7 @@ type CreateBookModalType = {
 }
 
 const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
-    const [file, setFile] = useState('')
-    const [name, setName] = useState('')
-    const [author, setAuthor] = useState('')
-    const [description, setDescription] = useState('')
-    const [price, setPrice] = useState(0)
-
+    const [file, setFile] = useState(null)
     const { genres } = useSelector((state: AppStateType) => state.filter)
     const { genreBook } = useSelector((state: AppStateType) => state.books)
 
@@ -29,17 +24,18 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
         console.log(file)
     }
 
-    const addBook = () => {
+    const addBook = (values: any) => {
         const formData = new FormData()
-        formData.append('name', name),
-            formData.append('author', author),
-            formData.append('description', description),
-            formData.append('price', `${price}`),
-            formData.append('image', file),
-            formData.append('genreId', `${genreBook.id}`)
+
+        formData.append('name', values.name),
+            formData.append('author', values.author),
+            formData.append('description', values.description),
+            formData.append('price', values.price),
+            formData.append('image', values.image),
+            formData.append('genreId', values.genreId)
 
         dispatch(createBook(formData))
-        console.log(name, author, description, price, file, genreBook.id)
+        console.log(formData)
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
@@ -50,7 +46,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
 
     useEffect(() => {
         dispatch(getAllGenres())
-    }, [])
+    }, [genreBook])
     return (
         <>
             <Modal
@@ -64,36 +60,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div >
-                        <label>Name</label>
-                        <input type='text' onChange={(e: any) => setName(e.target.value)} />
-                        <label>Author</label>
-                        <input type='text' onChange={(e: any) => setAuthor(e.target.value)} />
-                        <label>Description</label>
-                        <input type='text' onChange={(e: any) => setDescription(e.target.value)} />
-                        <label>Price</label>
-                        <input type='text' onChange={(e: any) => setPrice(e.target.value)} />
-                        <label>photo</label>
-                        <input type='file' onChange={addFile} />
-                        <div>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                    {genreBook.name ? genreBook.name : 'Виберіть жанр'}
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    {genres.map(genre => <Dropdown.Item
-                                        onClick={() => chooseGenre(genre)}
-                                        key={genre.id}>{genre.name}</Dropdown.Item>)}
-
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        </div>
-                        <button type='submit' onClick={addBook}>
-                            Submit
-                        </button>
-                    </div>
-                    {/* <Formik initialValues={{
+                    <Formik initialValues={{
                         name: '',
                         author: '',
                         description: '',
@@ -139,7 +106,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
                             <button type='submit'>Добавити</button>
                         </Form>
 
-                    </Formik> */}
+                    </Formik>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={onHide}>Закрити</Button>
