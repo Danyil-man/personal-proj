@@ -19,13 +19,16 @@ const OpenedBookModal: FC<OpenBookModalType> = ({ close, book, onClose }) => {
                     <img src={`http://localhost:5000/${book.image}`} alt="book-img" />
                 </div>
                 <div className={style.infoBlock}>
-                    <h4 className={style.nameBook}>{book.name}</h4>
-                    <p className={style.bookAuthor}>Автор: {book.author}</p>
-                    <p className={style.bookDescription}>Опис: {book.description}</p>
-                    <div className={style.interactBlock}>
-                        <p className={style.bookPrice}>Ціна: {book.price}</p>
-                        <button className={style.closeBtn} onClick={() => onClose(!close)}>Закрити</button>
-                    </div>
+
+                    <h6>{book.name}</h6>
+                    <p>Автор: {book.author}</p>
+                    <p>Жанр: {book.genreId}</p>
+                    <p>Ціна: {book.price}</p>
+                </div>
+
+                <div className={style.interactBlock}>
+
+                    <button className={style.closeBtn} onClick={() => onClose(!close)}>Закрити</button>
                 </div>
             </div>
         </div>

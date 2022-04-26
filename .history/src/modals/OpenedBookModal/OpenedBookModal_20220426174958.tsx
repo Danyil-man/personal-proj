@@ -15,18 +15,22 @@ const OpenedBookModal: FC<OpenBookModalType> = ({ close, book, onClose }) => {
     return (
         <div className={style.wrapper}>
             <div className={style.container}>
-                <div className={style.imgBlock}>
-                    <img src={`http://localhost:5000/${book.image}`} alt="book-img" />
-                </div>
-                <div className={style.infoBlock}>
-                    <h4 className={style.nameBook}>{book.name}</h4>
-                    <p className={style.bookAuthor}>Автор: {book.author}</p>
-                    <p className={style.bookDescription}>Опис: {book.description}</p>
+                <div className={style.modalInner}>
+                    <div className={style.imgBlock}>
+                        <img src={`http://localhost:5000/${book.image}`} alt="book-img" />
+                    </div>
+                    <div className={style.infoBlock}>
+                        <h6>{book.name}</h6>
+                        <p>Автор: {book.author}</p>
+                        <p>Жанр: {book.genreId}</p>
+                        <p>Ціна: {book.price}</p>
+                    </div>
+
                     <div className={style.interactBlock}>
-                        <p className={style.bookPrice}>Ціна: {book.price}</p>
                         <button className={style.closeBtn} onClick={() => onClose(!close)}>Закрити</button>
                     </div>
                 </div>
+
             </div>
         </div>
 

@@ -1,0 +1,13 @@
+.formBlock{
+    width: 100%;
+    text-align: center;
+    .formItem{
+        width: 100%;
+        .formItemName{
+            width: 30%;
+        }
+        .formItemInput{
+            width: 70%;
+        }
+    }
+}

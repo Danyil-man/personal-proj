@@ -66,16 +66,8 @@
             width: 100%;
             background: none;
             background-color: $white;
-            font-family: 'Monserat';
             border: none;
-            padding: 5px;
             border-radius: 14px ;
-
-            &:hover{
-              transition: $iconDuration;
-              color: $white;
-              background-color: $text;
-            }
           }
         }
 }

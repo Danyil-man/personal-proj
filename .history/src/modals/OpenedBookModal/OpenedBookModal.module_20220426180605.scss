@@ -20,7 +20,7 @@
     display: flex;
     border-radius: 20px;
     padding: 20px;
-    background-color: $bezh;
+    background-color: $white;
       .imgBlock{
          width: 100%;
           max-width: 350px;
@@ -48,7 +48,6 @@
         .bookPrice{
           font-family: 'Oswald';
           text-align: start;
-          margin-bottom: 25px;
         }
         .bookDescription{
           margin-top: 10px;
@@ -60,22 +59,10 @@
           position: absolute;
           bottom: 0;
           left: 0;
-          padding-left:20px;
+          padding: 0px 0px 0 20px;
           
           .closeBtn{
             width: 100%;
-            background: none;
-            background-color: $white;
-            font-family: 'Monserat';
-            border: none;
-            padding: 5px;
-            border-radius: 14px ;
-
-            &:hover{
-              transition: $iconDuration;
-              color: $white;
-              background-color: $text;
-            }
           }
         }
 }

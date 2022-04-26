@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { Button, CloseButton, Modal } from 'react-bootstrap';
-import { CloudSlash } from 'react-bootstrap-icons';
 import { bookType } from '../../types/generalTypes';
 import style from './OpenedBookModal.module.scss'
 
@@ -18,14 +17,16 @@ const OpenedBookModal: FC<OpenBookModalType> = ({ close, book, onClose }) => {
                 <div className={style.imgBlock}>
                     <img src={`http://localhost:5000/${book.image}`} alt="book-img" />
                 </div>
+                <CloseButton className={style.closeBtn} onClick={() => onClose(!close)} />
                 <div className={style.infoBlock}>
-                    <h4 className={style.nameBook}>{book.name}</h4>
-                    <p className={style.bookAuthor}>Автор: {book.author}</p>
-                    <p className={style.bookDescription}>Опис: {book.description}</p>
-                    <div className={style.interactBlock}>
-                        <p className={style.bookPrice}>Ціна: {book.price}</p>
-                        <button className={style.closeBtn} onClick={() => onClose(!close)}>Закрити</button>
-                    </div>
+
+                    <h6>{book.name}</h6>
+                    <p>Автор: {book.author}</p>
+                    <p>Жанр: {book.genreId}</p>
+                </div>
+
+                <div className={style.interactBlock}>
+                    <p>Ціна: {book.price}</p>
                 </div>
             </div>
         </div>

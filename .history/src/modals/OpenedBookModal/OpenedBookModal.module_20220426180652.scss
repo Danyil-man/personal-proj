@@ -20,7 +20,7 @@
     display: flex;
     border-radius: 20px;
     padding: 20px;
-    background-color: $bezh;
+    background-color: $white;
       .imgBlock{
          width: 100%;
           max-width: 350px;
@@ -64,18 +64,6 @@
           
           .closeBtn{
             width: 100%;
-            background: none;
-            background-color: $white;
-            font-family: 'Monserat';
-            border: none;
-            padding: 5px;
-            border-radius: 14px ;
-
-            &:hover{
-              transition: $iconDuration;
-              color: $white;
-              background-color: $text;
-            }
           }
         }
 }

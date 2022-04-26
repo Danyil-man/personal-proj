@@ -70,12 +70,6 @@
             border: none;
             padding: 5px;
             border-radius: 14px ;
-
-            &:hover{
-              transition: $iconDuration;
-              color: $white;
-              background-color: $text;
-            }
           }
         }
 }
