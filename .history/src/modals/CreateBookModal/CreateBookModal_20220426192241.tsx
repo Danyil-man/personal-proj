@@ -44,7 +44,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
         setName('')
         setAuthor('')
         setDescription('')
-        setPrice(0)
+        setPrice('')
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
