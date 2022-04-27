@@ -7,12 +7,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 40px 60px 0px 60px;
+    flex-wrap: wrap;
 
     .leftText{
         font-family: 'Monserat';
     }
   
     .searchBookBlock {
+        max-width: 100%;
       position: relative;
       padding: 0 15px;
       display: flex;

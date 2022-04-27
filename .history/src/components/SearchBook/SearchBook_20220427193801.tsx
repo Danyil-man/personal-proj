@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react';
-import { CloseButton } from 'react-bootstrap';
-import { ArrowsCollapse, CalendarCheckFill, CircleFill, CircleSquare, DashCircleDotted, Eraser, EraserFill, Search, SkipForwardCircle, SlashCircle, StopCircle } from 'react-bootstrap-icons';
+import { DashCircleDotted, Search } from 'react-bootstrap-icons';
 import style from './SearchBook.module.scss'
 
 type SearchBookType = {
@@ -11,11 +10,11 @@ type SearchBookType = {
 const SearchBook: FC<SearchBookType> = ({ searchBook, setSearchBook }) => {
     return (
         <div className={style.container}>
-            <h3 className={style.leftText}>{searchBook ? `Шукаємо: '${searchBook}'` : 'Усі Книги'}</h3>
+            <h2>{searchBook ? `Шукаємо: '${searchBook}'` : 'Усі Книги'}</h2>
             <div className={style.searchBookBlock}>
                 <Search />
 
-                <input maxLength={45} className={style.bookNameValue}
+                <input className={style.bookNameValue}
                     onChange={(e) => {
                         setSearchBook(e.target.value);
                     }}
@@ -23,7 +22,7 @@ const SearchBook: FC<SearchBookType> = ({ searchBook, setSearchBook }) => {
                     placeholder="Пошук..."
                 />
                 {searchBook ? (
-                    <EraserFill
+                    <DashCircleDotted
                         onClick={() => setSearchBook('')}
                         className={style.clearSearchBtn}
                     />

@@ -15,7 +15,7 @@ const SearchBook: FC<SearchBookType> = ({ searchBook, setSearchBook }) => {
             <div className={style.searchBookBlock}>
                 <Search />
 
-                <input maxLength={45} className={style.bookNameValue}
+                <input className={style.bookNameValue}
                     onChange={(e) => {
                         setSearchBook(e.target.value);
                     }}

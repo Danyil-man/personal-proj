@@ -1,24 +1,18 @@
-@import '../../styles/variables.scss';
-@import '../../styles/fonts.scss';
-
 .container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 60px 0px 60px;
+    margin: 20px;
 
-    .leftText{
-        font-family: 'Monserat';
-    }
   
     .searchBookBlock {
       position: relative;
+      border: 1px solid #f3f3f3;
+      border-radius: 10px;
       padding: 0 15px;
       display: flex;
       align-items: center;
-      background-color: $white;
-      border-radius: 14px;
       .clearSearchBtn {
         position: absolute;
         right: 10px;
@@ -30,7 +24,7 @@
         border: 0;
         outline: none;
         padding: 14px;
-        font-size: 16px;
+        font-size: 15px;
         width: 200px;
       }
     }

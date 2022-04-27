@@ -2,11 +2,12 @@
 @import '../../styles/fonts.scss';
 
 .container {
-    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 40px 60px 0px 60px;
+    flex-wrap: wrap;
 
     .leftText{
         font-family: 'Monserat';

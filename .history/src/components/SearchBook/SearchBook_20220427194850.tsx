@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { CloseButton } from 'react-bootstrap';
-import { ArrowsCollapse, CalendarCheckFill, CircleFill, CircleSquare, DashCircleDotted, Eraser, EraserFill, Search, SkipForwardCircle, SlashCircle, StopCircle } from 'react-bootstrap-icons';
+import { ArrowsCollapse, CalendarCheckFill, CircleFill, CircleSquare, DashCircleDotted, Search, SkipForwardCircle, SlashCircle, StopCircle } from 'react-bootstrap-icons';
 import style from './SearchBook.module.scss'
 
 type SearchBookType = {
@@ -15,7 +15,7 @@ const SearchBook: FC<SearchBookType> = ({ searchBook, setSearchBook }) => {
             <div className={style.searchBookBlock}>
                 <Search />
 
-                <input maxLength={45} className={style.bookNameValue}
+                <input className={style.bookNameValue}
                     onChange={(e) => {
                         setSearchBook(e.target.value);
                     }}
@@ -23,7 +23,7 @@ const SearchBook: FC<SearchBookType> = ({ searchBook, setSearchBook }) => {
                     placeholder="Пошук..."
                 />
                 {searchBook ? (
-                    <EraserFill
+                    <ArrowsCollapse
                         onClick={() => setSearchBook('')}
                         className={style.clearSearchBtn}
                     />
