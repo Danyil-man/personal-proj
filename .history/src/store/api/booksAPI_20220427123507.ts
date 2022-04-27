@@ -5,9 +5,9 @@ import { publicAPI, signedAPI } from './api'
 
 export const booksAPI = {
     getAllBooks(filterID:number, page:number, limit: number){
-        const genreId = `${filterID === 0 ? '' : filterID}` //no genre with id 0
+        const checkGenreId = `${filterID === 0 ? '' : filterID}` //no genre with id 0
         return publicAPI.get('api/book', {params:{
-            genreId, page, limit
+            checkGenreId, page, limit
         }})
     },
     createBook(book: any){

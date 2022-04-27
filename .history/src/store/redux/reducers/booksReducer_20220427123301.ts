@@ -116,7 +116,7 @@ export const getAllBooks = (filterID:number, page:number, limit:number):ThunkTyp
     const response = await booksAPI.getAllBooks(filterID, page,limit)
     dispatch(actions.setBooks(response.data.rows))
     dispatch(actions.setTotalCount(response.data.count))
-    dispatch(actions.setGenreFilter(filterID))
+    //dispatch(actions.setGenreFilter(filterID))
 }
 
 export const createBook = (book: any):ThunkType => async (dispatch) => {

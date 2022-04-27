@@ -133,7 +133,7 @@ export const setPageItem = (page:number):ThunkType => async (dispatch) => {
 }
 
 export const setFilter = (filterID:number):ThunkType => async (dispatch) => {
-    dispatch( actions.setGenreFilter(filterID))
+    dispatch( actions.setPage(filterID))
 }
 
 export default booksReducer;

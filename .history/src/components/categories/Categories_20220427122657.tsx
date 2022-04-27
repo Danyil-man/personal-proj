@@ -9,7 +9,9 @@ type Categories = {
 }
 
 const Categories: FC<Categories> = ({ filterGenres }) => {
+
     const genres = useSelector((state: AppStateType) => state.filter.genres)
+    console.log(genres.map(genre => genre.name))
     return (
         <div className={style.container}>
             <ul className={style.ulBlock}>

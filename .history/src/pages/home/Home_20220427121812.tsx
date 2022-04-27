@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Cards from '../../components/cards/Cards';
 import Categories from '../../components/categories/Categories';
 import PaginationBar from '../../components/Pagination/Pagination';
-import { chooseGenreBook, getAllBooks, setFilter } from '../../store/redux/reducers/booksReducer';
+import { chooseGenreBook, getAllBooks } from '../../store/redux/reducers/booksReducer';
 import { getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
 import { GenresType } from '../../types/generalTypes';
@@ -13,14 +13,14 @@ import style from './Home.module.scss'
 
 const Home = () => {
     const dispatch = useDispatch()
-    const { filterId, page, limit } = useSelector((state: AppStateType) => state.books)
-    const filterGenres = (filterID: number) => {
-        dispatch(setFilter(filterID))
+    const { genreBook, page, limit } = useSelector((state: AppStateType) => state.books)
+    const chooseGenre = (genreId: GenresType) => {
+        dispatch(chooseGenreBook(genreId))
     }
     useEffect(() => {
-        dispatch(getAllBooks(filterId, page, limit))
+        dispatch(getAllBooks(genreBook.id, page, limit))
         dispatch(getAllGenres())
-    }, [page, filterId])
+    }, [page, genreBook])
     return (
         <div className={style.wrapper}>
             <div className={style.container}>
@@ -56,7 +56,7 @@ const Home = () => {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-                <Categories filterGenres={filterGenres} />
+                <Categories chooseGenre={chooseGenre} />
                 <Cards />
                 <PaginationBar />
             </div>
