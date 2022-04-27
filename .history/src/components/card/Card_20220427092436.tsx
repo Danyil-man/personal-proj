@@ -8,7 +8,7 @@ type CardType = {
     book: bookType
 }
 
-const obj: any = {
+const obj = {
     1: 'Фантастика',
     2: 'Історія',
     3: 'Наукова література',
