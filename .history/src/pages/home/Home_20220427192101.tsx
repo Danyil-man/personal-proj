@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Cards from '../../components/cards/Cards';
@@ -16,7 +16,6 @@ import style from './Home.module.scss'
 
 const Home = () => {
     const dispatch = useDispatch()
-    const [searchBook, setSearchBook] = useState('');
     const { filterId, page, limit } = useSelector((state: AppStateType) => state.books)
     const filterGenres = (filterID: number) => {
         dispatch(setFilter(filterID))
@@ -64,8 +63,8 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
                 <Categories filterGenres={filterGenres} />
-                <SearchBook searchBook={searchBook} setSearchBook={setSearchBook} />
-                <Cards searchBook={searchBook} />
+                <SearchBook />
+                <Cards />
                 <PaginationBar />
             </div>
         </div>

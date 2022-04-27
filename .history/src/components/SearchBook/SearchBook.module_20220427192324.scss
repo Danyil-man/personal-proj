@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+  
+    .searchBookBlock {
+      position: relative;
+      border: 1px solid #f3f3f3;
+      border-radius: 10px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      .clearSearchBtn {
+        position: absolute;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+      .bookNameValue {
+        border: 0;
+        outline: none;
+        padding: 14px;
+        font-size: 15px;
+        width: 200px;
+      }
+    }
+  }

@@ -15,9 +15,7 @@ const Cards: FC<CardsType> = ({ searchBook }) => {
     const { books, isLoading } = useSelector((state: AppStateType) => state.books)
     return (
         <div className={style.container}>
-            {isLoading ? Array(10).fill(<SkeletonLoader />) :
-                books.filter((book) => book.name.includes(searchBook))
-                    .map(book => <Card key={book.id} book={book} />)}
+            {isLoading ? Array(10).fill(<SkeletonLoader />) : books.filter((book) => book.name.includes(searchBook)).map(book => <Card key={book.id} book={book} />)}
         </div>
     )
 }
