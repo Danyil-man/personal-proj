@@ -1,0 +1,15 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+
+
+    .pagination{
+        color: black;
+    }
+    .paginationItem{
+        background-color: black;
+        color: black;
+    }
+}

@@ -3,7 +3,7 @@ import { Pagination } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPageItem } from '../../store/redux/reducers/booksReducer';
 import { AppStateType } from '../../store/redux/store';
-
+import style from './Pagination.module.scss'
 
 
 const PaginationBar = () => {
@@ -20,13 +20,13 @@ const PaginationBar = () => {
         dispatch(setPageItem(page))
     }
     return (
-        <>
-            <Pagination>
+        <div className={style.container}>
+            <Pagination >
                 {pages.map(pageItem => <Pagination.Item
                     key={pageItem} active={page === pageItem}
                     onClick={() => setPage(pageItem)} >{pageItem}</Pagination.Item>)}
             </Pagination>
-        </>
+        </div>
 
     )
 }
