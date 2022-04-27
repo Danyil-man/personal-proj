@@ -14,6 +14,7 @@ const PaginationBar = () => {
     for (let i = 0; i < pageCount; i++) {
         pages.push(i + 1)
     }
+    console.log('Page', page)
 
     const setPage = (page: number) => {
         dispatch(setPageItem(page))

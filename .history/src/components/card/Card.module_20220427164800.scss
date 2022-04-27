@@ -10,6 +10,10 @@
   background-color: $white;
   padding: 20px;
   cursor: pointer;
+  &:last-child{
+    display: flex;
+    text-align: start;
+}
 
   &:hover{
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);

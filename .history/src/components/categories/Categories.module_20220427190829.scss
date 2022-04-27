@@ -32,6 +32,11 @@
             cursor: pointer;
             color: $bezh;
             background-color: $text;
+            &:hover{
+                color: $text;
+                background-color: $bezh;
+                transition: $iconDuration;
+            }
         }
     }
 }

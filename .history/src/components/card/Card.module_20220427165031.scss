@@ -60,3 +60,10 @@
   }
   }
 }
+
+.blockCard{
+  &:last-child{
+    display: flex;
+    justify-content: flex-start;
+  }
+}

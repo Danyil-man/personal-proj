@@ -14,6 +14,7 @@ const PaginationBar = () => {
     for (let i = 0; i < pageCount; i++) {
         pages.push(i + 1)
     }
+    console.log('Page', page)
 
     const setPage = (page: number) => {
         dispatch(setPageItem(page))
@@ -21,7 +22,7 @@ const PaginationBar = () => {
     return (
         <div className={style.container}>
             <Pagination >
-                {pages.map(pageItem => <Pagination.Item activeLabel=''
+                {pages.map(pageItem => <Pagination.Item
                     key={pageItem} active={page === pageItem}
                     onClick={() => setPage(pageItem)} >{pageItem}</Pagination.Item>)}
             </Pagination>

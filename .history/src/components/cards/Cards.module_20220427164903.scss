@@ -1,0 +1,9 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0px 40px 0px;
+    &:last-child{
+    text-align: start;}
+}

@@ -22,16 +22,10 @@
                 background-color: $text;
                 transition: $iconDuration;
             }
-        }
-        .active{
-            width: 220px;
-            margin: 40px 10px 0px 10px;
-            padding: 5px;
-            border: 1px solid $text;
-            border-radius: 20px;
-            cursor: pointer;
-            color: $bezh;
-            background-color: $text;
+            .active{
+                color: $bezh;
+                background-color: $text;
+            }
         }
     }
 }

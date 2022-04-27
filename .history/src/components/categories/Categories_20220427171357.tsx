@@ -8,20 +8,15 @@ type Categories = {
     filterGenres: (filyerID: number) => void
 }
 
-
-
 const Categories: FC<Categories> = ({ filterGenres }) => {
     const genres = useSelector((state: AppStateType) => state.filter.genres)
     const { filterId } = useSelector((state: AppStateType) => state.books)
-    console.log('Genres', genres.map(genre => genre.id))
-    console.log('Filter', filterId)
     return (
         <div className={style.container}>
             <ul className={style.ulBlock}>
-                {genres.map((genre) => (
+                {genres.map((genre, index) => (
                     <li onClick={() => filterGenres(genre.id)}
-                        className={`
-                         ${filterId === genre.id ? style.active : style.liBlock}`} key={genre.id}>{genre.name}</li>
+                        className={`${style.active} ${filterId === genre.id ? '' : style.active}`} key={genre.id}>{genre.name}</li>
                 ))}
             </ul>
         </div>

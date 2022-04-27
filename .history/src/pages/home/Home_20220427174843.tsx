@@ -21,11 +21,12 @@ const Home = () => {
     }
     useEffect(() => {
         dispatch(getAllBooks(filterId, page, limit))
+        dispatch(getAllGenres())
     }, [page, filterId])
 
-    useEffect(() => {
-        dispatch(getAllGenres())
-    }, [])
+    // useEffect(() => {
+    //     dispatch(getAllGenres())
+    // }, [])
     return (
         <div className={style.wrapper}>
             <div className={style.container}>

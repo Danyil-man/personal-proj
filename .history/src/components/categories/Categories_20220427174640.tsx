@@ -20,8 +20,8 @@ const Categories: FC<Categories> = ({ filterGenres }) => {
             <ul className={style.ulBlock}>
                 {genres.map((genre) => (
                     <li onClick={() => filterGenres(genre.id)}
-                        className={`
-                         ${filterId === genre.id ? style.active : style.liBlock}`} key={genre.id}>{genre.name}</li>
+                        className={`${style.liBlock}
+                         ${filterId === genre.id ? style.active : ''}`} key={genre.id}>{genre.name}</li>
                 ))}
             </ul>
         </div>
