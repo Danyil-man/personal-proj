@@ -45,6 +45,11 @@ class UserController {
     const token = generateJWT(req.user.id, req.user.email, req.user.role);
     return res.json({ token });
   }
+  async getUser(req, res) {
+    const { email, role } = req.body;
+    const user = await User.findOne({ where: { email, role } });
+    return res.json({ user });
+  }
 }
 
 module.exports = new UserController();

@@ -6,7 +6,7 @@ import Categories from '../../components/categories/Categories';
 import PaginationBar from '../../components/common/Pagination/Pagination';
 import Filter from '../../components/filter/Filter';
 import SearchBook from '../../components/SearchBook/SearchBook';
-import { filterByName, filterByPrice, getAllBooks, setFilter } from '../../store/redux/reducers/booksReducer';
+import { filterByName, getAllBooks, setFilter } from '../../store/redux/reducers/booksReducer';
 import { getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
 import style from './Home.module.scss'
@@ -23,8 +23,8 @@ const Home = () => {
         dispatch(filterByName(name))
     }
 
-    const filterByBookPrice = (price: string) => {
-        dispatch(filterByPrice(price))
+    const filterByPrice = (price: string) => {
+        dispatch(filterByName(price))
     }
     useEffect(() => {
         dispatch(getAllBooks(filterId, page, limit, filteredName, filteredPrice))
@@ -71,7 +71,7 @@ const Home = () => {
                 <Categories filterGenres={filterGenres} />
                 <Filter
                     filterByBookName={filterByBookName}
-                    filterByPrice={filterByBookPrice}
+                    filterByPrice={filterByPrice}
                 />
                 <SearchBook searchBook={searchBook} setSearchBook={setSearchBook} />
                 <Cards searchBook={searchBook} />

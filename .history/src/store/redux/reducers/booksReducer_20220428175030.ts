@@ -147,7 +147,7 @@ type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreator
 
 export const getAllBooks = (filterID:number, page:number, limit:number, name:string, price:string):ThunkType => async (dispatch) => {
     dispatch(actions.setIsLoading(true))
-    const response = await booksAPI.getAllBooks(filterID, page,limit, name, price)
+    const response = await booksAPI.getAllBooks(filterID, page,limit)
     dispatch(actions.setBooks(response.data.rows))
     dispatch(actions.setTotalCount(response.data.count))
     dispatch(actions.setIsLoading(false))

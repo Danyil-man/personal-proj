@@ -14,8 +14,8 @@ const Filter: FC<FiltersType> = ({ filterByBookName, filterByPrice }) => {
         <div className={style.container}>
             <h4>Фільтр книг</h4>
             <button onClick={() => filterByBookName(alphabit)}>фільтир за алфавітом</button>
-            <button onClick={() => filterByPrice(priceASC)}>фільтир за меншою ціною</button>
-            <button onClick={() => filterByPrice(priceDESC)}>фільтир за більшою ціною</button>
+            <button onClick={() => filterByPrice(priceASC)}>фільтир за більшою ціною</button>
+            <button onClick={() => filterByPrice(priceDESC)}>фільтир за меншою ціною</button>
         </div>
     )
 }

@@ -33,16 +33,17 @@ class BookController {
       let offset = page * limit - limit;
       let books;
       //Get all books
-      if (!genreId) {
+      if (!genreId || !name || !price) {
         books = await Book.findAndCountAll({ limit, offset });
-      } else {
+      }
+      //Sort by genre
+      else {
         books = await Book.findAndCountAll({
-          where: { genreId, name },
+          where: { genreId },
           limit,
           offset,
         });
       }
-      //Sort by genre
       // if (!name) {
       //   books = await Book.findAndCountAll({ limit, offset });
       // }

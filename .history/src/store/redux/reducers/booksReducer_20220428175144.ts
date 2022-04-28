@@ -1,4 +1,5 @@
 import { ThunkAction } from 'redux-thunk'
+import { NumberSchema } from 'yup'
 import { bookType, createBookType, GenresType } from '../../../types/generalTypes'
 import { booksAPI } from '../../api/booksAPI'
 import { AppStateType, InfernActionType } from '../store'
@@ -145,9 +146,9 @@ const actions = {
 type ActionCreatoreType = InfernActionType<typeof actions>
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreatoreType>
 
-export const getAllBooks = (filterID:number, page:number, limit:number, name:string, price:string):ThunkType => async (dispatch) => {
+export const getAllBooks = (filterID:number, page:number, limit:number):ThunkType => async (dispatch) => {
     dispatch(actions.setIsLoading(true))
-    const response = await booksAPI.getAllBooks(filterID, page,limit, name, price)
+    const response = await booksAPI.getAllBooks(filterID, page,limit)
     dispatch(actions.setBooks(response.data.rows))
     dispatch(actions.setTotalCount(response.data.count))
     dispatch(actions.setIsLoading(false))

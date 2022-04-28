@@ -37,7 +37,7 @@ class BookController {
         books = await Book.findAndCountAll({ limit, offset });
       } else {
         books = await Book.findAndCountAll({
-          where: { genreId, name },
+          where: { genreId },
           limit,
           offset,
         });

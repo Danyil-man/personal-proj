@@ -2,7 +2,7 @@ import { ThunkAction } from 'redux-thunk'
 import { bookType, createBookType, GenresType } from '../../../types/generalTypes'
 import { booksAPI } from '../../api/booksAPI'
 import { AppStateType, InfernActionType } from '../store'
-import { CHOOSE_GENRE, CREATE_BOOK, FILTER_NAME, FILTER_PRICE, GET_BOOKS, IS_LOADING, SET_GENRE_FILTER, SET_LIMIT, SET_PAGE, SET_TOTAL_COUNT } from '../variables/actionsType'
+import { CHOOSE_GENRE, CREATE_BOOK, FILTER_NAME, GET_BOOKS, IS_LOADING, SET_GENRE_FILTER, SET_LIMIT, SET_PAGE, SET_TOTAL_COUNT } from '../variables/actionsType'
 
 type initialStateType = {
     books: Array<bookType>
@@ -14,7 +14,7 @@ type initialStateType = {
     limit: number
     isLoading: boolean
     filteredName: string,
-    filteredPrice: string
+    price: string
 }
 
 const initialState:initialStateType = {
@@ -34,7 +34,7 @@ const initialState:initialStateType = {
     limit: 10,
     isLoading: false,
     filteredName: '',
-    filteredPrice: ''
+    price: ''
 }
 
 const booksReducer = (state=initialState, action:ActionCreatoreType):initialStateType => {
@@ -83,11 +83,6 @@ const booksReducer = (state=initialState, action:ActionCreatoreType):initialStat
                 ...state,
               filteredName: action.filterVarsion
             } 
-            case FILTER_PRICE:
-                return{
-                    ...state,
-                  filteredPrice: action.filterPrice
-                } 
         case IS_LOADING:
             return{
                 ...state,
@@ -132,10 +127,6 @@ const actions = {
         type: FILTER_NAME,
         filterVarsion
     } as const),
-    filterPrice: (filterPrice: string) => ({
-        type: FILTER_PRICE,
-        filterPrice
-    } as const),
     setIsLoading: (isLoading:boolean) => ({
         type: IS_LOADING,
         isLoading
@@ -145,9 +136,9 @@ const actions = {
 type ActionCreatoreType = InfernActionType<typeof actions>
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionCreatoreType>
 
-export const getAllBooks = (filterID:number, page:number, limit:number, name:string, price:string):ThunkType => async (dispatch) => {
+export const getAllBooks = (filterID:number, page:number, limit:number, name:string):ThunkType => async (dispatch) => {
     dispatch(actions.setIsLoading(true))
-    const response = await booksAPI.getAllBooks(filterID, page,limit, name, price)
+    const response = await booksAPI.getAllBooks(filterID, page,limit, name)
     dispatch(actions.setBooks(response.data.rows))
     dispatch(actions.setTotalCount(response.data.count))
     dispatch(actions.setIsLoading(false))
@@ -170,10 +161,6 @@ export const setPageItem = (page:number):ThunkType => async (dispatch) => {
 
 export const filterByName = (name:string):ThunkType => async (dispatch) => {
     dispatch(actions.filterName(name))
-}
-
-export const filterByPrice = (price:string):ThunkType => async (dispatch) => {
-    dispatch(actions.filterPrice(price))
 }
 
 export const setFilter = (filterID:number):ThunkType => async (dispatch) => {

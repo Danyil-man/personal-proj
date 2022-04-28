@@ -27,7 +27,7 @@ const Home = () => {
         dispatch(filterByPrice(price))
     }
     useEffect(() => {
-        dispatch(getAllBooks(filterId, page, limit, filteredName, filteredPrice))
+        dispatch(getAllBooks(filterId, page, limit))
     }, [page, filterId, filteredName, filteredPrice])
 
     useEffect(() => {

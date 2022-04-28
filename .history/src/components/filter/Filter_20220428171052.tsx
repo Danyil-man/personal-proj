@@ -7,7 +7,7 @@ type FiltersType = {
 }
 
 const Filter: FC<FiltersType> = ({ filterByBookName, filterByPrice }) => {
-    const [alphabit, setAlphabit] = useState('ASC')
+    const [alphabit, setAlphabit] = useState('DESC')
     const [priceASC, setPriceASC] = useState('ASC')
     const [priceDESC, setPriceDESC] = useState('DESC')
     return (

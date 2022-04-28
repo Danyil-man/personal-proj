@@ -35,25 +35,26 @@ class BookController {
       //Get all books
       if (!genreId) {
         books = await Book.findAndCountAll({ limit, offset });
-      } else {
+      }
+      //Sort by genre
+      else {
         books = await Book.findAndCountAll({
-          where: { genreId, name },
+          where: { genreId },
           limit,
           offset,
         });
       }
-      //Sort by genre
-      // if (!name) {
-      //   books = await Book.findAndCountAll({ limit, offset });
-      // }
-      // //Sort by name
-      // else {
-      //   books = await Book.findAndCountAll({
-      //     order: [["name", name]],
-      //     limit,
-      //     offset,
-      //   });
-      // }
+      if (!name) {
+        books = await Book.findAndCountAll({ limit, offset });
+      }
+      //Sort by name
+      else {
+        books = await Book.findAndCountAll({
+          where: [["name", name]],
+          limit,
+          offset,
+        });
+      }
       // if (!price) {
       //   books = await Book.findAndCountAll({ limit, offset });
       // }
