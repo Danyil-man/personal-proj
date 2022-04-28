@@ -40,8 +40,8 @@ class BookController {
       const genresMappedId = genres.map((id) => id.id);
       const genre = genreId ? genreId : genresMappedId;
 
-      //const filteredPrice = price ? ["price", price] : ["id", "ASC"];
-      //const filteredName = name ? ["name", name] : ["id", "ASC"];
+      const filteredPrice = price ? ["price", price] : ["id", "ASC"];
+      const filteredName = name ? ["name", name] : ["id", "ASC"];
 
       let filteredParams;
       if (!price && !name) {

@@ -35,27 +35,16 @@ class BookController {
 
       const genres = await Genre.findAll({
         raw: true,
-        attributes: ["id"],
+        attributes: ["genresMappedId"],
       });
-      const genresMappedId = genres.map((id) => id.id);
-      const genre = genreId ? genreId : genresMappedId;
+      const genresMappedId = genres.map((id) => id);
+      console.log("GENRES", genresMappedId);
+      const genre = genreId ? genreId : 0;
 
-      //const filteredPrice = price ? ["price", price] : ["id", "ASC"];
-      //const filteredName = name ? ["name", name] : ["id", "ASC"];
-
-      let filteredParams;
-      if (!price && !name) {
-        filteredParams = ["id", "ASC"];
-      } else if (price) {
-        filteredParams = ["price", price];
-      } else if (name) {
-        filteredParams = ["name", name];
-      }
       //Get all books
 
       books = await Book.findAndCountAll({
         where: { genreId: genre },
-        order: [filteredParams],
         offset: offset,
         limit: limit,
         subQuery: false,

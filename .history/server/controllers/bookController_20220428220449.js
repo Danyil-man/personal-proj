@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const uuid = require("uuid");
-const { Book, Genre } = require("../models/models");
+const { Book } = require("../models/models");
 const path = require("path");
 const ApiError = require("../error/ApiError");
 class BookController {
@@ -32,44 +32,20 @@ class BookController {
       limit = parseInt(limit) || 30;
       let offset = page * limit - limit;
       let books;
-
-      const genres = await Genre.findAll({
-        raw: true,
-        attributes: ["id"],
-      });
-      const genresMappedId = genres.map((id) => id.id);
-      const genre = genreId ? genreId : genresMappedId;
-
-      //const filteredPrice = price ? ["price", price] : ["id", "ASC"];
-      //const filteredName = name ? ["name", name] : ["id", "ASC"];
-
-      let filteredParams;
-      if (!price && !name) {
-        filteredParams = ["id", "ASC"];
-      } else if (price) {
-        filteredParams = ["price", price];
-      } else if (name) {
-        filteredParams = ["name", name];
-      }
+      //const genre = genreId ? genreId : 0;
       //Get all books
 
-      books = await Book.findAndCountAll({
-        where: { genreId: genre },
-        order: [filteredParams],
-        offset: offset,
-        limit: limit,
-        subQuery: false,
-      });
+      // books = await Book.findAndCountAll({ where: { genreId: genre } });
       // console.log("RESPONSEEEEEEEEEEEEEEE", books);
-      // if (!genreId) {
-      //   books = await Book.findAndCountAll({ limit, offset });
-      // } else {
-      //   books = await Book.findAndCountAll({
-      //     where: { genreId },
-      //     limit,
-      //     offset,
-      //   });
-      // }
+      if (!genreId) {
+        books = await Book.findAndCountAll({ limit, offset });
+      } else {
+        books = await Book.findAndCountAll({
+          where: { genreId },
+          limit,
+          offset,
+        });
+      }
       //Sort by genre
       // if (!name) {
       //   books = await Book.findAndCountAll({ limit, offset });

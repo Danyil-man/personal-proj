@@ -11,7 +11,7 @@ export const booksAPI = {
         const name = `${filterName ?  filterName : '' }`
         const price = `${filterPrice ? filterPrice : '' }`
         return publicAPI.get('api/book', {params:{
-            genreId,  page,  limit
+            genreId,  page,  limit,  name
         }
        })
     },
