@@ -51,7 +51,9 @@ class BookController {
       //Sort by name
       else {
         books = await Book.findAndCountAll({
-          order: [["name", name]],
+          order: [
+            Sequelize.literal(`ARRAY_POSITION(ARRAY[${books}]::integer)`),
+          ],
           limit,
           offset,
         });

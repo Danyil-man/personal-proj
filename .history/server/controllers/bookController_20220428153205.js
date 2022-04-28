@@ -4,7 +4,6 @@ const uuid = require("uuid");
 const { Book } = require("../models/models");
 const path = require("path");
 const ApiError = require("../error/ApiError");
-const { Sequelize } = require("../db");
 class BookController {
   async create(req, res, next) {
     try {
@@ -40,18 +39,7 @@ class BookController {
       //Sort by genre
       else {
         books = await Book.findAndCountAll({
-          where: { genreId },
-          limit,
-          offset,
-        });
-      }
-      if (!name) {
-        books = await Book.findAndCountAll({ limit, offset });
-      }
-      //Sort by name
-      else {
-        books = await Book.findAndCountAll({
-          order: [["name", name]],
+          where: { genreId, name },
           limit,
           offset,
         });

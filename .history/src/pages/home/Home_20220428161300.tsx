@@ -3,29 +3,27 @@ import { Carousel } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Cards from '../../components/cards/Cards';
 import Categories from '../../components/categories/Categories';
+import PageLoader from '../../components/common/PageLoader/PageLoader';
 import PaginationBar from '../../components/common/Pagination/Pagination';
-import Filter from '../../components/filter/Filter';
+import SkeletonLoader from '../../components/common/SkeletonLoader/SkeletonLoader';
 import SearchBook from '../../components/SearchBook/SearchBook';
-import { filterByName, getAllBooks, setFilter } from '../../store/redux/reducers/booksReducer';
+import { chooseGenreBook, getAllBooks, setFilter } from '../../store/redux/reducers/booksReducer';
 import { getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
+import { GenresType } from '../../types/generalTypes';
 import style from './Home.module.scss'
 
 
 const Home = () => {
     const dispatch = useDispatch()
     const [searchBook, setSearchBook] = useState('');
-    const { filterId, page, limit, filteredName } = useSelector((state: AppStateType) => state.books)
+    const { filterId, page, limit, filterByAsc } = useSelector((state: AppStateType) => state.books)
     const filterGenres = (filterID: number) => {
         dispatch(setFilter(filterID))
     }
-    const filterByBookName = (name: string) => {
-        dispatch(filterByName(name))
-    }
-
     useEffect(() => {
-        dispatch(getAllBooks(filterId, page, limit, filteredName))
-    }, [page, filterId, filteredName])
+        dispatch(getAllBooks(filterId, page, limit, filterByAsc))
+    }, [page, filterId])
 
     useEffect(() => {
         dispatch(getAllGenres())
@@ -66,7 +64,6 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
                 <Categories filterGenres={filterGenres} />
-                <Filter filterByBookName={filterByBookName} />
                 <SearchBook searchBook={searchBook} setSearchBook={setSearchBook} />
                 <Cards searchBook={searchBook} />
                 <PaginationBar />

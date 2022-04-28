@@ -4,7 +4,6 @@ const uuid = require("uuid");
 const { Book } = require("../models/models");
 const path = require("path");
 const ApiError = require("../error/ApiError");
-const { Sequelize } = require("../db");
 class BookController {
   async create(req, res, next) {
     try {
@@ -27,7 +26,7 @@ class BookController {
   }
   async getAll(req, res, next) {
     try {
-      let { genreId, limit, page, name } = req.query;
+      let { genreId, limit, page, price } = req.query;
       //parseInt for correct syntax inMySQL
       page = parseInt(page) || 1;
       limit = parseInt(limit) || 30;
@@ -45,13 +44,13 @@ class BookController {
           offset,
         });
       }
-      if (!name) {
+      if (!price) {
         books = await Book.findAndCountAll({ limit, offset });
       }
-      //Sort by name
+      //Sort by genre
       else {
         books = await Book.findAndCountAll({
-          order: [["name", name]],
+          where: { price },
           limit,
           offset,
         });

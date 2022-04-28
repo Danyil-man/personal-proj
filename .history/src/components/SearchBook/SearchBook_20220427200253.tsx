@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { CloseButton } from 'react-bootstrap';
 import { EraserFill, Search } from 'react-bootstrap-icons';
 import style from './SearchBook.module.scss'
 

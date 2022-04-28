@@ -25,7 +25,7 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getAllBooks(filterId, page, limit, filteredName))
-    }, [page, filterId, filteredName])
+    }, [page, filterId])
 
     useEffect(() => {
         dispatch(getAllGenres())

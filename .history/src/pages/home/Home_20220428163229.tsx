@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Cards from '../../components/cards/Cards';
 import Categories from '../../components/categories/Categories';
 import PaginationBar from '../../components/common/Pagination/Pagination';
-import Filter from '../../components/filter/Filter';
 import SearchBook from '../../components/SearchBook/SearchBook';
 import { filterByName, getAllBooks, setFilter } from '../../store/redux/reducers/booksReducer';
 import { getAllGenres } from '../../store/redux/reducers/filterReducer';
@@ -25,7 +24,7 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getAllBooks(filterId, page, limit, filteredName))
-    }, [page, filterId, filteredName])
+    }, [page, filterId])
 
     useEffect(() => {
         dispatch(getAllGenres())
@@ -66,9 +65,8 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
                 <Categories filterGenres={filterGenres} />
-                <Filter filterByBookName={filterByBookName} />
                 <SearchBook searchBook={searchBook} setSearchBook={setSearchBook} />
-                <Cards searchBook={searchBook} />
+                <Cards searchBook={searchBook} filterByBookName={filterByBookName} />
                 <PaginationBar />
             </div>
         </div>

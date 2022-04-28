@@ -13,7 +13,7 @@ type initialStateType = {
     totalCount: number
     limit: number
     isLoading: boolean
-    filteredName: string,
+    filterByName: string,
 }
 
 const initialState:initialStateType = {
@@ -79,7 +79,7 @@ const booksReducer = (state=initialState, action:ActionCreatoreType):initialStat
         case FILTER_NAME:
             return{
                 ...state,
-              filteredName: action.filterVarsion
+              filterByName: action.filterVarsion
             } 
         case IS_LOADING:
             return{

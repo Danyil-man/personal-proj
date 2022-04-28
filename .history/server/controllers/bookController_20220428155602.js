@@ -51,7 +51,7 @@ class BookController {
       //Sort by name
       else {
         books = await Book.findAndCountAll({
-          order: [["name", name]],
+          order: ["name", "DESC"],
           limit,
           offset,
         });
