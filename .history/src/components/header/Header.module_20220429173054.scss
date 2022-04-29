@@ -1,0 +1,152 @@
+@import '../../styles/styles.scss';
+@import '../../styles/styles.scss';
+
+.header{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $text;
+
+    .headerLeftSide{
+        display: flex;
+        align-items: center;
+        
+        .logoName{
+            margin-right: 30px;
+            font-family: 'Lato-italic';
+            transition: $iconDuration;
+            &:hover{
+                color: $white;
+            }
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .translateIcon{
+            font-size: 28px;
+        }
+        
+    }
+
+    .headerRightSide{
+        display: flex;
+        align-items: center;
+        .icon:hover{
+            cursor: pointer;
+            transition: $iconDuration;
+            &:first-child{
+                color: $heart;
+            }
+            &:last-child{
+                color: $buy;
+            }
+        }
+        .userInfo{
+            font-family: 'Monserat';
+            font-size: 14px;
+        }
+        .navigateBtn{
+            background: none;
+            font-family: 'Monserat';
+            border-radius: 12px;
+            padding: 2px 5px;
+            font-size: 14px;
+            border: none;
+            border: 1px solid $text;
+            &:hover{
+                background-color: $text;
+                color: $bezh;
+            }
+        }
+    }
+}
+
+//LapTop 
+@media screen and (max-width: 992px){
+    .header{
+        padding: 35px;
+        .headerLeftSide{
+            .logoName{
+                margin-right: 20px;
+                font-size: 24px;
+            }
+            .translateIcon{
+                font-size: 22px;
+            }
+        }
+    
+        .headerRightSide{
+            .icon:hover{
+                cursor: pointer;
+                transition: $iconDuration;
+                &:first-child{
+                    color: $heart;
+                }
+                &:last-child{
+                    color: $buy;
+                }
+            }
+        }
+    }
+}
+
+//Tablet 
+@media screen and (max-width: 768px) {
+    .header{
+        padding: 30px;
+        .headerLeftSide{
+            .logoName{
+                margin-right: 20px;
+                font-size: 24px;
+            }
+            .translateIcon{
+                font-size: 20px;
+            }
+        }
+    
+        .headerRightSide{
+            .icon:hover{
+                cursor: pointer;
+                transition: $iconDuration;
+                &:first-child{
+                    color: $heart;
+                }
+                &:last-child{
+                    color: $buy;
+                }
+            }
+        }
+    }
+}
+
+//Phome
+@media screen and (max-width: 600px){
+    .header{
+        padding: 20px;
+        .headerLeftSide{
+            .logoName{
+                margin-right: 15px;
+                font-size: 22px;
+            }
+            .translateIcon{
+                font-size: 18px;
+            }
+        }
+    
+        .headerRightSide{
+            .icon:hover{
+                cursor: pointer;
+                transition: $iconDuration;
+                &:first-child{
+                    color: $heart;
+                }
+                &:last-child{
+                    color: $buy;
+                }
+            }
+        }
+    }
+}

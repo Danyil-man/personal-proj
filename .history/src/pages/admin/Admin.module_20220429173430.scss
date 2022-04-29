@@ -1,0 +1,13 @@
+@import './Admin.module.scss';
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 100px 0;
+
+    .createBtn{
+        background: none;
+        border: none;
+        font-family: 'Monserat';
+    }
+}
