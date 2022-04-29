@@ -50,8 +50,6 @@ class BookController {
         filteredParams = ["price", price];
       } else if (name === "ASC" || name === "DESC") {
         filteredParams = ["name", name];
-      } else {
-        filteredParams = ["id", "ASC"];
       }
       //Get all books
 

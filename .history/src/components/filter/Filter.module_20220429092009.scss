@@ -1,0 +1,13 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/variables.scss';
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+
+    .containerInner{
+        margin-top: 20px;
+    }
+}

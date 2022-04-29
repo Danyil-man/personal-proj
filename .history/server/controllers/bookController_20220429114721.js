@@ -40,18 +40,18 @@ class BookController {
       const genresMappedId = genres.map((id) => id.id);
       const genre = genreId ? genreId : genresMappedId;
 
-      // const filteredPrice = price ? ["price", price] : ["id", "ASC"];
-      // const filteredName = name ? ["name", name] : ["id", "ASC"];
+      const filteredPrice = price ? ["price", price] : ["id", "ASC"];
+      const filteredHighPrice = price ? ["price", "ASC"] : ["price", "DESC"];
+      const filteredName = name ? ["name", name] : ["id", "ASC"];
+      const filteredHighName = name ? ["name", "ASC"] : ["name", "DESC"];
 
       let filteredParams;
       if (!price && !name) {
         filteredParams = ["id", "ASC"];
-      } else if (price === "ASC" || price === "DESC") {
-        filteredParams = ["price", price];
-      } else if (name === "ASC" || name === "DESC") {
-        filteredParams = ["name", name];
-      } else {
-        filteredParams = ["id", "ASC"];
+      } else if (price) {
+        filteredParams = ["price", filteredPrice];
+      } else if (name) {
+        filteredParams = ["name", filteredName];
       }
       //Get all books
 

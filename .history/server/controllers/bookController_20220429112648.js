@@ -40,23 +40,35 @@ class BookController {
       const genresMappedId = genres.map((id) => id.id);
       const genre = genreId ? genreId : genresMappedId;
 
-      // const filteredPrice = price ? ["price", price] : ["id", "ASC"];
-      // const filteredName = name ? ["name", name] : ["id", "ASC"];
+      let filteredPrice = price ? ["price", "ASC"] : ["id", "ASC"];
+      let filteredHighPrice = price ? ["price", "ASC"] : ["price", "DESC"];
+      let filteredName = name ? ["name", name] : ["id", "ASC"];
+      let filteredHighName = name ? ["name", "ASC"] : ["name", "DESC"];
+
+      switch (price) {
+        case 1:
+          filteredHighPrice = ["price", "ASC"];
+          break;
+
+        case 2:
+          filteredHighPrice = ["price", "DESC"];
+          break;
+        default:
+          filteredHighPrice = ["id", "ASC"];
+      }
 
       let filteredParams;
       if (!price && !name) {
         filteredParams = ["id", "ASC"];
-      } else if (price === "ASC" || price === "DESC") {
-        filteredParams = ["price", price];
-      } else if (name === "ASC" || name === "DESC") {
-        filteredParams = ["name", name];
-      } else {
-        filteredParams = ["id", "ASC"];
+      } else if (price) {
+        filteredParams = ["price", filteredPrice];
+      } else if (name) {
+        filteredParams = ["name", filteredName];
       }
       //Get all books
 
       books = await Book.findAndCountAll({
-        where: { genreId: genre },
+        where: { genreId: genre, name: name },
         order: [filteredParams],
         offset: offset,
         limit: limit,

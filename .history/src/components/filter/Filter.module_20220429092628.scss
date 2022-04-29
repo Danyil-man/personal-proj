@@ -14,7 +14,7 @@
         }
         .filterBtn{
             width: 220px;
-            margin: 30px 10px 0px 10px;
+            margin: 40px 10px 0px 10px;
             padding: 5px;
             border: 1px solid $text;
             background: none;
@@ -25,16 +25,6 @@
                 background-color: $text;
                 transition: $iconDuration;
             }
-        }
-        .active{
-            width: 220px;
-            margin: 30px 10px 0px 10px;
-            padding: 5px;
-            border: 1px solid $text;
-            border-radius: 20px;
-            cursor: pointer;
-            color: $bezh;
-            background-color: $text;
         }
     }
 }

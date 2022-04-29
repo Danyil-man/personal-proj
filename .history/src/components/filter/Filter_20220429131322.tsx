@@ -10,6 +10,18 @@ type FiltersType = {
 
 const Filter: FC<FiltersType> = ({ filterByBookName, filterByPrice }) => {
     const { filteredName, filteredPrice } = useSelector((state: AppStateType) => state.books)
+
+    const filterByAlpabetASC = () => {
+        filteredName === 'ASC' ? filterByBookName('') : filterByBookName('ASC')
+    }
+    const filterPriceASC = () => {
+        filteredPrice === 'ASC' ? filterByPrice('') : filterByPrice('ASC')
+        filterByBookName('')
+    }
+    const filterPriceDESC = () => {
+        filteredPrice === 'DESC' ? filterByPrice('') : filterByPrice('DESC')
+        filterByBookName('')
+    }
     const filter = (filterField: string, filterParam: string, setFilter: (name: string) => void, removeFilter: (name: string) => void) => {
         filterField === filterParam ? setFilter('') : setFilter(filterParam);
         removeFilter('')

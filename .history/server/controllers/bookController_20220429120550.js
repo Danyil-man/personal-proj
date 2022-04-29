@@ -46,12 +46,10 @@ class BookController {
       let filteredParams;
       if (!price && !name) {
         filteredParams = ["id", "ASC"];
-      } else if (price === "ASC" || price === "DESC") {
+      } else if (price === "ASC" || price === "DESC" || !price) {
         filteredParams = ["price", price];
-      } else if (name === "ASC" || name === "DESC") {
+      } else if (name) {
         filteredParams = ["name", name];
-      } else {
-        filteredParams = ["id", "ASC"];
       }
       //Get all books
 

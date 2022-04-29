@@ -1,0 +1,17 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/variables.scss';
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .containerInner{
+        width: 100%;
+        margin: 40px 0px;
+        .headText{
+            font-family: 'Monserat';
+            font-size: 20px;
+        }
+    }
+}
