@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppStateType } from './store/redux/store';
 import { checkAuth, getUserData } from './store/redux/reducers/userReducer';
 import PageLoader from './components/common/PageLoader/PageLoader';
+import { UserType } from './types/generalTypes';
 
 
 const App = () => {

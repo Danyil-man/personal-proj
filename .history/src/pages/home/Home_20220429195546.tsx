@@ -17,7 +17,7 @@ const Home = () => {
     const dispatch = useDispatch()
     const [searchBook, setSearchBook] = useState('');
     const { filterId, page, limit, filteredName, filteredPrice } = useSelector((state: AppStateType) => state.books)
-
+    const { email } = useSelector((state: AppStateType) => state.user.user)
     const filterGenres = (filterID: number) => {
         dispatch(setFilter(filterID))
     }
@@ -30,7 +30,7 @@ const Home = () => {
     }
     useEffect(() => {
         dispatch(getAllBooks(filterId, page, limit, filteredName, filteredPrice))
-    }, [page, filterId, filteredName, filteredPrice])
+    }, [page, filterId, filteredName, filteredPrice, email])
 
     useEffect(() => {
         dispatch(getAllGenres())

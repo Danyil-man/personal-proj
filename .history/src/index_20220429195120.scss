@@ -7,6 +7,10 @@
 h1,h2,h3,h4,h5,h6,p,ul,li, label{
     margin: 0;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 body {
     margin: 0;
     -webkit-font-smoothing: antialiased;

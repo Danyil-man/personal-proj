@@ -1,5 +1,10 @@
 @import '../../styles/styles.scss';
 @import '../../styles/styles.scss';
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 
 .header{
     width: 100%;
@@ -8,14 +13,11 @@
     justify-content: space-between;
     align-items: center;
     color: $text;
-    .link{
-        text-decoration: none;
-        color: inherit;
-    }
 
     .headerLeftSide{
         display: flex;
         align-items: center;
+        
         .logoName{
             margin-right: 30px;
             font-family: 'Lato-italic';

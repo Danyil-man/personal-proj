@@ -12,11 +12,5 @@
         font-family: 'Monserat';
         border: 1px solid $text;
         padding: 5px 10px;
-        border-radius: 12px;
-        &:hover{
-            transition: $iconDuration;
-            color: $bezh;
-            background-color: $text;
-        }
     }
 }

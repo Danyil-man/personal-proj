@@ -8,14 +8,11 @@
     justify-content: space-between;
     align-items: center;
     color: $text;
-    .link{
-        text-decoration: none;
-        color: inherit;
-    }
 
     .headerLeftSide{
         display: flex;
         align-items: center;
+        
         .logoName{
             margin-right: 30px;
             font-family: 'Lato-italic';
@@ -23,6 +20,10 @@
             &:hover{
                 color: $white;
             }
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
         }
         .translateIcon{
             font-size: 28px;
@@ -35,6 +36,8 @@
         align-items: center;
         .icon:hover{
             cursor: pointer;
+            transition: $iconDuration;
+            color: $buy;
         }
         .userInfo{
             font-family: 'Monserat';
@@ -71,6 +74,19 @@
                 font-size: 22px;
             }
         }
+    
+        .headerRightSide{
+            .icon:hover{
+                cursor: pointer;
+                transition: $iconDuration;
+                &:first-child{
+                    color: $heart;
+                }
+                &:last-child{
+                    color: $buy;
+                }
+            }
+        }
     }
 }
 
@@ -88,6 +104,18 @@
             }
         }
     
+        .headerRightSide{
+            .icon:hover{
+                cursor: pointer;
+                transition: $iconDuration;
+                &:first-child{
+                    color: $heart;
+                }
+                &:last-child{
+                    color: $buy;
+                }
+            }
+        }
     }
 }
 
@@ -102,6 +130,19 @@
             }
             .translateIcon{
                 font-size: 18px;
+            }
+        }
+    
+        .headerRightSide{
+            .icon:hover{
+                cursor: pointer;
+                transition: $iconDuration;
+                &:first-child{
+                    color: $heart;
+                }
+                &:last-child{
+                    color: $buy;
+                }
             }
         }
     }

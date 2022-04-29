@@ -19,18 +19,21 @@ const Header = () => {
     return (
         <header className={style.header}>
             <div className={style.headerLeftSide}>
-                <Link to='/' className={style.link}>
+                <Link to='/'>
                     <h3 className={style.logoName}>ReadBook</h3>
                 </Link>
                 {/* <Translate role="button" className={style.translateIcon} /> */}
             </div>
             {isAuth ? <div className={style.headerRightSide}>
-                <Link to='/favorite' className={style.link}>
+
+                <Link to='/favorite'>
                     <Heart size={20} className={`mr-4 ${style.icon}`} />
                 </Link>
-                <Link to='/cart' className={style.link}>
+                <Link to='/cart'>
                     <Cart2 size={20} className={`mr-4 ${style.icon}`} />
                 </Link>
+
+
                 <p className={style.userInfo}> Увійшов, як {user.email}</p>
                 {user.role === 'ADMIN' ? <button className={style.navigateBtn} onClick={() => { navigate(ADMIN_ROUTE) }}>Адмін</button> : null}
                 <button className={style.navigateBtn} onClick={LogOut}>Вийти</button>
