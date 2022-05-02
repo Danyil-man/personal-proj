@@ -15,8 +15,8 @@ const Favorite = () => {
     }, [])
     return (
         <div className={style.container}>
-            <h4 className={style.headText}>Обрані книги</h4>
             <div className={style.favoriteBlock}>
+                <h4>Обрані товари</h4>
                 {favorites.map((favorite) =>
                     <FavoriteCard
                         key={favorite.id}

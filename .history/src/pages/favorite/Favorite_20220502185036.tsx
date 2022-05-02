@@ -15,13 +15,11 @@ const Favorite = () => {
     }, [])
     return (
         <div className={style.container}>
-            <h4 className={style.headText}>Обрані книги</h4>
-            <div className={style.favoriteBlock}>
-                {favorites.map((favorite) =>
-                    <FavoriteCard
-                        key={favorite.id}
-                        favorite={favorite.book} />)}
-            </div>
+            <h4>Your Favorites</h4>
+            {favorites.map((favorite) =>
+                <FavoriteCard
+                    key={favorite.id}
+                    favorite={favorite.book} />)}
         </div>
     )
 }

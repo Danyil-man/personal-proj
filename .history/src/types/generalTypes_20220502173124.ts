@@ -50,7 +50,7 @@ export type UserType = {
 }
 
 export type FavoriteBookType = {
-        id: number,
+    id: number,
         name: string,
         author: string,
         price: number,
@@ -63,5 +63,5 @@ export type FavoritesType = {
     id: number,
     userId: number,
     bookId: number,
-    book:  FavoriteBookType
+    favoriteBook:  FavoriteBookType
 }

@@ -11,7 +11,7 @@ const reducerPack = combineReducers({
     books: booksReducer,
     filter: filterReducer,
     user: userReducer,
-    favorite: favoriteReducer
+    //favorite: favoriteReducer
 })
 
 type reducerPackType = typeof reducerPack

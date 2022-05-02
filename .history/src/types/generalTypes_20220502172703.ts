@@ -50,18 +50,18 @@ export type UserType = {
 }
 
 export type FavoriteBookType = {
-        id: number,
+    bookItem: {id: number,
         name: string,
         author: string,
         price: number,
         image: string,
         rating: number,
-        genreId: number
+        genreId: number}
 }
 
 export type FavoritesType = {
     id: number,
     userId: number,
     bookId: number,
-    book:  FavoriteBookType
+    favoriteBook:  FavoriteBookType
 }

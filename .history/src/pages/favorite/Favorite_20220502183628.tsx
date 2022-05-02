@@ -13,15 +13,13 @@ const Favorite = () => {
     useEffect(() => {
         dispatch(getAllFavorites(id))
     }, [])
+    console.log('FAVORITE', favorites.map(favorite => favorite))
     return (
         <div className={style.container}>
-            <h4 className={style.headText}>Обрані книги</h4>
-            <div className={style.favoriteBlock}>
-                {favorites.map((favorite) =>
-                    <FavoriteCard
-                        key={favorite.id}
-                        favorite={favorite.book} />)}
-            </div>
+            {favorites.map((favorite) =>
+                <FavoriteCard
+                    key={favorite.id}
+                    favorite={favorite.favoriteBook} />)}
         </div>
     )
 }
