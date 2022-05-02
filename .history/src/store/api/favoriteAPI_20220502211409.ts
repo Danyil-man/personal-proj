@@ -1,5 +1,5 @@
 import React from 'react';
-import {  signedAPI } from './api';
+import { signedAPI } from './api';
 
 
 export const favoriteAPI = {
@@ -9,7 +9,7 @@ export const favoriteAPI = {
     addBookToFavorite(userId: number, Id: number){
         const bookId = `${Id ? Id : ''}`
         console.log('BOOKID',bookId)
-        return  signedAPI.post(`api/favorite/${userId}`, {params: {
+        return  signedAPI.post('api/favorite/'+ userId, {params: {
             bookId
         }})
         

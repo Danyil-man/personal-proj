@@ -51,9 +51,4 @@ export const getAllFavorites = (userId: number):ThunkType => async (dispatch) =>
     dispatch(actions.getAllFavorites(response.data))
 }
 
-export const addFavorite = (userId: number, bookId:number):ThunkType => async (dispatch) => {
-     await favoriteAPI.addBookToFavorite(userId, bookId)
-
-}
-
 export default favoriteReducer

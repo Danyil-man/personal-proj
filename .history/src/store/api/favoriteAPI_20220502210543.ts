@@ -1,5 +1,5 @@
 import React from 'react';
-import {  signedAPI } from './api';
+import { signedAPI } from './api';
 
 
 export const favoriteAPI = {
