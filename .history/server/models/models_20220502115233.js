@@ -75,5 +75,4 @@ module.exports = {
   Book,
   Genre,
   Rating,
-  Favorite,
 };

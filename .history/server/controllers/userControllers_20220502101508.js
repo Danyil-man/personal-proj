@@ -25,6 +25,7 @@ class UserController {
       const token = generateJWT(user.id, user.email, user.role);
       return res.json({ token });
     } catch (e) {
+      a;
       next(ApiError.badRequest(e.message));
     }
   }

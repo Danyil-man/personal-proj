@@ -13,14 +13,10 @@ const User = sequelize.define("user", {
 
 const Cart = sequelize.define("cart", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-});
-
-const CartBook = sequelize.define("cart_book", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   isSold: { type: DataTypes.BOOLEAN, defaultValue: false },
 });
 
-const Favorite = sequelize.define("favorite", {
+const CartBook = sequelize.define("cart_book", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 });
 
@@ -47,12 +43,6 @@ const Rating = sequelize.define("rating", {
 User.hasOne(Cart);
 Cart.belongsTo(User);
 
-User.hasMany(Favorite, { onDelete: "cascade" });
-Favorite.belongsTo(User);
-
-Book.hasMany(Favorite, { onDelete: "cascade" });
-Favorite.belongsTo(Book);
-
 User.hasMany(Rating);
 Rating.belongsTo(User);
 
@@ -75,5 +65,4 @@ module.exports = {
   Book,
   Genre,
   Rating,
-  Favorite,
 };
