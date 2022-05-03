@@ -20,7 +20,6 @@ const Favorite = () => {
                 {favorites.map((favorite) =>
                     <FavoriteCard
                         key={favorite.id}
-                        favoriteId={favorite.id}
                         favorite={favorite.book} />)
                 }
             </div>

@@ -39,6 +39,7 @@ const CreateBookModal: FC<CreateBookModalType> = ({ show, onHide }) => {
             formData.append('genreId', `${genreBook.id}`)
 
         dispatch(createBook(formData))
+        console.log('FORM DATA', formData)
         setFile('')
         setName('')
         setAuthor('')
