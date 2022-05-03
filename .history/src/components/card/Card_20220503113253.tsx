@@ -25,8 +25,8 @@ const Card: FC<CardType> = ({ book }) => {
     const dispatch = useDispatch()
     const { id } = useSelector((state: AppStateType) => state.user.user)
     const { bookId } = useSelector((state: AppStateType) => state.favorite)
-    const addBookToFavorite = (idBook: number, e: any) => {
-        e.stopPropagation()
+    const addBookToFavorite = (idBook: number) => {
+        setOpenBookModal(false)
         dispatch(addFavorite(id, idBook))
     }
     return (
@@ -44,7 +44,7 @@ const Card: FC<CardType> = ({ book }) => {
                 <div className={style.interactBlock}>
                     <p>Ціна: {book.price}грн.</p>
                     <div className='d-flex'>
-                        <Heart onClick={(e: any) => addBookToFavorite(book.id, e)} className={`mr-4 ${style.icon}`} size={20} />
+                        <Heart onClick={() => addBookToFavorite(book.id)} className={`mr-4 ${style.icon}`} size={20} />
                         <Cart2 size={20} className={`${style.icon}`} />
                     </div>
                 </div>

@@ -1,13 +1,19 @@
 import React from 'react';
-import { publicAPI, signedAPI } from './api';
+import { book } from '../redux/reducers/favoriteReducer';
+import {  signedAPI } from './api';
 
 
 export const favoriteAPI = {
     getAllFavorites(userId: number){
         return  signedAPI.get(`api/favorite/${userId}`)
     },
-    addBookToFavorite(userId: number, bookId: number | string = ''){
-        return  signedAPI.post(`api/favorite/${userId}?bookId=${bookId}`)  
+    addBookToFavorite(userId: number, book: book){
+        const bookId = `${book.bookId ? book.bookId : ''}`
+        console.log('BOOKID',bookId)
+        return  signedAPI.post(`api/favorite/${userId}`, {params: {
+            bookId
+        }})
+        
     },
     removeBookFromFavorite(id: number){
         return  signedAPI.delete(`api/favorite/${id}`)

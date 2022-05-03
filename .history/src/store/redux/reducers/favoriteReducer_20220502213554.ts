@@ -53,7 +53,6 @@ export const getAllFavorites = (userId: number):ThunkType => async (dispatch) =>
 
 export const addFavorite = (userId: number, bookId:number):ThunkType => async (dispatch) => {
     const response = await favoriteAPI.addBookToFavorite(userId, bookId)
-    console.log('THUNK ID',userId, bookId )
     dispatch(actions.addFavorite(response.data))
 }
 

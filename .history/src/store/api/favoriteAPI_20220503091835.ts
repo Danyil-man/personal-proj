@@ -6,8 +6,10 @@ export const favoriteAPI = {
     getAllFavorites(userId: number){
         return  signedAPI.get(`api/favorite/${userId}`)
     },
-    addBookToFavorite(userId: number, bookId: number | string = ''){
-        return  signedAPI.post(`api/favorite/${userId}?bookId=${bookId}`)  
+    addBookToFavorite(userId: number, Id: number){
+        const bookId = `${Id ? Id : ''}`
+        return  signedAPI.post(`api/favorite/${userId}?bookId=${bookId}`)
+        
     },
     removeBookFromFavorite(id: number){
         return  signedAPI.delete(`api/favorite/${id}`)

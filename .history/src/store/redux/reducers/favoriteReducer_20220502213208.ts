@@ -4,16 +4,20 @@ import { favoriteAPI } from '../../api/favoriteAPI'
 import { AppStateType, InfernActionType } from '../store'
 import { ADD_FAVORITE, GET_FAVORITES } from '../variables/actionsType'
 
-
+export type book = {
+    bookId?: number
+}
 
 type initialStateType = {
     favorites: Array<FavoritesType>,
-    bookId: number
+    favoriteBook:  book
 }
 
 const initialState:initialStateType = {
     favorites: [],
-    bookId: 0
+    favoriteBook: {
+        bookId: undefined
+    }
 }
 
 const favoriteReducer = (state = initialState, action:ActionCreatoreType):initialStateType => {
@@ -26,7 +30,7 @@ const favoriteReducer = (state = initialState, action:ActionCreatoreType):initia
         case ADD_FAVORITE:
             return{
                 ...state,
-                bookId: action.bookId
+                favoriteBook: action.favoriteBook
             }
         default: return state
     }
@@ -40,9 +44,9 @@ const actions = {
         type: GET_FAVORITES,
         favorites
     }as const),
-    addFavorite: (bookId: number) =>({
+    addFavorite: (favoriteBook: book) =>({
         type: ADD_FAVORITE,
-        bookId
+        favoriteBook
     }as const)
 }
 
@@ -51,9 +55,8 @@ export const getAllFavorites = (userId: number):ThunkType => async (dispatch) =>
     dispatch(actions.getAllFavorites(response.data))
 }
 
-export const addFavorite = (userId: number, bookId:number):ThunkType => async (dispatch) => {
-    const response = await favoriteAPI.addBookToFavorite(userId, bookId)
-    console.log('THUNK ID',userId, bookId )
+export const addFavorite = (userId: number, favoriteBook:book):ThunkType => async (dispatch) => {
+    const response = await favoriteAPI.addBookToFavorite(userId, favoriteBook)
     dispatch(actions.addFavorite(response.data))
 }
 
