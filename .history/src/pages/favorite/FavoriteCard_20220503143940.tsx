@@ -18,6 +18,7 @@ const obj: any = {
     6: 'Бізнес',
 };
 const FavoriteCard: FC<FavoriteType> = ({ favorite }) => {
+    const { isFavorited } = useSelector((state: AppStateType) => state.favorite)
     return (
         <div className={style.card}>
             <div className={style.imgBlock}>
