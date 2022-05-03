@@ -24,6 +24,7 @@ const Card: FC<CardType> = ({ book }) => {
     const [openBookModal, setOpenBookModal] = useState(false)
     const dispatch = useDispatch()
     const { id } = useSelector((state: AppStateType) => state.user.user)
+    const { isFavorited } = useSelector((state: AppStateType) => state.favorite)
     const addBookToFavorite = (idBook: number, e: any) => {
         e.stopPropagation()
         dispatch(addFavorite(id, idBook))
