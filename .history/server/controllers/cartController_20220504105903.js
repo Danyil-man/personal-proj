@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const ApiError = require("../error/ApiError");
 const { Genre, Cart, CartBook, Book } = require("../models/models");
-const { Sequelize } = require("sequelize");
 
 class CartController {
   async getuserCart(req, res) {
@@ -48,29 +47,21 @@ class CartController {
     return res.json({ Success: true });
   }
   async buyBooksCart(req, res) {
-    try {
-      const { id } = req.body;
-      const BookArray = await Cart.findAll({
-        where: { id: id },
-        include: [
-          {
-            model: CartBook,
-            attributes: ["bookId"],
-            where: { isSold: false },
-          },
-        ],
-        raw: true,
-      });
-      const booksId = BookArray.map((book) => book["cart_books.bookId"]);
-      await CartBook.update({ isSold: true }, { where: { cartId: id } });
-      await Book.update(
-        { count: Sequelize.literal("count - 1") },
-        { where: { id: booksId } }
-      );
-      return res.json({ Success: true });
-    } catch (e) {
-      console.log(e);
-    }
+    const { id } = req.body;
+    const BookArray = await Cart.findAll({
+      where: { id: id },
+      include: [
+        {
+          model: CartBook,
+          attributes: ["bookId"],
+          where: { isSold: false },
+        },
+      ],
+      raw: true,
+    });
+    await CartBook.update({ isSold: true }, { where: { cartId: id } });
+    console.log(BookArray);
+    return res.json({ Success: true });
   }
   async getOrders(req, res) {
     const { userId } = req.params;

@@ -53,6 +53,7 @@ class FavoriteController {
       bookId: favoriteBook.bookId,
       cartId: cartId,
     });
+    console.log("CART BOOK", favoriteBook);
     return res.json(cartBook);
   }
 }

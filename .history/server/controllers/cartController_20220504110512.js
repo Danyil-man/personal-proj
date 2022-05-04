@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const ApiError = require("../error/ApiError");
 const { Genre, Cart, CartBook, Book } = require("../models/models");
-const { Sequelize } = require("sequelize");
 
 class CartController {
   async getuserCart(req, res) {
@@ -61,12 +60,8 @@ class CartController {
         ],
         raw: true,
       });
-      const booksId = BookArray.map((book) => book["cart_books.bookId"]);
       await CartBook.update({ isSold: true }, { where: { cartId: id } });
-      await Book.update(
-        { count: Sequelize.literal("count - 1") },
-        { where: { id: booksId } }
-      );
+      console.log(BookArray.map((book) => book["cart_books.bookId"]));
       return res.json({ Success: true });
     } catch (e) {
       console.log(e);

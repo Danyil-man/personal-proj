@@ -50,9 +50,10 @@ class FavoriteController {
     });
 
     const cartBook = await CartBook.create({
-      bookId: favoriteBook.bookId,
+      bookId: favoriteBook.id,
       cartId: cartId,
     });
+    console.log("CART BOOK", favoriteBook);
     return res.json(cartBook);
   }
 }
