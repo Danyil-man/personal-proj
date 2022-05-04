@@ -46,13 +46,13 @@ class FavoriteController {
     const favoriteBook = await Favorite.findOne({
       where: { id: favoriteId },
       attributes: ["bookId"],
-      raw: true,
     });
 
     const cartBook = await CartBook.create({
-      bookId: favoriteBook.bookId,
+      bookId: favoriteBook.id,
       cartId: cartId,
     });
+    console.log("CART BOOK", cartBook);
     return res.json(cartBook);
   }
 }

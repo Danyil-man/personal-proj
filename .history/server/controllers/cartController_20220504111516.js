@@ -63,10 +63,7 @@ class CartController {
       });
       const booksId = BookArray.map((book) => book["cart_books.bookId"]);
       await CartBook.update({ isSold: true }, { where: { cartId: id } });
-      await Book.update(
-        { count: Sequelize.literal("count - 1") },
-        { where: { id: booksId } }
-      );
+      await Book.update({ count: Sequelize.literal("count - 1") });
       return res.json({ Success: true });
     } catch (e) {
       console.log(e);
