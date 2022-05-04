@@ -1,0 +1,13 @@
+.container{
+    width: 100%;
+    margin: 40px 0px 40px 0px;
+    .cartBlock{
+        width: 100%;
+        
+        flex-wrap: wrap;
+        margin: 40px 0px 40px 0px;
+    }
+    .headText{
+        text-align: center;
+    }
+}

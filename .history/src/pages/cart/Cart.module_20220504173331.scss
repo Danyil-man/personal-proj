@@ -1,0 +1,15 @@
+.container{
+    width: 100%;
+    margin: 40px 0px 40px 0px;
+    .cartBlock{
+        width: 100%;
+        display: flex;
+        //flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 40px 0px 40px 0px;
+    }
+    .headText{
+        text-align: center;
+    }
+}
