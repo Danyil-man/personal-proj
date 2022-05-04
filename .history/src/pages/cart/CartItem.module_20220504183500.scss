@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+.card{
+    margin: 0px 20px 20px 20px;
+    border-radius: 20px;
+    border: 1px solid $text;
+    background-color: $white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .leftSide{
+        width: 40%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        .imgBlock{
+            width: 200px;
+            img{
+              max-width: 100%;
+              height: 100%;
+              border-radius: 14px;
+            }
+          }
+      
+        .infoBlock{
+          margin-left: 20px;
+          h6{
+            font-size: 18px;
+            font-family: "Oswald";
+            margin-bottom: 15px;
+          }
+          p{
+            font-size: 14px;
+            text-align: start;
+            font-family: "Monserat";
+          }
+        }
+    }
+
+    .rightSide{
+        width: 60%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        .interactBlock{
+            margin-right: 150px;
+            p{
+              font-size: 18px;
+              font-family: 'Oswald';
+            }
+          }
+    }
+  }
