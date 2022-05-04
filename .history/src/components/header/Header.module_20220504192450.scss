@@ -1,0 +1,108 @@
+@import '../../styles/styles.scss';
+@import '../../styles/styles.scss';
+
+.header{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $text;
+    .link{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .headerLeftSide{
+        display: flex;
+        align-items: center;
+        .logoName{
+            margin-right: 30px;
+            font-family: 'Lato-italic';
+            transition: $iconDuration;
+            &:hover{
+                color: $white;
+            }
+        }
+        .translateIcon{
+            font-size: 28px;
+        }
+        
+    }
+
+    .headerRightSide{
+        display: flex;
+        align-items: baseline;
+        .icon:hover{
+            cursor: pointer;
+        }
+        .userInfo{
+            font-family: 'Monserat';
+            font-size: 14px;
+            margin-right: 5px;
+        }
+        .navigateBtn{
+            background: none;
+            font-family: 'Monserat';
+            border-radius: 12px;
+            padding: 2px 5px;
+            font-size: 14px;
+            border: none;
+            border: 1px solid $text;
+            &:hover{
+                transition: $iconDuration;
+                background-color: $text;
+                color: $bezh;
+            }
+        }
+    }
+}
+
+//LapTop 
+@media screen and (max-width: 992px){
+    .header{
+        padding: 35px;
+        .headerLeftSide{
+            .logoName{
+                margin-right: 20px;
+                font-size: 24px;
+            }
+            .translateIcon{
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+//Tablet 
+@media screen and (max-width: 768px) {
+    .header{
+        padding: 30px;
+        .headerLeftSide{
+            .logoName{
+                margin-right: 20px;
+                font-size: 24px;
+            }
+            .translateIcon{
+                font-size: 20px;
+            }
+        }
+    
+    }
+}
+
+//Phome
+@media screen and (max-width: 600px){
+    .header{
+        padding: 20px;
+        .headerLeftSide{
+            .logoName{
+                margin-right: 15px;
+                font-size: 22px;
+            }
+            .translateIcon{
+                font-size: 18px;
+            }
+        }
+    }
+}

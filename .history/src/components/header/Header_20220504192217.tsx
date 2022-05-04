@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Header.module.scss';
-import { Cart2, Heart, Person, PersonFill } from 'react-bootstrap-icons';
+import { Cart2, Heart, Person } from 'react-bootstrap-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppStateType } from '../../store/redux/store';

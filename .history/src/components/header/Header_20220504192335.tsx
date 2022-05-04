@@ -32,7 +32,7 @@ const Header = () => {
                     <Cart2 size={20} className={`mr-4 ${style.icon}`} />
                 </Link>
                 <Link to='/profile' className={style.link}>
-                    <Person size={20} className={`mr-4 ${style.icon}`} />
+                    <Person size={25} className={`mr-4 ${style.icon}`} />
                 </Link>
                 <p className={style.userInfo}> Увійшов, як {user.email}</p>
                 {user.role === 'ADMIN' ? <button className={style.navigateBtn} onClick={() => { navigate(ADMIN_ROUTE) }}>Адмін</button> : null}
