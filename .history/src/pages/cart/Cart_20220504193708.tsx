@@ -20,11 +20,8 @@ const Cart = () => {
         <div className={style.container}>
             <h4 className={style.headText}>Моя корзина</h4>
             <div className={style.cartBlock}>
-                {cartBook.map(cartItem => cartItem.map(cartBook => <CartItem key={cartBook.id} cartBook={cartBook} />))
+                {cartBook.map(cartItem => cartItem.map(cartBook => <CartItem key={cartBook.id} cartBook={cartBook} cartLength={cartLength} />))
                 }
-            </div>
-            <div className={style.cartFooter}>
-                <p>Кількість товарів в корзині {cartLength}</p>
             </div>
         </div>
     )

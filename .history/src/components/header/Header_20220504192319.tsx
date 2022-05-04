@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './Header.module.scss';
-import { Cart2, Heart, Person, PersonFill } from 'react-bootstrap-icons';
+import { Cart2, Heart, PersonFill } from 'react-bootstrap-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppStateType } from '../../store/redux/store';
@@ -32,7 +32,7 @@ const Header = () => {
                     <Cart2 size={20} className={`mr-4 ${style.icon}`} />
                 </Link>
                 <Link to='/profile' className={style.link}>
-                    <Person size={20} className={`mr-4 ${style.icon}`} />
+                    <PersonFill size={20} className={`mr-4 ${style.icon}`} />
                 </Link>
                 <p className={style.userInfo}> Увійшов, як {user.email}</p>
                 {user.role === 'ADMIN' ? <button className={style.navigateBtn} onClick={() => { navigate(ADMIN_ROUTE) }}>Адмін</button> : null}

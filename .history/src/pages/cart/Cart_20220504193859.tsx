@@ -23,9 +23,6 @@ const Cart = () => {
                 {cartBook.map(cartItem => cartItem.map(cartBook => <CartItem key={cartBook.id} cartBook={cartBook} />))
                 }
             </div>
-            <div className={style.cartFooter}>
-                <p>Кількість товарів в корзині {cartLength}</p>
-            </div>
         </div>
     )
 }
