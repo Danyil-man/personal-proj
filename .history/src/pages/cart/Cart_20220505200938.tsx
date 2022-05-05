@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCart } from '../../store/redux/reducers/cartReducer';
 import { AppStateType } from '../../store/redux/store';
 import CartItem from './CartItem';
 import style from './Cart.module.scss'
 import { CartBookType, CartType } from '../../types/generalTypes';
-import BuyModal from '../../modals/buyModal/BuyModal';
 
 const Cart = () => {
     const dispatch = useDispatch()
-    const [isBuy, setIsBuy] = useState(false)
     const { id } = useSelector((state: AppStateType) => state.user.user)
     const { cart, deleteId } = useSelector((state: AppStateType) => state.cart)
     const cartBook = cart.map(cartItem => cartItem.cart_books)
@@ -39,7 +37,6 @@ const Cart = () => {
                 </div>
                 <button className={style.buyBtn}>Оформити замовлення</button>
             </div>
-            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(!isBuy)} />}
         </div>
     )
 }
