@@ -32,18 +32,12 @@
                 }
             }
         }
+        .buyBlock{
             .buyBtn{
-                font-family: 'Monserat';
-                font-size: 20px;
-                padding: 5px 15px;
-                border-radius: 18px;
                 background: none;
-                border: $standartBoard;
-                &:hover{
-                    transition: $iconDuration;
-                    background-color: $text;
-                    color: $bezh;
-                }
+                border: none;
             }
+        }
+       
     }
 }

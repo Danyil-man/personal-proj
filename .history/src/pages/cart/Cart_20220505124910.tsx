@@ -31,11 +31,8 @@ const Cart = () => {
                 }
             </div>
             <div className={style.cartFooter}>
-                <div className={style.infoBlock}>
-                    <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength}</span></p>
-                    <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{cartPrice}</span></p>
-                </div>
-                <button className={style.buyBtn}>Купити</button>
+                <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength}</span></p>
+                <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{cartPrice}</span></p>
             </div>
         </div>
     )

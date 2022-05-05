@@ -41,8 +41,9 @@
                 border: $standartBoard;
                 &:hover{
                     transition: $iconDuration;
-                    background-color: $text;
-                    color: $bezh;
+                    background-color: $buy;
+                    color: $white;
+                    border: none;
                 }
             }
     }

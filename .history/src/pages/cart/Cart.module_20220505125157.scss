@@ -14,36 +14,22 @@
     }
     .cartFooter{
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: center;
         .infoBlock{
             display: flex;
-            justify-content: center;
             .cartInfoItem{
                 margin-right: 20px;
                 color: $text;
                 font-family: 'Monserat';
                 font-size: 18px;
-                &:last-child{
-                    margin-right: 0px;
-                }
                 .counter{
                     font-weight: bold;
                 }
             }
         }
-            .buyBtn{
-                font-family: 'Monserat';
-                font-size: 20px;
-                padding: 5px 15px;
-                border-radius: 18px;
-                background: none;
-                border: $standartBoard;
-                &:hover{
-                    transition: $iconDuration;
-                    background-color: $text;
-                    color: $bezh;
-                }
-            }
+        .buyBlock{
+
+        }
+       
     }
 }

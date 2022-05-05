@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+@import '../../styles/variables.scss';
+.container{
+    width: 100%;
+    margin: 40px 0px 40px 0px;
+    padding: 0 40px 0px 40px;
+    .cartBlock{
+        width: 100%;
+        margin: 40px 0px 40px 0px;
+       
+    }
+    .headText{
+        text-align: center;
+    }
+    .cartFooter{
+        display: flex;
+        justify-content: center;
+        .cartInfoItem{
+            margin-right: 10px;
+            color: $text;
+        }
+    }
+}

@@ -37,12 +37,10 @@
                 font-size: 20px;
                 padding: 5px 15px;
                 border-radius: 18px;
-                background: none;
+                background-color: $white;
                 border: $standartBoard;
                 &:hover{
-                    transition: $iconDuration;
-                    background-color: $text;
-                    color: $bezh;
+
                 }
             }
     }
