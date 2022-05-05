@@ -39,7 +39,7 @@ const Cart = () => {
                 </div>
                 <button className={style.buyBtn}>Оформити замовлення</button>
             </div>
-            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(!isBuy)} />}
+            {isBuy && <BuyModal />}
         </div>
     )
 }
