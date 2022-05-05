@@ -26,7 +26,6 @@ const Cart = () => {
         dispatch(getAllCart(id))
     }, [deleteId, cartId])
 
-
     return (
         <div className={style.container}>
             <h4 className={style.headText}>Моя корзина</h4>
@@ -41,7 +40,7 @@ const Cart = () => {
                 </div>
                 <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button>
             </div>
-            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} />}
+            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(false)} />}
         </div>
     )
 }

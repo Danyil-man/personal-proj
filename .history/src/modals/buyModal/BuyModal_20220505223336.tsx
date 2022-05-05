@@ -54,7 +54,7 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, onHide }) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div>
+                    <form onSubmit={sendEmail}>
                         <label>Ім&#39;я</label>
                         <input type="text"
                             name="name" onChange={(e: any) => handleChange(e)} />
@@ -67,8 +67,8 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, onHide }) => {
                         <label>Місто</label>
                         <input type="text"
                             name="city" onChange={handleChange} />
-                        <button onClick={sendEmail}>Купити</button>
-                    </div>
+                        <button type='submit'>Купити</button>
+                    </form>
 
 
                 </Modal.Body>
