@@ -55,15 +55,12 @@ const BuyModal: FC<BuyModalType> = ({ show, onHide }) => {
                         <label>Ім&#39;я</label>
                         <input type="text"
                             name="name" onChange={(e: any) => handleChange(e)} />
-                        <label>Ел.пошта</label>
+                        <label>Email</label>
                         <input type="еуче"
                             name="email" onChange={handleChange} />
                         <label>Вулиця</label>
-                        <input type="text"
-                            name="street" onChange={handleChange} />
-                        <label>Місто</label>
-                        <input type="text"
-                            name="city" onChange={handleChange} />
+                        <input type="email"
+                            name="email" onChange={handleChange} />
                         <button type='submit'>Купити</button>
                     </form>
 

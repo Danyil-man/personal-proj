@@ -37,9 +37,9 @@ const Cart = () => {
                     <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength}</span></p>
                     <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{cartPrice}</span></p>
                 </div>
-                <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button>
+                <button onClick={() => setIsBuy(!isBuy)} className={style.buyBtn}>Оформити замовлення</button>
             </div>
-            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(false)} />}
+            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(!isBuy)} />}
         </div>
     )
 }
