@@ -9,18 +9,16 @@ const Profile = () => {
     const dispatch = useDispatch()
     const { id } = useSelector((state: AppStateType) => state.user.user)
     const { orders } = useSelector((state: AppStateType) => state.order)
-    const orderItems = orders.map(order => order.cart_books)
-    const orderLength = orderItems.map(orderLength => orderLength.length)
     useEffect(() => {
         dispatch(getAllOrders(id))
     }, [])
-    console.log(orderLength);
+    console.log(orders);
 
     return (
         <div className={style.container}>
             <h4 className={style.headText}>Мої замовлення</h4>
             <div className={style.ordersBlock}>
-                {orderItems.map(order => order.map(item => <Orders key={item.id} item={item} />))}
+                {orders.map(order => <Orders order={order} />)}
             </div>
         </div>
     )
