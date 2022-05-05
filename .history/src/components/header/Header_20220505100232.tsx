@@ -4,7 +4,7 @@ import { Cart2, Heart, Person, PersonFill } from 'react-bootstrap-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppStateType } from '../../store/redux/store';
-import { ADMIN_ROUTE, CART_ROUTE, FAVORITE_ROUTE, HOME_ROUTE, PROFILE_ROUTE } from '../../routings/pathVariables';
+import { ADMIN_ROUTE, CART_ROUTE, FAVORITE_ROUTE, PROFILE_ROUTE } from '../../routings/pathVariables';
 import { logOut } from '../../store/redux/reducers/userReducer';
 import { adminPanel, btnLogOut, signedAs, storeName } from '../../consts/header';
 
@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <header className={style.header}>
             <div className={style.headerLeftSide}>
-                <Link to={HOME_ROUTE} className={style.link}>
+                <Link to='/' className={style.link}>
                     <h3 className={style.logoName}>{storeName}</h3>
                 </Link>
                 {/* <Translate role="button" className={style.translateIcon} /> */}

@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { CloseButton } from 'react-bootstrap';
 import { Cart2, CloudSleet, XCircle } from 'react-bootstrap-icons';
 import { useDispatch } from 'react-redux';
-import { genreObj } from '../../consts/genre';
 import { removeBookCart } from '../../store/redux/reducers/cartReducer';
 import { CartType } from '../../types/generalTypes';
 import style from './CartItem.module.scss'
@@ -25,7 +24,7 @@ const CartItem: FC<CartItemType> = ({ cartBook }) => {
                 <div className={style.infoBlock}>
                     <h6>{cartBook.book.name}</h6>
                     <p>Автор: {cartBook.book.author}</p>
-                    <p>Жанр: {genreObj[cartBook.book.genreId]}</p>
+                    <p>Жанр: {[cartBook.book.genreId]}</p>
                 </div>
             </div>
             <div className={style.rightSide}>
