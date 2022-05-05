@@ -20,7 +20,7 @@ const Profile = () => {
         <div className={style.container}>
             <h4 className={style.headText}>Мої замовлення</h4>
             <div className={style.ordersBlock}>
-                {orderItems.map(order => order.map(item => <Orders key={item.id} item={item} />))}
+                {orderItems.map(order => order.map(items => <Orders key={items.id} items={items} />))}
             </div>
         </div>
     )

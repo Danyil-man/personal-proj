@@ -99,8 +99,12 @@ export type UserCartItemsType = {
     book: CartBookType
 }
 
-export type OrderItemsType = {
+export type UserCartType = {
     id: number
     userId: number
     cart_books: Array<UserCartItemsType>
+}
+
+export type OrderItemsType = {
+   userCart: UserCartType
 }
