@@ -12,6 +12,7 @@ const Cart = () => {
     const { cart, deleteId } = useSelector((state: AppStateType) => state.cart)
     const cartBook = cart.map(cartItem => cartItem.cart_books)
     const cartLength = cartBook.map(cartItem => cartItem.length)
+    const bookPrice = cartBook.map(cartItem => cartItem.map(cartItem => cartItem.book))
     const totalPrice = () => {
         const cartPrice = cartBook.map(cartItem => cartItem.reduce((sum: number, book: CartType) => book.book.price + sum, 0))
         return { cartPrice }

@@ -4,7 +4,6 @@ import { getAllCart } from '../../store/redux/reducers/cartReducer';
 import { AppStateType } from '../../store/redux/store';
 import CartItem from './CartItem';
 import style from './Cart.module.scss'
-import { CartBookType, CartType } from '../../types/generalTypes';
 
 const Cart = () => {
     const dispatch = useDispatch()
@@ -12,12 +11,6 @@ const Cart = () => {
     const { cart, deleteId } = useSelector((state: AppStateType) => state.cart)
     const cartBook = cart.map(cartItem => cartItem.cart_books)
     const cartLength = cartBook.map(cartItem => cartItem.length)
-    const totalPrice = () => {
-        const cartPrice = cartBook.map(cartItem => cartItem.reduce((sum: number, book: CartType) => book.book.price + sum, 0))
-        return { cartPrice }
-    }
-    const { cartPrice } = totalPrice()
-
     useEffect(() => {
         dispatch(getAllCart(id))
     }, [deleteId])
@@ -32,7 +25,7 @@ const Cart = () => {
             </div>
             <div className={style.cartFooter}>
                 <p className={style.cartCount}>Кількість товарів в корзині: {cartLength}</p>
-                <p className={style.cartCount}>Загальна сума: {cartPrice}</p>
+                <p className={style.cartCount}>Загальна сума: {cartLength}</p>
             </div>
         </div>
     )
