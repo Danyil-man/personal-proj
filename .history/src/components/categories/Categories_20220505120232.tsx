@@ -6,7 +6,7 @@ import { GenresType } from '../../types/generalTypes';
 import style from './Categories.module.scss'
 
 type Categories = {
-    filterGenres: (filterID: number) => void
+    filterGenres: (filyerID: number) => void
 }
 
 const Categories: FC<Categories> = ({ filterGenres }) => {
@@ -16,12 +16,13 @@ const Categories: FC<Categories> = ({ filterGenres }) => {
     const getAll = (filterAll = '' || 0, nameAll = '', priceAll = '') => {
         dispatch(filterGenres(0))
         dispatch(getAllBooks(filterAll, page, limit, nameAll, priceAll))
+        console.log('all');
+
     }
     return (
         <div className={style.container}>
             <ul className={style.ulBlock}>
-                <li onClick={() => getAll(filterId, filteredName, filteredPrice)}
-                    className={filterId === 0 || '' ? style.active : style.liBlock}>Усі книги</li>
+                <li onClick={() => getAll(filterId, filteredName, filteredPrice)} className={style.liBlock}>Всі книги</li>
                 {genres.map((genre) => (
                     <li onClick={() => filterGenres(genre.id)}
                         className={`
