@@ -33,9 +33,7 @@ const CartItem: FC<CartItemType> = ({ cartBook }) => {
                     <p>{cartBook.book.price}грн.</p>
                 </div>
                 <div className={style.closeBlock}>
-                    <XCircle
-                        className={style.closeBtn}
-                        onClick={() => deleteCartBook(cartBook.id)} role='button' size={30} />
+                    <XCircle className={style.closeBtn} onClick={() => deleteCartBook(cartBook.id)} role='button' size={25} />
                 </div>
             </div>
 

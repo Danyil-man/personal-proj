@@ -28,12 +28,12 @@
         .infoBlock{
           margin-left: 20px;
           h6{
-            font-size: 20px;
+            font-size: 18px;
             font-family: "Oswald";
             margin-bottom: 15px;
           }
           p{
-            font-size: 16px;;
+            font-size: 14px;;
             font-family: "Monserat";
           }
         }
@@ -47,13 +47,13 @@
         .interactBlock{
             margin-right: 150px;
             p{
-              font-size: 20px;
+              font-size: 18px;
               font-family: 'Oswald';
             }
           }
           .closeBtn:hover{
             transition: $iconDuration;
-            transform: rotate(90deg);
+            transform: rotate(360deg);
           }
         
     }

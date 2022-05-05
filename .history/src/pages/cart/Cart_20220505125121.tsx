@@ -35,7 +35,9 @@ const Cart = () => {
                     <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength}</span></p>
                     <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{cartPrice}</span></p>
                 </div>
-                <button className={style.buyBtn}>Купити</button>
+                <div className={style.buyBlock}>
+                    <button>Замовити</button>
+                </div>
             </div>
         </div>
     )
