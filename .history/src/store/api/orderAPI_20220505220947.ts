@@ -8,6 +8,6 @@ export const orderAPI = {
         return signedAPI.get(`api/cart/order/${userId}`)
     },
     createOrder(cartId: number){
-        return signedAPI.post(`api/cart/order/${cartId}`,{id: cartId} )
+        return signedAPI.post(`api/cart/order/${cartId}`)
     }
 }

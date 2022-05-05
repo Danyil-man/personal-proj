@@ -57,8 +57,6 @@ export const getAllOrders = (userId: number):ThunkType => async (dispatch) => {
 export const createOrder = (cartId: number):ThunkType => async (dispatch) => {
     const response = await orderAPI.createOrder(cartId)
     dispatch(actions.createOrder(response.data))
-    console.log('THUNK CART ID',cartId);
-    
 }
 
 export default orderReducer

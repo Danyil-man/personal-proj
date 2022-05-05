@@ -15,7 +15,6 @@ const Cart = () => {
     const { cartId } = useSelector((state: AppStateType) => state.order)
     const cartBook = cart.map(cartItem => cartItem.cart_books)
     const cartLength = cartBook.map(cartItem => cartItem.length)
-    const userCartId = cartBook.map(cartItem => cartItem.map(cartBook => cartBook.cartId))
     const totalPrice = () => {
         const cartPrice = cartBook.map(cartItem => cartItem.reduce((sum: number, book: CartType) => book.book.price + sum, 0))
         return { cartPrice }
@@ -41,7 +40,7 @@ const Cart = () => {
                 </div>
                 <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button>
             </div>
-            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} />}
+            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(false)} />}
         </div>
     )
 }

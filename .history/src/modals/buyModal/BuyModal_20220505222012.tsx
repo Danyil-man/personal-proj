@@ -3,18 +3,13 @@ import style from './BuyModal.module.scss'
 import emailjs from '@emailjs/browser'
 import { Field, Form, Formik } from 'formik';
 import { Button, Modal } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { createOrder } from '../../store/redux/reducers/orderReducer';
 
 type BuyModalType = {
     show: boolean
     onHide: () => void
-    cartId: number
 }
 
-const BuyModal: FC<BuyModalType> = ({ show, cartId, onHide }) => {
-    const dispatch = useDispatch()
-
+const BuyModal: FC<BuyModalType> = ({ show, onHide }) => {
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -23,14 +18,15 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, onHide }) => {
     })
 
     const sendEmail = (e: any) => {
-        dispatch(createOrder(cartId))
         e.preventDefault();
+
         emailjs.send('service_hxod138', 'template_ioxwesk', values, 'hIa6EbQItOhL_Sxmg')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
             });
+
     };
 
     const handleChange = (e: any) => {
@@ -39,6 +35,7 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, onHide }) => {
             [e.target.name]: e.target.value
         }))
     }
+    console.log(values)
 
 
     return (
@@ -54,7 +51,7 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, onHide }) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div>
+                    <form onSubmit={sendEmail}>
                         <label>Ім&#39;я</label>
                         <input type="text"
                             name="name" onChange={(e: any) => handleChange(e)} />
@@ -67,8 +64,8 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, onHide }) => {
                         <label>Місто</label>
                         <input type="text"
                             name="city" onChange={handleChange} />
-                        <button onClick={sendEmail}>Купити</button>
-                    </div>
+                        <button type='submit'>Купити</button>
+                    </form>
 
 
                 </Modal.Body>

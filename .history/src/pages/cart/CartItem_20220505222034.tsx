@@ -12,12 +12,11 @@ type CartItemType = {
 }
 
 const CartItem: FC<CartItemType> = ({ cartBook }) => {
-
     const dispatch = useDispatch()
     const deleteCartBook = (bookId: number) => {
         dispatch(removeBookCart(bookId))
     }
-
+    export const cartId = cartBook.cartId
 
     return (
         <div className={style.card}>
