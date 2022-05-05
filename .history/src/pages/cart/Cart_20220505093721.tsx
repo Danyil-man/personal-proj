@@ -24,7 +24,7 @@ const Cart = () => {
                 }
             </div>
             <div className={style.cartFooter}>
-                <p className={style.cartCount}>Кількість товарів в корзині: {cartLength}</p>
+                <p>Кількість товарів в корзині: {cartLength}</p>
             </div>
         </div>
     )
