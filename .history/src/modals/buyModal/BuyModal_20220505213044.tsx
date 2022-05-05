@@ -12,15 +12,13 @@ type BuyModalType = {
 const BuyModal: FC<BuyModalType> = ({ show, onHide }) => {
     const [values, setValues] = useState({
         name: '',
-        email: '',
-        street: '',
-        city: ''
+        email: ''
     })
 
     const sendEmail = (e: any) => {
         e.preventDefault();
 
-        emailjs.send('service_hxod138', 'template_ioxwesk', values, 'hIa6EbQItOhL_Sxmg')
+        emailjs.send('service_hxod138', 'template_ioxwesk', values)
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
@@ -35,7 +33,7 @@ const BuyModal: FC<BuyModalType> = ({ show, onHide }) => {
             [e.target.name]: e.target.value
         }))
     }
-    console.log(values)
+
 
 
     return (
@@ -51,23 +49,14 @@ const BuyModal: FC<BuyModalType> = ({ show, onHide }) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <form onSubmit={sendEmail}>
-                        <label>Ім&#39;я</label>
-                        <input type="text"
-                            name="name" onChange={(e: any) => handleChange(e)} />
-                        <label>Ел.пошта</label>
-                        <input type="еуче"
-                            name="email" onChange={handleChange} />
-                        <label>Вулиця</label>
-                        <input type="text"
-                            name="street" onChange={handleChange} />
-                        <label>Місто</label>
-                        <input type="text"
-                            name="city" onChange={handleChange} />
-                        <button type='submit'>Купити</button>
-                    </form>
 
-
+                    <label>Name</label>
+                    <Field type="text"
+                        name="name" />
+                    <label>Email</label>
+                    <input type="email"
+                        name="email" />
+                    <button type='submit'>Купити</button>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={onHide}>Закрити</Button>

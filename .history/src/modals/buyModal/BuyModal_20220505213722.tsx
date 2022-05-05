@@ -12,9 +12,7 @@ type BuyModalType = {
 const BuyModal: FC<BuyModalType> = ({ show, onHide }) => {
     const [values, setValues] = useState({
         name: '',
-        email: '',
-        street: '',
-        city: ''
+        email: ''
     })
 
     const sendEmail = (e: any) => {
@@ -52,18 +50,12 @@ const BuyModal: FC<BuyModalType> = ({ show, onHide }) => {
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={sendEmail}>
-                        <label>Ім&#39;я</label>
+                        <label>Name</label>
                         <input type="text"
                             name="name" onChange={(e: any) => handleChange(e)} />
-                        <label>Ел.пошта</label>
-                        <input type="еуче"
+                        <label>Email</label>
+                        <input type="email"
                             name="email" onChange={handleChange} />
-                        <label>Вулиця</label>
-                        <input type="text"
-                            name="street" onChange={handleChange} />
-                        <label>Місто</label>
-                        <input type="text"
-                            name="city" onChange={handleChange} />
                         <button type='submit'>Купити</button>
                     </form>
 
