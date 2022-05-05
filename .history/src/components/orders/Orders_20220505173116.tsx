@@ -8,7 +8,7 @@ type OrderType = {
 }
 
 const Orders: FC<OrderType> = ({ item }) => {
-
+    console.log(item.createdAt);
 
     return (
         <div className={style.card}>
@@ -20,7 +20,6 @@ const Orders: FC<OrderType> = ({ item }) => {
                 <p className={style.subItems}>Автор: {item.book.author}</p>
                 <p className={style.subItems}>Жанр: {genreObj[item.book.genreId]}</p>
                 <p className={style.subItems}>Ціна: {item.book.price}грн.</p>
-                <p className={style.subItems}>Дата покупки: {item.createdAt} </p>
             </div>
         </div>
     )

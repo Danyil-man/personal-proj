@@ -19,7 +19,7 @@ const Profile = () => {
     return (
         <div className={style.container}>
             <h4 className={style.headText}>Мої замовлення</h4>
-            <p className={style.orderInfo}>Всього було замовлено товарів: {orderLength}  </p>
+            <p>Всього замовлених товарів {orderLength}</p>
             <div className={style.ordersBlock}>
                 {orderItems.map(order => order.map(item => <Orders key={item.id} item={item} />))}
             </div>
