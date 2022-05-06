@@ -34,7 +34,7 @@
         display: flex;
         align-items: center;
         .icon{
-            margin-right: 20px;
+            margin-right: 10px;
             &:hover{
                 cursor: pointer;
             }
@@ -59,9 +59,6 @@
             }
         }
     }
-    .burderMenu{
-        display: none;
-    }
 }
 
 //LapTop 
@@ -80,11 +77,8 @@
         .headerRightSide{
             display: flex;
             align-items: center;
-            .icon{
-                margin-right: 15px;
-                &:hover{
-                    cursor: pointer;
-                }
+            .icon:hover{
+                cursor: pointer;
             }
             .userInfo{
                 font-family: 'Monserat';
@@ -122,12 +116,6 @@
                 font-size: 20px;
             }
         }
-        .burderMenu{
-            display: block;
-        }
-        .headerRightSide{
-           display: none;
-        }
     
     }
 }
@@ -144,12 +132,6 @@
             .translateIcon{
                 font-size: 18px;
             }
-        }
-        .burderMenu{
-            display: block;
-        }
-        .headerRightSide{
-           display: none;
         }
     }
 }

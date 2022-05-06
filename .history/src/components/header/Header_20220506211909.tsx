@@ -45,13 +45,13 @@ const Header = () => {
                         <Dropdown.Toggle variant="dark" id="dropdown-basic">
 
                         </Dropdown.Toggle>
-                        <Dropdown.Menu variant='dark'>
+                        <Dropdown.Menu className='dropdown-menu-dark'>
                             {user.role === 'ADMIN' ? <Dropdown.Item onClick={() => { navigate(ADMIN_ROUTE) }}>{adminPanel}</Dropdown.Item> : null}
-                            <Dropdown.Item onClick={() => { navigate(FAVORITE_ROUTE) }} >Обрані</Dropdown.Item>
-                            <Dropdown.Item onClick={() => { navigate(CART_ROUTE) }} >Корзина</Dropdown.Item>
-                            <Dropdown.Item onClick={() => { navigate(PROFILE_ROUTE) }} >Профіль</Dropdown.Item>
+                            <Dropdown.Item >Обрані</Dropdown.Item>
+                            <Dropdown.Item >Корзина</Dropdown.Item>
+                            <Dropdown.Item >Замовлення</Dropdown.Item>
                             <Dropdown.Divider />
-                            <Dropdown.Item onClick={LogOut}>Вийти</Dropdown.Item>
+                            <Dropdown.Item >Вийти</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>

@@ -51,7 +51,7 @@ const Header = () => {
                             <Dropdown.Item onClick={() => { navigate(CART_ROUTE) }} >Корзина</Dropdown.Item>
                             <Dropdown.Item onClick={() => { navigate(PROFILE_ROUTE) }} >Профіль</Dropdown.Item>
                             <Dropdown.Divider />
-                            <Dropdown.Item onClick={LogOut}>Вийти</Dropdown.Item>
+                            <Dropdown.Item >Вийти</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
