@@ -11,7 +11,6 @@
     }
     .headText{
         text-align: center;
-        font-family: 'Monserat';
     }
     .cartFooter{
         display: flex;
@@ -47,31 +46,11 @@
                 }
             }
             .emptyBlock{
-                display: flex;
-                justify-content: center;
-                text-align: center;
-                .title{
-                    font-family: 'Monserat';
-                }
-                .subTitle{
-                    font-family: 'Monserat';
-                    margin: 10px 0px 30px 0px;
-                }
-                .homeBtn{
-                    background: none;
-                    border: $standartBoard;
-                    padding: 5px 15px;
-                    border-radius: 16px;
-                    font-size: 18px;
-                    font-family: 'Monserat';
-                    &:hover{
-                        transition: $iconDuration;
-                        background-color: $text;
-                        color: $bezh;
-                    }
-                }
+                width: 100%;
                 .emptyCartBlock{
-                   width: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
                     .imgBlock{
                         width: 100%;
                         max-width: 500px;

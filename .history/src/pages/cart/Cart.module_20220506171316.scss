@@ -64,11 +64,6 @@
                     border-radius: 16px;
                     font-size: 18px;
                     font-family: 'Monserat';
-                    &:hover{
-                        transition: $iconDuration;
-                        background-color: $text;
-                        color: $bezh;
-                    }
                 }
                 .emptyCartBlock{
                    width: 100%;

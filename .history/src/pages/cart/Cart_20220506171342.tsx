@@ -51,7 +51,7 @@ const Cart = () => {
                                 <img className={style.image} src="https://res.cloudinary.com/wunu/image/upload/v1651844844/personalproject/empty-cart_oesvoo.png" alt="empty-cart" />
                             </div>
                             <h4 className={style.title}>Ваша корзина пуста</h4>
-                            <h6 className={style.subTitle} >Перейдіть на головну, щоб замовити товар.</h6>
+                            <h6 className={style.subTitle} >Перейдіть на головну, щоб замовити товар!</h6>
                             <button className={style.homeBtn} onClick={() => navigate(HOME_ROUTE)}>На головну</button>
                         </div>
                     </div>}

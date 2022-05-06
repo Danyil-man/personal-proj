@@ -55,20 +55,10 @@
                 }
                 .subTitle{
                     font-family: 'Monserat';
-                    margin: 10px 0px 30px 0px;
+                    margin-top: 15px;
                 }
                 .homeBtn{
-                    background: none;
-                    border: $standartBoard;
-                    padding: 5px 15px;
-                    border-radius: 16px;
-                    font-size: 18px;
                     font-family: 'Monserat';
-                    &:hover{
-                        transition: $iconDuration;
-                        background-color: $text;
-                        color: $bezh;
-                    }
                 }
                 .emptyCartBlock{
                    width: 100%;
