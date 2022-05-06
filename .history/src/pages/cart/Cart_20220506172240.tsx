@@ -36,26 +36,19 @@ const Cart = () => {
     return (
         <div className={style.container}>
             <h3 className={style.headText}>Моя корзина</h3>
-            {cartLength[0] ?
-                <>
-                    <div className={style.cartBlock}>
-                        {cartBook.map(cartItem => cartItem.map(cartBook => <CartItem key={cartBook.id} cartBook={cartBook} />))
-                        }
-                    </div>
-                    <div className={style.cartFooter}>
-                        <div className={style.infoBlock}>
-                            <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength[0] ? cartLength[0] : 0}</span></p>
-                            <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{totalCartPrice ? totalCartPrice : 0}</span></p>
-                        </div>
-                        <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button>
-                    </div>
-                </> : <EmptyBlock
-                    title={'Ваша корзина пуста'}
-                    subTitle={'Перейдіть на головну, щоб замовити товар.'}
-                    image={'https://res.cloudinary.com/wunu/image/upload/v1651844844/personalproject/empty-cart_oesvoo.png'} />
-            }
+            <div className={style.cartBlock}>
+                {cartBook.map(cartItem => cartItem.map(cartBook => <CartItem key={cartBook.id} cartBook={cartBook} />))
+                }
+            </div>
+            <div className={style.cartFooter}>
+                {cartLength[0] ? <> <div className={style.infoBlock}>
+                    <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength[0] ? cartLength[0] : 0}</span></p>
+                    <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{totalCartPrice ? totalCartPrice : 0}</span></p>
+                </div>
+                    <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button></>
+                    : <EmptyBlock title={'Ваша корзина пуста'} subTitle={'Перейдіть на головну, щоб замовити товар.'} image={'https://res.cloudinary.com/wunu/image/upload/v1651844844/personalproject/empty-cart_oesvoo.png'} />}
 
-
+            </div>
             {isBuy && <BuyModal
                 show={isBuy}
                 onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} totalCartPrice={totalCartPrice}

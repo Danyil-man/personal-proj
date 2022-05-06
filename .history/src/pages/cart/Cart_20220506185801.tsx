@@ -49,13 +49,10 @@ const Cart = () => {
                         </div>
                         <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button>
                     </div>
-                </> : <EmptyBlock
-                    title={'Ваша корзина пуста'}
-                    subTitle={'Перейдіть на головну, щоб замовити товар.'}
-                    image={'https://res.cloudinary.com/wunu/image/upload/v1651844844/personalproject/empty-cart_oesvoo.png'} />
-            }
+                    : <EmptyBlock title={'Ваша корзина пуста'} subTitle={'Перейдіть на головну, щоб замовити товар.'} image={'https://res.cloudinary.com/wunu/image/upload/v1651844844/personalproject/empty-cart_oesvoo.png'} />}
+                </>
 
-
+                
             {isBuy && <BuyModal
                 show={isBuy}
                 onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} totalCartPrice={totalCartPrice}
