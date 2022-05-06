@@ -19,8 +19,6 @@ const Favorite = () => {
     return (
         <div className={style.container}>
             <h4 className={style.headText}>Мої обрані книги</h4>
-            {favorites.length ? <p className={style.orderInfo}>Всього товарів в обраних: {favorites.length}</p> : null}
-
             <div className={style.favoriteBlock}>
                 {favorites.length ? <> {favorites.map((favorite) =>
                     <FavoriteCard
