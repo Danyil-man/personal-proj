@@ -14,6 +14,7 @@ const Profile = () => {
     useEffect(() => {
         dispatch(getAllOrders(id))
     }, [])
+    console.log('order length', orderLength[0]);
 
     return (
         <div className={style.container}>

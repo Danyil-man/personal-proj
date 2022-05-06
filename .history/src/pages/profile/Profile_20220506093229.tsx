@@ -14,11 +14,12 @@ const Profile = () => {
     useEffect(() => {
         dispatch(getAllOrders(id))
     }, [])
+    console.log(orderLength);
 
     return (
         <div className={style.container}>
             <h4 className={style.headText}>Мої замовлення</h4>
-            <p className={style.orderInfo}>Всього було замовлено товарів: {orderLength[0]}</p>
+            <p className={style.orderInfo}>Всього було замовлено товарів: {orderLength[0]}  </p>
             <div className={style.ordersBlock}>
                 {orderItems.map(order => order.map(item => <Orders key={item.id} item={item} />))}
             </div>

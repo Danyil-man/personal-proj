@@ -1,5 +1,5 @@
 import { ThunkAction } from 'redux-thunk';
-import { OrderItemsType } from '../../../types/generalTypes';
+import { CartItemsType, OrderItemsType } from '../../../types/generalTypes';
 import { cartAPI } from '../../api/cartAPI';
 import { orderAPI } from '../../api/orderAPI';
 import { AppStateType, InfernActionType } from '../store';

@@ -44,11 +44,7 @@ const Cart = () => {
                 </div>
                 <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button>
             </div>
-            {isBuy && <BuyModal
-                show={isBuy}
-                onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} totalCartPrice={totalCartPrice}
-                orders={cartBook.map(cartItem => cartItem)}
-            />}
+            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} totalCartPrice={totalCartPrice} />}
         </div>
     )
 }
