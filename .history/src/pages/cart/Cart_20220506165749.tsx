@@ -6,13 +6,10 @@ import CartItem from './CartItem';
 import style from './Cart.module.scss'
 import { CartBookType, CartType } from '../../types/generalTypes';
 import BuyModal from '../../modals/buyModal/BuyModal';
-import { useNavigate } from 'react-router-dom';
-import { HOME_ROUTE } from '../../routings/pathVariables';
 
 
 const Cart = () => {
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const [isBuy, setIsBuy] = useState(false)
     const { id } = useSelector((state: AppStateType) => state.user.user)
     const { cart, deleteId } = useSelector((state: AppStateType) => state.cart)
@@ -34,7 +31,7 @@ const Cart = () => {
 
     return (
         <div className={style.container}>
-            <h3 className={style.headText}>Моя корзина</h3>
+            <h4 className={style.headText}>Моя корзина</h4>
             <div className={style.cartBlock}>
                 {cartBook.map(cartItem => cartItem.map(cartBook => <CartItem key={cartBook.id} cartBook={cartBook} />))
                 }
@@ -47,12 +44,10 @@ const Cart = () => {
                     <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button></>
                     : <div className={style.emptyBlock}>
                         <div className={style.emptyCartBlock}>
+                            <h4>Ваша корзина пуста</h4>
                             <div className={style.imgBlock}>
                                 <img className={style.image} src="https://res.cloudinary.com/wunu/image/upload/v1651844844/personalproject/empty-cart_oesvoo.png" alt="empty-cart" />
                             </div>
-                            <h4 className={style.title}>Ваша корзина пуста</h4>
-                            <h6 className={style.subTitle} >Перейдіть на головну, щоб замовити товар.</h6>
-                            <button className={style.homeBtn} onClick={() => navigate(HOME_ROUTE)}>На головну</button>
                         </div>
                     </div>}
 

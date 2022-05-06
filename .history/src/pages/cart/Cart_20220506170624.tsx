@@ -34,7 +34,7 @@ const Cart = () => {
 
     return (
         <div className={style.container}>
-            <h3 className={style.headText}>Моя корзина</h3>
+            <h2 className={style.headText}>Моя корзина</h2>
             <div className={style.cartBlock}>
                 {cartBook.map(cartItem => cartItem.map(cartBook => <CartItem key={cartBook.id} cartBook={cartBook} />))
                 }
@@ -51,7 +51,7 @@ const Cart = () => {
                                 <img className={style.image} src="https://res.cloudinary.com/wunu/image/upload/v1651844844/personalproject/empty-cart_oesvoo.png" alt="empty-cart" />
                             </div>
                             <h4 className={style.title}>Ваша корзина пуста</h4>
-                            <h6 className={style.subTitle} >Перейдіть на головну, щоб замовити товар.</h6>
+                            <h6 className={style.subTitle} >Перейдіть на головну, щоб замовити товар</h6>
                             <button className={style.homeBtn} onClick={() => navigate(HOME_ROUTE)}>На головну</button>
                         </div>
                     </div>}
