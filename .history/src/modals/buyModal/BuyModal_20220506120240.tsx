@@ -77,6 +77,15 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                         <label>Місто</label>
                         <input type="text"
                             name="city" onChange={handleChange} />
+                        <input type='hidden'
+                            name="price" value={totalCartPrice} />
+                        {/* {orders.map(orderItem => orderItem.map(order => <input
+                            key={order.bookId}
+                            value={order.book.name}
+                            name='bookName'
+                            type='text'
+                        />))} */}
+
                         <button onClick={sendEmail}>Купити</button>
                     </div>
                 </Modal.Body>
