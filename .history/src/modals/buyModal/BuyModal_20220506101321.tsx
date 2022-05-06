@@ -5,31 +5,23 @@ import { Field, Form, Formik } from 'formik';
 import { Button, Modal } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { createOrder } from '../../store/redux/reducers/orderReducer';
-import { CartType, UserCartItemsType } from '../../types/generalTypes';
+import { totalPrice } from '../../hook/hookPrice';
 
 type BuyModalType = {
     show: boolean
     onHide: () => void
     cartId: number
-    totalCartPrice: number
-    orders: Array<CartType[]>
 }
 
-const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHide }) => {
+const BuyModal: FC<BuyModalType> = ({ show, cartId, onHide }) => {
     const dispatch = useDispatch()
-    const orderId = orders.map(orderItem => orderItem.map(order => order.bookId))
-    const orderBookName = orders.map(orderItem => orderItem.map(order => order.book.name))
+    const { cartPrice } = totalPrice()
     const [values, setValues] = useState({
         name: '',
         email: '',
         street: '',
-        city: '',
-        price: totalCartPrice,
-        bookId: orderId,
-        bookName: orderBookName
+        city: ''
     })
-    console.log(orders);
-
 
     const sendEmail = (e: any) => {
         e.preventDefault();
@@ -49,7 +41,6 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
             [e.target.name]: e.target.value
         }))
     }
-
 
     return (
         <div>
@@ -77,13 +68,6 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                         <label>Місто</label>
                         <input type="text"
                             name="city" onChange={handleChange} />
-                        <input type='hidden'
-                            name="price" value={totalCartPrice} />
-                        {orders.map(orderItem => orderItem.map(order => <input
-                            key={order.bookId}
-                            name='bookName'
-                            type='hidden'
-                        />))}
 
                         <button onClick={sendEmail}>Купити</button>
                     </div>

@@ -1,5 +1,5 @@
 import { ThunkAction } from 'redux-thunk';
-import { OrderItemsType } from '../../../types/generalTypes';
+import { CartItemsType, OrderItemsType } from '../../../types/generalTypes';
 import { cartAPI } from '../../api/cartAPI';
 import { orderAPI } from '../../api/orderAPI';
 import { AppStateType, InfernActionType } from '../store';
@@ -8,13 +8,13 @@ import { ADD_BOOK_CART, CREATE_ORDER, GET_ALL_ORDERS, GET_CART, REMOVE_BOOK_CART
 
 type initialStateType = {
     orders: Array<OrderItemsType>
-    success: boolean
+    cartId: number
 
 }
 
 const initialState:initialStateType = {
     orders: [],
-    success: false
+    cartId:0
 }
 
 
@@ -28,7 +28,7 @@ const orderReducer = (state = initialState, action:ActionCreatoreType):initialSt
         case CREATE_ORDER:
             return{
                 ...state,
-                success: action.success
+                cartId: action.cartId
             }
         default:
             return state;
@@ -40,9 +40,9 @@ const actions = {
         type: GET_ALL_ORDERS,
         orders
     } as const),
-   createOrder: (success: boolean) => ({
+   createOrder: (cartId: number) => ({
         type: CREATE_ORDER,
-        success
+        cartId
     } as const)
 }
 
@@ -55,8 +55,7 @@ export const getAllOrders = (userId: number):ThunkType => async (dispatch) => {
 }
 
 export const createOrder = (cartId: number):ThunkType => async (dispatch) => {
-    const response = await orderAPI.createOrder(cartId)
-    dispatch(actions.createOrder(response.data))
+    await orderAPI.createOrder(cartId)
 }
 
 export default orderReducer

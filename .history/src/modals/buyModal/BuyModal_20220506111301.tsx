@@ -7,29 +7,27 @@ import { useDispatch } from 'react-redux';
 import { createOrder } from '../../store/redux/reducers/orderReducer';
 import { CartType, UserCartItemsType } from '../../types/generalTypes';
 
+
 type BuyModalType = {
     show: boolean
     onHide: () => void
     cartId: number
     totalCartPrice: number
-    orders: Array<CartType[]>
+    orderArray: Array<CartType>
 }
 
-const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHide }) => {
+const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orderArray, onHide }) => {
     const dispatch = useDispatch()
-    const orderId = orders.map(orderItem => orderItem.map(order => order.bookId))
-    const orderBookName = orders.map(orderItem => orderItem.map(order => order.book.name))
+    //const { cartPrice } = totalPrice()
     const [values, setValues] = useState({
         name: '',
         email: '',
         street: '',
         city: '',
         price: totalCartPrice,
-        bookId: orderId,
-        bookName: orderBookName
+        bookId: 0,
+        bookName: ''
     })
-    console.log(orders);
-
 
     const sendEmail = (e: any) => {
         e.preventDefault();
@@ -77,13 +75,18 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                         <label>Місто</label>
                         <input type="text"
                             name="city" onChange={handleChange} />
+                        <label>Ціна</label>
+                        <input type="text"
+                            name="price" value={totalCartPrice} />
                         <input type='hidden'
                             name="price" value={totalCartPrice} />
-                        {orders.map(orderItem => orderItem.map(order => <input
-                            key={order.bookId}
-                            name='bookName'
-                            type='hidden'
-                        />))}
+                        {orderArray.map(orderItem => (<>
+                            <label>Id</label>
+                            <input name='bookId' onChange={handleChange} key={orderItem.book.id} value={orderItem.book.id} type='text' />
+                            <label>Name</label>
+                            <input name='bookName' onChange={handleChange} key={orderItem.book.id} value={orderItem.book.author} type='text' />
+                        </>
+                        ))}
 
                         <button onClick={sendEmail}>Купити</button>
                     </div>

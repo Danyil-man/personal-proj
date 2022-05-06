@@ -7,7 +7,6 @@ import style from './Cart.module.scss'
 import { CartBookType, CartType } from '../../types/generalTypes';
 import BuyModal from '../../modals/buyModal/BuyModal';
 
-
 const Cart = () => {
     const dispatch = useDispatch()
     const [isBuy, setIsBuy] = useState(false)
@@ -19,11 +18,9 @@ const Cart = () => {
     const userCartId = cartBook.map(cartItem => cartItem.map(cartBook => cartBook.cartId))
     const totalPrice = () => {
         const cartPrice = cartBook.map(cartItem => cartItem.reduce((sum: number, book: CartType) => book.book.price + sum, 0))
-
         return { cartPrice }
     }
     const { cartPrice } = totalPrice()
-    const totalCartPrice = cartPrice[0]
 
     useEffect(() => {
         dispatch(getAllCart(id))
@@ -40,15 +37,11 @@ const Cart = () => {
             <div className={style.cartFooter}>
                 <div className={style.infoBlock}>
                     <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength[0] ? cartLength[0] : 0}</span></p>
-                    <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{totalCartPrice ? totalCartPrice : 0}</span></p>
+                    <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{cartPrice[0] ? cartPrice[0] : 0}</span></p>
                 </div>
                 <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button>
             </div>
-            {isBuy && <BuyModal
-                show={isBuy}
-                onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} totalCartPrice={totalCartPrice}
-                orders={cartBook.map(cartItem => cartItem)}
-            />}
+            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} />}
         </div>
     )
 }

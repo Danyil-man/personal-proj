@@ -23,7 +23,7 @@ const Cart = () => {
         return { cartPrice }
     }
     const { cartPrice } = totalPrice()
-    const totalCartPrice = cartPrice[0]
+    console.log(cartPrice[0]);
 
     useEffect(() => {
         dispatch(getAllCart(id))
@@ -40,15 +40,11 @@ const Cart = () => {
             <div className={style.cartFooter}>
                 <div className={style.infoBlock}>
                     <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength[0] ? cartLength[0] : 0}</span></p>
-                    <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{totalCartPrice ? totalCartPrice : 0}</span></p>
+                    {/* <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{cartPrice[0] ? cartPrice[0] : 0}</span></p> */}
                 </div>
                 <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Оформити замовлення</button>
             </div>
-            {isBuy && <BuyModal
-                show={isBuy}
-                onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} totalCartPrice={totalCartPrice}
-                orders={cartBook.map(cartItem => cartItem)}
-            />}
+            {isBuy && <BuyModal show={isBuy} onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} />}
         </div>
     )
 }

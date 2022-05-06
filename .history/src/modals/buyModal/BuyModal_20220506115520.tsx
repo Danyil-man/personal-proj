@@ -12,21 +12,21 @@ type BuyModalType = {
     onHide: () => void
     cartId: number
     totalCartPrice: number
-    orders: Array<CartType[]>
+    orders: Array<CartType>
 }
 
 const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHide }) => {
     const dispatch = useDispatch()
-    const orderId = orders.map(orderItem => orderItem.map(order => order.bookId))
-    const orderBookName = orders.map(orderItem => orderItem.map(order => order.book.name))
+    // const orderId = orderArray.map(orderItem => orderItem.bookId)
+    // const orderBookName = orderArray.map(orderItem => orderItem.book.name)
     const [values, setValues] = useState({
         name: '',
         email: '',
         street: '',
         city: '',
         price: totalCartPrice,
-        bookId: orderId,
-        bookName: orderBookName
+        // bookId: orderId,
+        // bookName: orderBookName
     })
     console.log(orders);
 
@@ -79,11 +79,12 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                             name="city" onChange={handleChange} />
                         <input type='hidden'
                             name="price" value={totalCartPrice} />
-                        {orders.map(orderItem => orderItem.map(order => <input
-                            key={order.bookId}
-                            name='bookName'
-                            type='hidden'
-                        />))}
+                        {/* {orderArray.map(orderItem =>
+                            <input
+                                key={orderItem.bookId}
+                                name='bookName'
+                                type='hidden'
+                            />)} */}
 
                         <button onClick={sendEmail}>Купити</button>
                     </div>

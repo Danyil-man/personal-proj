@@ -47,7 +47,7 @@ const Cart = () => {
             {isBuy && <BuyModal
                 show={isBuy}
                 onHide={() => setIsBuy(false)} cartId={userCartId[0][0]} totalCartPrice={totalCartPrice}
-                orders={cartBook.map(cartItem => cartItem)}
+                orders={cartBook.map(cartItem => cartItem[0])}
             />}
         </div>
     )
