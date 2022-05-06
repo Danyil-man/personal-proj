@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './Header.module.scss';
-import { Cart2, Heart, MenuAppFill, MenuDown, Person, PersonFill } from 'react-bootstrap-icons';
+import { Cart2, Heart, Person, PersonFill } from 'react-bootstrap-icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppStateType } from '../../store/redux/store';
 import { ADMIN_ROUTE, CART_ROUTE, FAVORITE_ROUTE, HOME_ROUTE, PROFILE_ROUTE } from '../../routings/pathVariables';
 import { logOut } from '../../store/redux/reducers/userReducer';
 import { adminPanel, btnLogOut, signedAs, storeName } from '../../consts/header';
-import { Dropdown } from 'react-bootstrap';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 
 
 const Header = () => {
@@ -41,17 +42,15 @@ const Header = () => {
                     <button className={style.navigateBtn} onClick={LogOut}>{btnLogOut}</button>
                 </div>
                 <div className={style.burderMenu}>
-                    <Dropdown align='end'>
-                        <Dropdown.Toggle variant="dark" id="dropdown-basic">
-
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            <DropdownButton />
                         </Dropdown.Toggle>
-                        <Dropdown.Menu variant='dark'>
-                            {user.role === 'ADMIN' ? <Dropdown.Item onClick={() => { navigate(ADMIN_ROUTE) }}>{adminPanel}</Dropdown.Item> : null}
-                            <Dropdown.Item onClick={() => { navigate(FAVORITE_ROUTE) }} >Обрані</Dropdown.Item>
-                            <Dropdown.Item onClick={() => { navigate(CART_ROUTE) }} >Корзина</Dropdown.Item>
-                            <Dropdown.Item onClick={() => { navigate(PROFILE_ROUTE) }} >Профіль</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Item onClick={LogOut}>Вийти</Dropdown.Item>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
