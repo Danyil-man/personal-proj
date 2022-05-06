@@ -86,7 +86,7 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                                 name="city" onChange={handleChange} />
                         </div>
 
-                        <Button onClick={sendEmail}>Оформити завмовлення</Button>
+                        <Button onClick={sendEmail}>Купити</Button>
                     </form>
                 </Modal.Body>
                 <Modal.Footer>

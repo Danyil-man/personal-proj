@@ -93,10 +93,6 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                             <input className={style.formItemInput} type='text' onChange={(e: any) => setPrice(e.target.value)} />
                         </div>
                         <div className={style.formItem}>
-                            <label className={style.formItemName}>Кількість</label>
-                            <input className={style.formItemInput} type='text' onChange={(e: any) => setCount(e.target.value)} />
-                        </div>
-                        <div className={style.formItem}>
                             <label className={style.formItemName}>Фото</label>
                             <input className={style.formItemInput} type='file' onChange={addFile} />
                         </div>
