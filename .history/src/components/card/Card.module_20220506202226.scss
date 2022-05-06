@@ -1,12 +1,7 @@
 @import '../../styles/variables.scss';
 @import '../../styles/fonts.scss';
-@import '../../styles/mixins.scss';
 
-.disabled{
-  @include disabled;
-}
-
-.card {
+.card{
   width: 100%;
   max-width: 320px;
   margin: 0px 20px 20px 20px;
@@ -15,7 +10,17 @@
   background-color: $white;
   padding: 20px;
   cursor: pointer;
-
+  .disabled{
+  width: 100%;
+  max-width: 320px;
+  margin: 0px 20px 20px 20px;
+  border-radius: 20px;
+  border: 1px solid $text;
+  background-color: $white;
+  padding: 20px;
+  pointer-events: none;
+    opacity: 0.4;
+  }
   &:hover{
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-10px);

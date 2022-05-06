@@ -1,10 +1,7 @@
 @import '../../styles/variables.scss';
 @import '../../styles/fonts.scss';
-@import '../../styles/mixins.scss';
 
-.disabled{
-  @include disabled;
-}
+
 
 .card {
   width: 100%;

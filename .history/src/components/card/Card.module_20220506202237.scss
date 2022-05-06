@@ -1,12 +1,19 @@
 @import '../../styles/variables.scss';
 @import '../../styles/fonts.scss';
-@import '../../styles/mixins.scss';
 
 .disabled{
-  @include disabled;
-}
+  width: 100%;
+  max-width: 320px;
+  margin: 0px 20px 20px 20px;
+  border-radius: 20px;
+  border: 1px solid $text;
+  background-color: $white;
+  padding: 20px;
+  pointer-events: none;
+    opacity: 0.4;
+  }
 
-.card {
+.card{
   width: 100%;
   max-width: 320px;
   margin: 0px 20px 20px 20px;
