@@ -67,26 +67,26 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                     <form className={style.formBlock}>
                         <div className={style.formItem}>
                             <label className={style.formItemName}>Ім&#39;я</label>
-                            <input className={style.formItemInput} type="text"
+                            <input type="text"
                                 name="name" onChange={(e: any) => handleChange(e)} />
                         </div>
                         <div className={style.formItem}>
                             <label className={style.formItemName}>Ел.пошта</label>
-                            <input className={style.formItemInput} type="еуче"
+                            <input type="еуче"
                                 name="email" onChange={handleChange} />
                         </div>
                         <div className={style.formItem}>
                             <label className={style.formItemName}>Вулиця</label>
-                            <input className={style.formItemInput} type="text"
+                            <input type="text"
                                 name="street" onChange={handleChange} />
                         </div>
                         <div className={style.formItem}>
                             <label className={style.formItemName}>Місто</label>
-                            <input className={style.formItemInput} type="text"
+                            <input type="text"
                                 name="city" onChange={handleChange} />
                         </div>
 
-                        <Button onClick={sendEmail}>Оформити завмовлення</Button>
+                        <button onClick={sendEmail}>Купити</button>
                     </form>
                 </Modal.Body>
                 <Modal.Footer>

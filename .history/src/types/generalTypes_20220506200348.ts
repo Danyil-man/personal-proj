@@ -19,7 +19,6 @@ export type createBookType = {
     price: void,
     image: string,
     genreId: void
-    count: void
 }
 
 export type userType ={

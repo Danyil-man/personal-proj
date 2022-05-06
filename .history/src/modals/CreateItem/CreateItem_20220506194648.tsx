@@ -18,7 +18,6 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
     const [author, setAuthor] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState(0)
-    const [count, setCount] = useState(0)
 
     const { genres } = useSelector((state: AppStateType) => state.filter)
     const { genreBook } = useSelector((state: AppStateType) => state.books)
@@ -38,15 +37,13 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
             formData.append('price', `${price}`),
             formData.append('image', file),
             formData.append('genreId', `${genreBook.id}`)
-        formData.append('count', `${count}`),
 
-            dispatch(createBook(formData))
+        dispatch(createBook(formData))
         setFile('')
         setName('')
         setAuthor('')
         setDescription('')
         setPrice(0)
-        setCount(0)
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
@@ -93,10 +90,6 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                             <input className={style.formItemInput} type='text' onChange={(e: any) => setPrice(e.target.value)} />
                         </div>
                         <div className={style.formItem}>
-                            <label className={style.formItemName}>Кількість</label>
-                            <input className={style.formItemInput} type='text' onChange={(e: any) => setCount(e.target.value)} />
-                        </div>
-                        <div className={style.formItem}>
                             <label className={style.formItemName}>Фото</label>
                             <input className={style.formItemInput} type='file' onChange={addFile} />
                         </div>
@@ -114,7 +107,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
-                        <Button className='mt-2' type='submit' onClick={addBook}>
+                        <Button className='mt-3' type='submit' onClick={addBook}>
                             Добавити
                         </Button>
                     </div>
