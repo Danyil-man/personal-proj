@@ -22,71 +22,57 @@
                 color: $bezh;
             }
         }
-        .image{
+        .imgBlock{
             width: 100%;
             max-width: 400px;
-            height: 400px;
-        }   
+            .image{
+              max-width: 100%;
+              height: 100%;
+            }
+          }
     }
 
 //LapTop 
 @media screen and (max-width: 992px){
     .emptyCartBlock{
+        text-align: center;
         .title{
-            font-size: 22px;
+            font-family: 'Monserat';
         }
         .subTitle{
-            margin: 10px 0px 20px 0px;
+            font-family: 'Monserat';
+            margin: 10px 0px 30px 0px;
         }
-        .image{
+        .homeBtn{
+            background: none;
+            border: $standartBoard;
+            padding: 5px 15px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-family: 'Monserat';
+            &:hover{
+                transition: $iconDuration;
+                background-color: $text;
+                color: $bezh;
+            }
+        }
+        .imgBlock{
             width: 100%;
-            max-width: 350px;
-            height: 350px;
-        }  
+            max-width: 400px;
+            .image{
+              max-width: 100%;
+              height: 100%;
+            }
+          }
     }
 }
 
 //Tablet 
 @media screen and (max-width: 768px) {
-    .emptyCartBlock{
-        .title{
-            font-size: 20px;
-        }
-        .subTitle{
-            margin: 10px 0px 20px 0px;
-            font-size: 14px;
-        }
-        .homeBtn{
-            padding: 3px 10px;
-            font-size: 16px;
-        }
-        .image{
-            width: 100%;
-            max-width: 300px;
-            height: 300px;
-        }  
-    }
+
 }
 
 //Phone
 @media screen and (max-width: 600px){
-    .emptyCartBlock{
-        
-        .title{
-            font-size: 18px;
-        }
-        .subTitle{
-            margin: 5px 0px 15px 0px;
-            font-size: 14px;
-        }
-        .homeBtn{
-            padding: 3px 10px;
-            font-size: 16px;
-        }
-        .image{
-            width: 100%;
-            max-width: 250px;
-            height: 250px;
-        }  
-    }
+
 }
