@@ -1,0 +1,116 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/variables.scss';
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .containerInner{
+        width: 100%;
+        margin: 40px 0px;
+        .headText{
+            font-family: 'Monserat';
+        }
+        .filterBtn{
+            width: 220px;
+            margin: 30px 10px 0px 10px;
+            padding: 5px;
+            border: 1px solid $text;
+            background: none;
+            border-radius: 20px;
+            cursor: pointer;
+            &:hover{
+                color: $bezh;
+                background-color: $text;
+                transition: $iconDuration;
+            }
+        }
+        .active{
+            width: 220px;
+            margin: 30px 10px 0px 10px;
+            padding: 5px;
+            border: 1px solid $text;
+            border-radius: 20px;
+            cursor: pointer;
+            color: $bezh;
+            background-color: $text;
+        }
+    }
+}
+//LapTop 
+@media screen and (max-width: 992px){
+    .container{
+        .containerInner{
+            width: 100%;
+            margin: 30px 0px;
+            .headText{
+                font-family: 'Monserat';
+            }
+            .filterBtn{
+                width: 220px;
+                margin: 30px 10px 0px 10px;
+                padding: 5px;
+                border: 1px solid $text;
+                background: none;
+                border-radius: 20px;
+                cursor: pointer;
+                &:hover{
+                    color: $bezh;
+                    background-color: $text;
+                    transition: $iconDuration;
+                }
+            }
+            .active{
+                width: 220px;
+                margin: 30px 10px 0px 10px;
+                padding: 5px;
+                border: 1px solid $text;
+                border-radius: 20px;
+                cursor: pointer;
+                color: $bezh;
+                background-color: $text;
+            }
+        }
+    }
+}
+
+//Tablet++ 
+@media screen and (max-width: 850px) {
+    .carouselHeadText{
+        font-size: 22px;
+       }
+       .carouselSlang{
+           font-size: 20px;
+           line-height: 1.5;
+       }
+}
+
+//Tablet 
+@media screen and (max-width: 768px) {
+    .carouselHeadText{
+        font-size: 20px;
+       }
+       .carouselSlang{
+           font-size: 18px;
+           line-height: 1.4;
+       }
+}
+
+//Phone
+@media screen and (max-width: 600px){
+    .carouselHeadText{
+        font-size: 18px;
+       }
+       .carouselSlang{
+           font-size: 16px;
+           line-height: 1.2;
+       }
+       .carouselCaption{
+        top: 40%;
+        transform: translateY(-50%);
+    }
+    .magicCaption{
+        top: 60%;
+    }
+}
