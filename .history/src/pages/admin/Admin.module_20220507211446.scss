@@ -6,7 +6,6 @@
     justify-content: center;
 
     .itemBlock{
-        margin: 100px 0;
         .createBtn{
             background: none;
             border: none;
@@ -26,7 +25,7 @@
 @media screen and (max-width: 600px) {
     .container{
         .itemBlock{
-            height: calc(100vh - 278px) ;
+            height: calc(100vh - 198px) ;
        }
     }
     
