@@ -69,8 +69,7 @@
             }
             .filterBtn{
                 width: 130px;
-                margin: 20px 8px 0px 8px;
-                font-size: 14px;
+                margin: 20px 10px 0px 10px;
             }
             .active{
                 width: 130px;
@@ -82,21 +81,18 @@
 
 //Phone
 @media screen and (max-width: 600px){
-    .container{
-        .containerInner{
-            margin: 20px 0px;
-            .headText{
-                font-size: 18px;
-            }
-            .filterBtn{
-                width: 130px;
-                margin: 15px 8px 0px 8px;
-                font-size: 14px;
-            }
-            .active{
-                width: 130px;
-                margin: 15px 10px 0px 10px;
-            }
-        }
+    .carouselHeadText{
+        font-size: 18px;
+       }
+       .carouselSlang{
+           font-size: 16px;
+           line-height: 1.2;
+       }
+       .carouselCaption{
+        top: 40%;
+        transform: translateY(-50%);
+    }
+    .magicCaption{
+        top: 60%;
     }
 }
