@@ -94,7 +94,6 @@
                 border: 1px solid $text;
                 border-radius: 20px;
                 font-family: 'Monserat';
-                font-size: 14px;
                 cursor: pointer;
                 &:hover{
                     color: $bezh;
@@ -109,7 +108,6 @@
                 border: 1px solid $text;
                 border-radius: 20px;
                 font-family: 'Monserat';
-                font-size: 14px;
                 cursor: pointer;
                 color: $bezh;
                 background-color: $text;
@@ -120,41 +118,18 @@
 
 //Phone
 @media screen and (max-width: 600px){
-    .container{
-        .ulBlock{
-            max-width: 360px;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 10px;
-            .liBlock{
-                width: 104px;
-                margin: 12px 8px 0px 8px;
-                padding: 5px;
-                border: 1px solid $text;
-                border-radius: 20px;
-                font-family: 'Monserat';
-                font-size: 12px;
-                cursor: pointer;
-                &:hover{
-                    color: $bezh;
-                    background-color: $text;
-                    transition: $iconDuration;
-                }
-            }
-            .active{
-                width: 104px;
-                margin: 12px 8px 0px 8px;
-                padding: 5px;
-                border: 1px solid $text;
-                border-radius: 20px;
-                font-family: 'Monserat';
-                font-size: 12px;
-                cursor: pointer;
-                color: $bezh;
-                background-color: $text;
-            }
-        }
-     }
+    .carouselHeadText{
+        font-size: 18px;
+       }
+       .carouselSlang{
+           font-size: 16px;
+           line-height: 1.2;
+       }
+       .carouselCaption{
+        top: 40%;
+        transform: translateY(-50%);
+    }
+    .magicCaption{
+        top: 60%;
+    }
 }

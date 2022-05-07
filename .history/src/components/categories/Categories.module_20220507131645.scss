@@ -1,0 +1,118 @@
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .ulBlock{
+        max-width: 720px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .liBlock{
+            width: 220px;
+            margin: 40px 10px 0px 10px;
+            padding: 5px;
+            border: 1px solid $text;
+            border-radius: 20px;
+            font-family: 'Monserat';
+            cursor: pointer;
+            &:hover{
+                color: $bezh;
+                background-color: $text;
+                transition: $iconDuration;
+            }
+        }
+        .active{
+            width: 220px;
+            margin: 40px 10px 0px 10px;
+            padding: 5px;
+            border: 1px solid $text;
+            border-radius: 20px;
+            font-family: 'Monserat';
+            cursor: pointer;
+            color: $bezh;
+            background-color: $text;
+        }
+    }
+}
+//LapTop 
+@media screen and (max-width: 992px){
+    .container{
+        .ulBlock{
+            max-width: 570px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .liBlock{
+                width: 180px;
+                margin: 40px 10px 0px 10px;
+                padding: 5px;
+                border: 1px solid $text;
+                border-radius: 20px;
+                font-family: 'Monserat';
+                cursor: pointer;
+                &:hover{
+                    color: $bezh;
+                    background-color: $text;
+                    transition: $iconDuration;
+                }
+            }
+            .active{
+                width: 220px;
+                margin: 40px 10px 0px 10px;
+                padding: 5px;
+                border: 1px solid $text;
+                border-radius: 20px;
+                font-family: 'Monserat';
+                cursor: pointer;
+                color: $bezh;
+                background-color: $text;
+            }
+        }
+     }
+
+    
+}
+
+//Tablet++ 
+@media screen and (max-width: 850px) {
+    .carouselHeadText{
+        font-size: 22px;
+       }
+       .carouselSlang{
+           font-size: 20px;
+           line-height: 1.5;
+       }
+}
+
+//Tablet 
+@media screen and (max-width: 768px) {
+    .carouselHeadText{
+        font-size: 20px;
+       }
+       .carouselSlang{
+           font-size: 18px;
+           line-height: 1.4;
+       }
+}
+
+//Phone
+@media screen and (max-width: 600px){
+    .carouselHeadText{
+        font-size: 18px;
+       }
+       .carouselSlang{
+           font-size: 16px;
+           line-height: 1.2;
+       }
+       .carouselCaption{
+        top: 40%;
+        transform: translateY(-50%);
+    }
+    .magicCaption{
+        top: 60%;
+    }
+}
