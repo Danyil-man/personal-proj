@@ -1,0 +1,70 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/styles.scss';
+.emptyBlock{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .title{
+        font-family: 'Monserat';
+    }
+    .subTitle{
+        font-family: 'Monserat';
+        margin: 10px 0px 30px 0px;
+    }
+    .homeBtn{
+        background: none;
+        border: $standartBoard;
+        padding: 5px 15px;
+        border-radius: 16px;
+        font-size: 18px;
+        font-family: 'Monserat';
+        &:hover{
+            transition: $iconDuration;
+            background-color: $text;
+            color: $bezh;
+        }
+    }
+    .emptyCartBlock{
+        .imgBlock{
+            width: 100%;
+            max-width: 400px;
+            .image{
+              max-width: 100%;
+              height: 100%;
+            }
+          }
+    }
+}
+
+//LapTop 
+@media screen and (max-width: 992px){
+    .emptyBlock{
+        .title{
+            font-size: 22px;
+        }
+        .subTitle{
+            margin: 10px 0px 20px 0px;
+        }
+        .emptyCartBlock{
+            .imgBlock{
+                width: 100%;
+                max-width: 350px;
+                .image{
+                  max-width: 100%;
+                  height: 100%;
+                }
+              }
+        }
+    }
+}
+
+//Tablet 
+@media screen and (max-width: 768px) {
+
+}
+
+//Phone
+@media screen and (max-width: 600px){
+
+}

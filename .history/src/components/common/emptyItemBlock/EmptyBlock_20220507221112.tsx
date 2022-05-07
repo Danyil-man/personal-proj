@@ -13,7 +13,9 @@ const EmptyBlock: FC<EmptyBlockType> = ({ title, subTitle, image }) => {
     const navigate = useNavigate()
     return (
         <div className={style.emptyCartBlock}>
-            <img className={style.image} src={image} alt="empty-cart" />
+            <div className={style.imgBlock}>
+                <img className={style.image} src={image} alt="empty-cart" />
+            </div>
             <h4 className={style.title}>{title}</h4>
             <h6 className={style.subTitle}>{subTitle}</h6>
             <button className={style.homeBtn} onClick={() => navigate(HOME_ROUTE)}>На головну</button>

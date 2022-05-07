@@ -1,9 +1,6 @@
 @import '../../styles/variables.scss';
 
 .phoneContainer{
-  width: 100%;
-  margin: 40px 0px 40px 0px;
-  padding: 0 40px 0px 40px;
   text-align: center;
 }
 .container{
@@ -178,7 +175,6 @@
 @media screen and (max-width: 600px){
   .phoneContainer{
     width: 100%;
-    height: calc(100vh - 98px);
     padding: 0 40px 0px 40px;
     margin: 10px 0px 10px 0px;
     text-align: center;

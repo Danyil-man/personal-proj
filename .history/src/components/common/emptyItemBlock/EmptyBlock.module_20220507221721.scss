@@ -56,37 +56,15 @@
             margin: 10px 0px 20px 0px;
             font-size: 14px;
         }
-        .homeBtn{
-            padding: 3px 10px;
-            font-size: 16px;
-        }
         .image{
             width: 100%;
-            max-width: 300px;
-            height: 300px;
+            max-width: 350px;
+            height: 350px;
         }  
     }
 }
 
 //Phone
 @media screen and (max-width: 600px){
-    .emptyCartBlock{
-        
-        .title{
-            font-size: 18px;
-        }
-        .subTitle{
-            margin: 5px 0px 15px 0px;
-            font-size: 14px;
-        }
-        .homeBtn{
-            padding: 3px 10px;
-            font-size: 16px;
-        }
-        .image{
-            width: 100%;
-            max-width: 250px;
-            height: 250px;
-        }  
-    }
+
 }

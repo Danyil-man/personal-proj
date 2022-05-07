@@ -1,13 +1,7 @@
 @import '../../styles/variables.scss';
-
-.phoneContainer{
-  width: 100%;
-  margin: 40px 0px 40px 0px;
-  padding: 0 40px 0px 40px;
-  text-align: center;
-}
 .container{
     width: 100%;
+    height: 100%;
     margin: 40px 0px 40px 0px;
     padding: 0 40px 0px 40px;
     .orderInfo{
@@ -176,12 +170,8 @@
 
 //Phone
 @media screen and (max-width: 600px){
-  .phoneContainer{
-    width: 100%;
-    height: calc(100vh - 98px);
-    padding: 0 40px 0px 40px;
+  .container{
     margin: 10px 0px 10px 0px;
-    text-align: center;
     .orderInfo{
       margin-top: 10px;
       font-size: 14px;

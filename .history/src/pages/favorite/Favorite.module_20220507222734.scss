@@ -178,10 +178,11 @@
 @media screen and (max-width: 600px){
   .phoneContainer{
     width: 100%;
-    height: calc(100vh - 98px);
+    height: 100vh;
     padding: 0 40px 0px 40px;
     margin: 10px 0px 10px 0px;
     text-align: center;
+   transform: translateY(20%);
     .orderInfo{
       margin-top: 10px;
       font-size: 14px;
