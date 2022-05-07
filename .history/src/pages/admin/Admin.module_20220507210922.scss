@@ -1,0 +1,27 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/variables.scss';
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 100px 0;
+
+    .createBtn{
+        background: none;
+        border: none;
+        font-family: 'Monserat';
+        border: 1px solid $text;
+        padding: 5px 10px;
+        border-radius: 12px;
+        &:hover{
+            transition: $iconDuration;
+            color: $bezh;
+            background-color: $text;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .container{
+        height: 100%;
+    }
+}

@@ -51,6 +51,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
 
     const chooseGenre = (genreBookName: GenresType) => {
         dispatch(chooseGenreBook(genreBookName))
+        console.log(genreBookName)
     }
 
     const addGenre = (values: any) => {

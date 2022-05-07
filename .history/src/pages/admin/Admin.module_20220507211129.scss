@@ -4,9 +4,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 100px 0;
 
     .itemBlock{
-        margin: 100px 0;
         .createBtn{
             background: none;
             border: none;
@@ -24,10 +24,7 @@
     
 }
 @media screen and (max-width: 600px) {
-    .container{
-        .itemBlock{
-            height: calc(100vh - 278px) ;
-       }
+    .itemBlock{
+        height: 100vh;
     }
-    
 }
