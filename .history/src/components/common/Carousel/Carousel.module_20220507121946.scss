@@ -1,0 +1,19 @@
+.container{
+    width: 100%;
+    max-width: 1440px;
+    .imgCarousel{
+        max-width: 100%;
+        border-radius: 20px;
+        }
+        
+        .carouselHeadText{
+        font-family: 'Paper';
+        }
+        
+        .carouselCaption{
+        top: 50%;
+        transform: translateY(-50%);
+        }
+}
+   
+

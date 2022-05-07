@@ -49,7 +49,7 @@ const Header = () => {
                             {user.role === 'ADMIN' ? <Dropdown.Item onClick={() => { navigate(ADMIN_ROUTE) }}>{adminPanel}</Dropdown.Item> : null}
                             <Dropdown.Item onClick={() => { navigate(FAVORITE_ROUTE) }} >Обрані</Dropdown.Item>
                             <Dropdown.Item onClick={() => { navigate(CART_ROUTE) }} >Корзина</Dropdown.Item>
-                            <Dropdown.Item onClick={() => { navigate(PROFILE_ROUTE) }} >Мої замовлення</Dropdown.Item>
+                            <Dropdown.Item onClick={() => { navigate(PROFILE_ROUTE) }} >Профіль</Dropdown.Item>
                             <Dropdown.Divider />
                             <Dropdown.Item onClick={LogOut}>Вийти</Dropdown.Item>
                         </Dropdown.Menu>

@@ -42,14 +42,14 @@ const Header = () => {
                 </div>
                 <div className={style.burderMenu}>
                     <Dropdown align='end'>
-                        <Dropdown.Toggle variant="dark" id="dropdown-basic" >
-                            Меню
+                        <Dropdown.Toggle variant="dark" id="dropdown-basic" aria-rowcount={false}>
+                            <img src="" alt="" />
                         </Dropdown.Toggle>
                         <Dropdown.Menu variant='dark'>
                             {user.role === 'ADMIN' ? <Dropdown.Item onClick={() => { navigate(ADMIN_ROUTE) }}>{adminPanel}</Dropdown.Item> : null}
                             <Dropdown.Item onClick={() => { navigate(FAVORITE_ROUTE) }} >Обрані</Dropdown.Item>
                             <Dropdown.Item onClick={() => { navigate(CART_ROUTE) }} >Корзина</Dropdown.Item>
-                            <Dropdown.Item onClick={() => { navigate(PROFILE_ROUTE) }} >Мої замовлення</Dropdown.Item>
+                            <Dropdown.Item onClick={() => { navigate(PROFILE_ROUTE) }} >Профіль</Dropdown.Item>
                             <Dropdown.Divider />
                             <Dropdown.Item onClick={LogOut}>Вийти</Dropdown.Item>
                         </Dropdown.Menu>

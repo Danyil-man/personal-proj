@@ -1,0 +1,33 @@
+@import '../../../styles/fonts.scss';
+.imgCarousel{
+    max-width: 100%;
+    border-radius: 20px;
+}
+        
+.carouselHeadText{
+    font-family: 'Monserat';
+}
+.storeName{
+    font-family: 'Paper';
+}
+.carouselCaption{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+   
+
+//LapTop 
+@media screen and (max-width: 992px){
+    
+}
+
+//Tablet 
+@media screen and (max-width: 768px) {
+   
+}
+
+//Phone
+@media screen and (max-width: 600px){
+    
+}

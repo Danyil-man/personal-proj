@@ -1,0 +1,17 @@
+@import '../../../styles/fonts.scss';
+    .imgCarousel{
+        max-width: 100%;
+        border-radius: 20px;
+        }
+        
+        .carouselHeadText{
+        font-family: 'Monserat';
+        }
+        
+        .carouselCaption{
+        top: 50%;
+        transform: translateY(-50%);
+        }
+
+   
+
