@@ -1,0 +1,75 @@
+@import '../../../styles/fonts.scss';
+.imgCarousel{
+    max-width: 100%;
+    border-radius: 20px;
+}
+        
+.carouselHeadText{
+    font-family: 'Monserat';
+}
+.carouselSlang{
+    font-family: 'Monserat';
+}
+.storeName{
+    font-family: 'Paper';
+}
+.carouselCaption{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.magicCaption{
+    top: 55%;
+}
+   
+
+//LapTop 
+@media screen and (max-width: 992px){
+    .carouselHeadText{
+     font-size: 28px;
+    }
+    .carouselSlang{
+        font-size: 24px;
+        line-height: 1.8;
+    }
+    
+}
+
+//Tablet++ 
+@media screen and (max-width: 850px) {
+    .carouselHeadText{
+        font-size: 22px;
+       }
+       .carouselSlang{
+           font-size: 20px;
+           line-height: 1.5;
+       }
+}
+
+//Tablet 
+@media screen and (max-width: 768px) {
+    .carouselHeadText{
+        font-size: 20px;
+       }
+       .carouselSlang{
+           font-size: 18px;
+           line-height: 1.4;
+       }
+}
+
+//Phone
+@media screen and (max-width: 600px){
+    .carouselHeadText{
+        font-size: 18px;
+       }
+       .carouselSlang{
+           font-size: 16px;
+           line-height: 1.2;
+       }
+       .carouselCaption{
+        top: 40%;
+        transform: translateY(-50%);
+    }
+    .magicCaption{
+        top: 60%;
+    }
+}
