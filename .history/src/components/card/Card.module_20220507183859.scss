@@ -7,7 +7,6 @@
 }
 
 .card {
-  position: relative;
   width: 100%;
   max-width: 320px;
   margin: 0px 20px 20px 20px;
@@ -34,7 +33,6 @@
   .infoBlock{
     padding: 10px;
     text-align: center;
-    margin-bottom: 40px;
     h6{
       font-size: 18px;
       font-family: "Oswald";
@@ -48,13 +46,9 @@
   }
 
   .interactBlock{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    margin: 10px;
     align-items: center;
     p{
       font-size: 18px;
@@ -91,7 +85,6 @@
   
     .infoBlock{
       padding: 10px;
-      margin-bottom: 30px;
       h6{
         font-size: 16px;
         margin-bottom: 12px;
@@ -102,7 +95,7 @@
     }
   
     .interactBlock{
-      padding: 20px;
+      margin: 8px;
       p{
         font-size: 16px;
         font-family: 'Oswald';
@@ -111,6 +104,19 @@
         margin-left: 12px;
         width: 18px;
         height: 18px;
+        &:first-child{
+          margin-left: 0px;
+        }
+        &:hover{
+          cursor: pointer;
+          transition: $iconDuration;
+          &:first-child{
+              color: $heart;
+          }
+          &:last-child{
+              color: $buy;
+          }
+      }
       }
     }
   }
@@ -119,74 +125,10 @@
 
 //Tablet 
 @media screen and (max-width: 768px) {
-  .card {
-    max-width: 280px;
-    margin: 0px 15px 20px 15px;
-    padding: 18px;
-      .imgBlock{
-        height: 405px;
-      }
-  
-    .infoBlock{
-      padding: 10px;
-      margin-bottom: 20px;
-      h6{
-        font-size: 16px;
-        margin-bottom: 12px;
-      }
-      p{
-        font-size: 12px;
-      }
-    }
-  
-    .interactBlock{
-      padding: 20px;
-      p{
-        font-size: 16px;
-        font-family: 'Oswald';
-      }
-      .icon{
-        margin-left: 12px;
-        width: 18px;
-        height: 18px;
-      }
-    }
-  }
+
 }
 
 //Phone
 @media screen and (max-width: 600px){
-  .card {
-    max-width: 260px;
-    margin: 0px 10px 15px 10px;
-    padding: 16px;
-      .imgBlock{
-        height: 385px;
-      }
-  
-    .infoBlock{
-      padding: 8px;
-      margin-bottom: 20px;
-      h6{
-        font-size: 14px;
-        margin-bottom: 10px;
-      }
-      p{
-        font-size: 10px;
-      }
-    }
-  
-    .interactBlock{
-      padding: 16px;
-      p{
-        font-size: 14px;
-        font-family: 'Oswald';
-      }
-      .icon{
-        margin-left: 10px;
-        width: 16px;
-        height: 16px;
-      }
-    }
-  }
+
 }

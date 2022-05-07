@@ -15,7 +15,7 @@ type initialStateType = {
     isLoading: boolean
     filteredName: string,
     filteredPrice: string,
-    // filteredBook: string
+    filteredBook: string
 }
 
 const initialState:initialStateType = {
@@ -37,7 +37,7 @@ const initialState:initialStateType = {
     isLoading: false,
     filteredName: '',
     filteredPrice: '',
-    // filteredBook: ''
+    filteredBook: ''
 }
 
 const booksReducer = (state=initialState, action:ActionCreatoreType):initialStateType => {
@@ -91,11 +91,11 @@ const booksReducer = (state=initialState, action:ActionCreatoreType):initialStat
                     ...state,
                   filteredPrice: action.filterPrice
                 }
-                // case FILTER_BOOK:
-                //     return{
-                //         ...state,
-                //       filteredBook: action.filterBook
-                //     } 
+                case FILTER_BOOK:
+                    return{
+                        ...state,
+                      filteredBook: action.filterBook
+                    } 
         case IS_LOADING:
             return{
                 ...state,
@@ -144,10 +144,10 @@ const actions = {
         type: FILTER_PRICE,
         filterPrice
     } as const),
-    // filterBook: (filterBook: string) => ({
-    //     type: FILTER_BOOK,
-    //     filterBook
-    // } as const),
+    filterBook: (filterBook: string) => ({
+        type: FILTER_BOOK,
+        filterBook
+    } as const),
     setIsLoading: (isLoading:boolean) => ({
         type: IS_LOADING,
         isLoading
@@ -191,9 +191,5 @@ export const filterByPrice = (price:string):ThunkType => async (dispatch) => {
 export const setFilter = (filterID:number):ThunkType => async (dispatch) => {
     dispatch( actions.setGenreFilter(filterID))
 }
-
-// export const setFilterBook = (filterBook:string):ThunkType => async (dispatch) => {
-//     dispatch( actions.filterBook(filterBook))
-// }
 
 export default booksReducer;

@@ -13,7 +13,8 @@ const SearchBook: FC<SearchBookType> = ({ searchBook, setSearchBook }) => {
         <div className={style.container}>
             <h3 className={style.leftText}>{searchBook ? `Шукаємо: '${searchBook}'` : 'Усі Книги'}</h3>
             <div className={style.searchBookBlock}>
-                <input maxLength={30} className={style.bookNameValue}
+                <Search />
+                <input maxLength={45} className={style.bookNameValue}
                     onChange={(e) => {
                         setSearchBook(e.target.value);
                     }}

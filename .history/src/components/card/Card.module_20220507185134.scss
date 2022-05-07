@@ -158,34 +158,34 @@
 @media screen and (max-width: 600px){
   .card {
     max-width: 260px;
-    margin: 0px 10px 15px 10px;
-    padding: 16px;
+    margin: 0px 15px 20px 15px;
+    padding: 18px;
       .imgBlock{
         height: 385px;
       }
   
     .infoBlock{
-      padding: 8px;
+      padding: 10px;
       margin-bottom: 20px;
       h6{
-        font-size: 14px;
-        margin-bottom: 10px;
+        font-size: 16px;
+        margin-bottom: 12px;
       }
       p{
-        font-size: 10px;
+        font-size: 12px;
       }
     }
   
     .interactBlock{
-      padding: 16px;
+      padding: 20px;
       p{
-        font-size: 14px;
+        font-size: 16px;
         font-family: 'Oswald';
       }
       .icon{
-        margin-left: 10px;
-        width: 16px;
-        height: 16px;
+        margin-left: 12px;
+        width: 18px;
+        height: 18px;
       }
     }
   }

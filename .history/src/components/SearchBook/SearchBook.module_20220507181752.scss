@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 40px 0px 40px;
+    padding: 40px 60px 0px 60px;
 
     .leftText{
         font-family: 'Monserat';
@@ -37,7 +37,7 @@
   }
   @media screen and (max-width: 992px){
     .container {
-    
+      padding: 30px 60px 0px 60px;
   
       .leftText{
           font-size:24px ;
@@ -48,6 +48,7 @@
         .clearSearchBtn {
           width: 20px;
           height: 20px;
+          cursor: pointer;
         }
         .bookNameValue {
           padding: 10px;
@@ -62,7 +63,7 @@
 //Tablet 
 @media screen and (max-width: 768px) {
   .container {
-   
+    padding: 20px 50px 0px 50px;
 
     .leftText{
         font-size:20px ;
@@ -87,7 +88,7 @@
 //Phone
 @media screen and (max-width: 600px){
   .container {
-   
+    padding: 15px 40px 0px 40px;
 
     .leftText{
         font-size:16px ;
