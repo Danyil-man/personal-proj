@@ -1,0 +1,150 @@
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px 0px 60px;
+
+    .leftText{
+        font-family: 'Monserat';
+    }
+  
+    .searchBookBlock {
+      position: relative;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      border-radius: 14px;
+      .clearSearchBtn {
+        position: absolute;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+      .bookNameValue {
+        border: 0;
+        outline: none;
+        padding: 14px;
+        font-size: 16px;
+        width: 200px;
+      }
+    }
+  }
+  @media screen and (max-width: 992px){
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 60px 0px 50px;
+  
+      .leftText{
+          font-family: 'Monserat';
+      }
+    
+      .searchBookBlock {
+        position: relative;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        border-radius: 14px;
+        .clearSearchBtn {
+          position: absolute;
+          right: 10px;
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+        }
+        .bookNameValue {
+          border: 0;
+          outline: none;
+          padding: 14px;
+          font-size: 16px;
+          width: 200px;
+        }
+      }
+    }
+}
+
+
+//Tablet 
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px 0px 60px;
+
+    .leftText{
+        font-family: 'Monserat';
+    }
+  
+    .searchBookBlock {
+      position: relative;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      border-radius: 14px;
+      .clearSearchBtn {
+        position: absolute;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+      .bookNameValue {
+        border: 0;
+        outline: none;
+        padding: 14px;
+        font-size: 16px;
+        width: 200px;
+      }
+    }
+  }
+}
+
+//Phone
+@media screen and (max-width: 600px){
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px 0px 60px;
+
+    .leftText{
+        font-family: 'Monserat';
+    }
+  
+    .searchBookBlock {
+      position: relative;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      border-radius: 14px;
+      .clearSearchBtn {
+        position: absolute;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+      .bookNameValue {
+        border: 0;
+        outline: none;
+        padding: 14px;
+        font-size: 16px;
+        width: 200px;
+      }
+    }
+  }
+}
