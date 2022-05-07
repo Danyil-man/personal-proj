@@ -44,8 +44,8 @@ const FavoriteCard: FC<FavoriteType> = ({ favorite, favoriteId }) => {
             <div className={style.interactBlock}>
                 <p className={style.price}>Ціна: {favorite.price}грн.</p>
                 <div className='d-flex'>
-                    <Heart onClick={() => deleteFavorite(favoriteId)} color='red' className={style.icon} />
-                    <Cart2 onClick={() => addBookToCart(favorite.id)} className={style.icon} />
+                    <Heart onClick={() => deleteFavorite(favoriteId)} color='red' className={`mr-4 ${style.icon}`} size={20} />
+                    <Cart2 onClick={() => addBookToCart(favorite.id)} size={20} className={`${style.icon}`} />
                 </div>
             </div>
         </div>

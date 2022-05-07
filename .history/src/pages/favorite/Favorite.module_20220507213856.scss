@@ -61,24 +61,16 @@
             font-size: 18px;
             font-family: 'Oswald';
           }
-          .icon{
-            margin-left: 15px;
-            width: 20px;
-            height: 20px;
+          .icon:hover{
+            cursor: pointer;
+            transition: $iconDuration;
             &:first-child{
-              margin-left: 0px;
+                color: $heart;
             }
-            &:hover{
-              cursor: pointer;
-              transition: $iconDuration;
-              &:first-child{
-                  color: $heart;
-              }
-              &:last-child{
-                  color: $buy;
-              }
-          }
-          }
+            &:last-child{
+                color: $buy;
+            }
+        }
         }
       }
 }
@@ -113,13 +105,10 @@
     }
       
     .interactBlock{
+      margin: 10px;
+      align-items: center;
         .price{
           font-size: 16px;
-        }
-        .icon{
-          margin-left: 12px;
-          width: 18px;
-          height: 18px;
         }
       }
     }
@@ -129,84 +118,49 @@
 
 //Tablet 
 @media screen and (max-width: 768px) {
-  .container{
-    margin: 20px 0px 20px 0px;
-    .orderInfo{
-      margin-top: 20px;
+.container {
+ 
+
+  .leftText{
+      font-size:20px ;
   }
-  .favoriteBlock{
-    margin: 20px 0px 20px 0px;
-  }
-  .card{
-    max-width: 280px;
-    margin: 0px 8px 15px 8px;
-    padding: 16px;
-      .imgBlock{
-        height: 405px;
-      }
-      
-      .infoBlock{
-        padding: 10px;
-        margin-bottom: 20px;
-        h6{
-          font-size: 16px;
-          margin-bottom: 12px;
-        }
-        p{
-          font-size: 12px;
-        }
-      }
-      
-    .interactBlock{
-        .price{
-          font-size: 16px;
-        }
-      }
+
+  .searchBookBlock {
+    padding: 0 10px;
+    .clearSearchBtn {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+    .bookNameValue {
+      padding: 8px;
+      font-size: 14px;
+      width: 180px;
     }
   }
+}
 }
 
 //Phone
 @media screen and (max-width: 600px){
-  .container{
-    margin: 10px 0px 10px 0px;
-    .orderInfo{
-      margin-top: 10px;
+.container {
+ 
+
+  .leftText{
+      font-size:16px ;
   }
-  .favoriteBlock{
-    margin: 10px 0px 10px 0px;
-  }
-  .card{
-    max-width: 260px;
-    margin: 0px 8px 15px 8px;
-    padding: 16px;
-      .imgBlock{
-        height: 385px;
-      }
-      
-      .infoBlock{
-        padding: 8px;
-        margin-bottom: 20px;
-        h6{
-          font-size: 14px;
-          margin-bottom: 10px;
-        }
-        p{
-          font-size: 10px;
-        }
-      }
-      
-      .interactBlock{
-        .price{
-          font-size: 14px;
-          font-family: 'Oswald';
-        }
-        .icon{
-          margin-left: 10px;
-          width: 16px;
-          height: 16px;
-        }
-      }
+
+  .searchBookBlock {
+    padding: 0 8px;
+    .clearSearchBtn {
+      width: 14px;
+      height: 14px;
+    }
+    .bookNameValue {
+      padding: 5px;
+      font-size: 12px;
+      width: 150px;
     }
   }
+}
 }
