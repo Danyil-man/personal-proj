@@ -2,8 +2,7 @@ import { Field, Form, Formik } from 'formik';
 import React, { FC, useEffect, useState } from 'react';
 import { Button, Dropdown, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewBook, addNewGenre, bookAuthor, bookCount, bookDescription, bookName, bookPhoto, bookPrice, chooseBookGenre, genreName } from '../../consts/createItemModal';
-import { add, close } from '../../consts/generalConsts';
+import { addNewBook, addNewGenre, bookAuthor, bookCount, bookDescription, bookName, bookPhoto, bookPrice } from '../../consts/createItemModal';
 import { chooseGenreBook, createBook } from '../../store/redux/reducers/booksReducer';
 import { createGenre, getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
@@ -104,7 +103,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                         <div>
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                    {genreBook.name ? genreBook.name : chooseBookGenre}
+                                    {genreBook.name ? genreBook.name : 'Вибрати жанр'}
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
@@ -116,7 +115,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                             </Dropdown>
                         </div>
                         <Button className='mt-2' type='submit' onClick={addBook}>
-                            {add}
+                            Добавити
                         </Button>
                     </form>
 
@@ -134,16 +133,16 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                         <Form>
                             <div className={style.formBlock}>
                                 <div className={style.formItem}>
-                                    <label className={style.formItemName}>{genreName}</label>
+                                    <label className={style.formItemName}>Назва жанру</label>
                                     <Field name="genre" className={style.formItemInput} />
                                 </div>
-                                <Button type='submit'>{add}</Button>
+                                <Button type='submit'>Добавити</Button>
                             </div>
                         </Form>
                     </Formik>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={onHide}>{close}</Button>
+                    <Button onClick={onHide}>Закрити</Button>
                 </Modal.Footer>
             </Modal>
         </>

@@ -1,18 +1,16 @@
 import React, { FC } from 'react';
-import { author, description, price } from '../../consts/bookInfo';
-import { uah } from '../../consts/currency';
-import { close } from '../../consts/generalConsts';
+import { author, description } from '../../consts/bookInfo';
 import { bookType } from '../../types/generalTypes';
 import style from './OpenedBookModal.module.scss'
 
 type OpenBookModalType = {
-    closeModal: boolean
+    close: boolean
     onClose: (close: boolean) => void
     book: bookType
 }
 
 
-const OpenedBookModal: FC<OpenBookModalType> = ({ closeModal, book, onClose }) => {
+const OpenedBookModal: FC<OpenBookModalType> = ({ close, book, onClose }) => {
     return (
         <div className={style.wrapper}>
             <div className={style.container}>
@@ -26,8 +24,8 @@ const OpenedBookModal: FC<OpenBookModalType> = ({ closeModal, book, onClose }) =
                         <p className={style.bookDescription}>{description} {book.description}</p>
                     </div>
                     <div className={style.interactBlock}>
-                        <p className={style.bookPrice}>{price} {book.price}{uah}</p>
-                        <button className={style.closeBtn} onClick={() => onClose(!closeModal)}>{close}</button>
+                        <p className={style.bookPrice}>Ціна: {book.price}грн.</p>
+                        <button className={style.closeBtn} onClick={() => onClose(!close)}>Закрити</button>
                     </div>
                 </div>
             </div>

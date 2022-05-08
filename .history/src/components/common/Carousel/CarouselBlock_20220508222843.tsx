@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import { carouselFirstBlock1st, carouselFirstBlock2nd, carouselSecondBlock1st, carouselSecondBlock2nd, readBookStore } from '../../../consts/carousel';
-import { storeName } from '../../../consts/generalConsts';
+import { carouselFirstBlock1st, carouselFirstBlock2nd, carouselSecondBlock1st, carouselSecondBlock2nd, readBookStore } from '../../../consts/generalConsts';
+import { storeName } from '../../../consts/header';
 import style from './Carousel.module.scss';
 
 
