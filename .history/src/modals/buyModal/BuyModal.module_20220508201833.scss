@@ -30,10 +30,14 @@
         .formItem{
             padding: 10px 30px 10px 0px;
             .formItemName{
-                width: 30%;
+                width: 20%;
+                font-family: 'Monserat';
             }
             .formItemInput{
-                width: 70%;
+                width: 80%;
+                font-family: 'Monserat';
+                padding: 5px;
+                font-size: 14px;
             }
         }
     }

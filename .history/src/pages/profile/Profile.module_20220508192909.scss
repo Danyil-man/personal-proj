@@ -1,0 +1,56 @@
+@import '../../styles/variables.scss';
+@import '../../styles/fonts.scss';
+
+.container{
+    width: 100%;
+    margin: 40px 0px 40px 0px;
+    padding: 0px 40px;
+    .ordersBlock{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 40px 0px 40px 0px;
+    }
+    .orderInfo{
+        color: $text;
+        font-size: 18px;
+        font-family: 'Monserat';
+        margin-top: 40px;
+    }
+    .headText{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 992px){
+    .container{
+        margin: 40px 0px 40px 0px;
+        .ordersBlock{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px 0px 40px 0px;
+        }
+        .orderInfo{
+            color: $text;
+            font-size: 18px;
+            font-family: 'Monserat';
+            margin-top: 40px;
+        }
+        .headText{
+            text-align: center;
+        }
+    }
+  }
+  
+  
+  //Tablet 
+  @media screen and (max-width: 768px) {
+    
+  }
+  
+  //Phone
+  @media screen and (max-width: 600px){
+   
+}

@@ -12,7 +12,7 @@
 
   .imgBlock{
     width: 100%;
-    height: 420px;
+    height: 425px;
     img{
       max-width: 100%;
       height: 100%;
@@ -38,40 +38,10 @@
 
 @media screen and (max-width: 992px){
   .card{
-    max-width: 300px;
-    margin: 0px 15px 20px 15px;
-    padding: 18px;
-  
-    .imgBlock{
-      width: 100%;
-      height: 425px;
-      img{
-        max-width: 100%;
-        height: 100%;
-        border-radius: 14px;
-      }
-    }
-  }
-        
-  .infoBlock{
-    padding: 10px;
-    .bookName{
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    .subItems{
-      font-size: 12px;
-      }
-  }
-}
-
-
-//Tablet 
-@media screen and (max-width: 768px) {
-  .card{
+    width: 100%;
     max-width: 280px;
-    margin: 0px 8px 15px 8px;
-    padding: 16px;
+    margin: 0px 15px 15px 15px;
+    padding: 18px;
   
     .imgBlock{
       width: 100%;
@@ -96,6 +66,47 @@
   }
 }
 
+
+//Tablet 
+@media screen and (max-width: 768px) {
+  .container{
+    margin: 20px 0px 20px 0px;
+    .orderInfo{
+      margin-top: 20px;
+      font-size: 16px;
+  }
+  .favoriteBlock{
+    margin: 20px 0px 20px 0px;
+  }
+  .card{
+    max-width: 280px;
+    margin: 0px 8px 15px 8px;
+    padding: 16px;
+      .imgBlock{
+        height: 405px;
+      }
+      
+      .infoBlock{
+        padding: 10px;
+        margin-bottom: 20px;
+        h6{
+          font-size: 16px;
+          margin-bottom: 12px;
+        }
+        p{
+          font-size: 12px;
+        }
+      }
+      
+    .interactBlock{
+        .price{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
 //Phone
 @media screen and (max-width: 600px){
   .phoneContainer{
@@ -108,30 +119,40 @@
       margin-top: 10px;
       font-size: 14px;
   }
+  .favoriteBlock{
+    margin: 10px 0px 10px 0px;
   }
   .card{
     max-width: 260px;
     margin: 0px 8px 15px 8px;
     padding: 16px;
-    .imgBlock{
-      width: 100%;
-      height: 385px;
-      img{
-        max-width: 100%;
-        height: 100%;
-        border-radius: 14px;
+      .imgBlock{
+        height: 385px;
+      }
+      
+      .infoBlock{
+        padding: 8px;
+        margin-bottom: 20px;
+        h6{
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        p{
+          font-size: 10px;
+        }
+      }
+      
+      .interactBlock{
+        .price{
+          font-size: 14px;
+          font-family: 'Oswald';
+        }
+        .icon{
+          margin-left: 10px;
+          width: 16px;
+          height: 16px;
+        }
       }
     }
-  }
-        
-  .infoBlock{
-    padding: 8px;
-    .bookName{
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    .subItems{
-      font-size: 10px;
-      }
   }
 }

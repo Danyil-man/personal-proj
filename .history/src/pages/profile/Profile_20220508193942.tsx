@@ -17,14 +17,14 @@ const Profile = () => {
     }, [])
 
     return (
-        <div className={orderLength[0] ? style.container : style.phoneContainer}>
+        <div className={style.container}>
             <h4 className={style.headText}>Мої замовлення</h4>
             {orderLength[0] ? <>
                 <p className={style.orderInfo}>Всього було замовлено товарів: {orderLength[0]}</p>
                 <div className={style.ordersBlock}>
                     {orderItems.map(order => order.map(item => <Orders key={item.id} item={item} />))}
                 </div>
-            </> : <EmptyBlock title={'Ви ще не робили замовлень'} subTitle={'Перейдіть в корзину, щоб зробити замовлення.'} image={'https://res.cloudinary.com/wunu/image/upload/v1652028186/personalproject/Lovepik_com-401603043-online-shopping-vector-elements_wnj9hd.png'} />}
+            </> : <EmptyBlock title={'Ви ще не робили замовлень'} subTitle={'Перейдіть в корзину, щоб зробити замовлення.'} image={''} />}
 
         </div>
     )
