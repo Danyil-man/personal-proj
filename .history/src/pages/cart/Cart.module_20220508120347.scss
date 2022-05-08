@@ -29,6 +29,9 @@
                 margin-right: 20px;
                 font-family: 'Monserat';
                 font-size: 18px;
+                &:last-child{
+                    margin-right: 0px;
+                }
                 .counter{
                     font-weight: bold;
                 }
@@ -62,7 +65,10 @@
                     margin-right: 10px;
                     color: $text;
                     font-family: 'Monserat';
-                    font-size: 16px;
+                    font-size: 18px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
                     .counter{
                         font-weight: bold;
                     }
@@ -70,8 +76,9 @@
             }
                 .buyBtn{
                     font-family: 'Monserat';
-                    font-size: 18px;
+                    font-size: 20px;
                     padding: 5px 15px;
+                    border-radius: 18px;
                     background: none;
                     border: $standartBoard;
                     &:hover{
@@ -100,6 +107,9 @@
             .infoBlock{
                 .cartInfoItem{
                     font-size: 16px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
                     .counter{
                         font-weight: bold;
                     }
@@ -137,12 +147,21 @@
         .cartFooter{
             .infoBlock{
                 .cartInfoItem{
-                    font-size: 14px;
+                    font-size: 16px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                    .counter{
+                        font-weight: bold;
+                    }
                 }
             }
                 .buyBtn{
-                    font-size: 14px;
+                    font-size: 16px;
                     padding: 3px 10px;
+                    border-radius: 18px;
+                    background: none;
+                    border: $standartBoard;
                 }
                 
         }
