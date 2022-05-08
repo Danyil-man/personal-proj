@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { EraserFill } from 'react-bootstrap-icons';
-import { allBooks, searchingOn } from '../../consts/generalConsts';
+import { searchingOn } from '../../consts/generalConsts';
 import style from './SearchBook.module.scss'
 
 type SearchBookType = {
@@ -12,7 +12,7 @@ const SearchBook: FC<SearchBookType> = ({ searchBook, setSearchBook }) => {
 
     return (
         <div className={style.container}>
-            <h3 className={style.leftText}>{searchBook ? `${searchingOn} '${searchBook}'` : allBooks}</h3>
+            <h3 className={style.leftText}>{searchBook ? `${searchingOn} '${searchBook}'` : 'Усі Книги'}</h3>
             <div className={style.searchBookBlock}>
                 <input maxLength={30} className={style.bookNameValue}
                     onChange={(e) => {
