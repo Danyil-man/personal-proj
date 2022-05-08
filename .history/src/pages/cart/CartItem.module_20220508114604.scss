@@ -11,7 +11,7 @@
     align-items: center;
     margin-bottom: 40px;
     .leftSide{
-        width: 70%;
+        width: 100%;
         display: flex;
         justify-content: start;
         align-items: center;
@@ -40,7 +40,7 @@
     }
 
     .rightSide{
-        width: 30%;
+        width: 100%;
         display: flex;
         justify-content: end;
         align-items: center;
@@ -57,8 +57,8 @@
           }
           .closeBlock{
             .closeBtn{
-              width: 30px;
-              height: 30px;
+              width: 40px;
+              height: 40px;
             }
           }
         
@@ -67,7 +67,7 @@
   //Laptop
   @media screen and (max-width: 992px){
     .card{
-      padding: 15px 25px;
+      padding: 15px 30px;
       margin-bottom: 30px;
       .leftSide{
           .imgBlock{
@@ -95,15 +95,9 @@
   
       .rightSide{
           .interactBlock{
-              margin-right: 70px;
+              margin-right: 100px;
               p{
                 font-size: 18px;
-              }
-            }
-            .closeBlock{
-              .closeBtn{
-                width: 25px;
-                height: 25px;
               }
             }
       }
@@ -139,15 +133,9 @@
   
       .rightSide{
           .interactBlock{
-              margin-right: 50px;
+              margin-right: 70px;
               p{
                 font-size: 14px;
-              }
-            }
-            .closeBlock{
-              .closeBtn{
-                width: 20px;
-                height: 20px;
               }
             }
       }
@@ -183,7 +171,7 @@
           .infoBlock{
             margin-left: 8px;
             h6{
-              font-size: 12px;
+              font-size: 14px;
             }
             p{
               font-size: 10px;;
@@ -193,15 +181,9 @@
   
       .rightSide{
           .interactBlock{
-              margin-right: 30px;
+              margin-right: 60px;
               p{
-                font-size: 12px;
-              }
-            }
-            .closeBlock{
-              .closeBtn{
-                width: 15px;
-                height: 15px;
+                font-size: 14px;
               }
             }
       }

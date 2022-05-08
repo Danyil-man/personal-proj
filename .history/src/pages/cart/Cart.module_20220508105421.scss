@@ -114,10 +114,15 @@
             }
                 .buyBtn{
                     font-size: 16px;
-                    padding: 3px 10px;
+                    padding: 5px 10px;
                     border-radius: 18px;
                     background: none;
                     border: $standartBoard;
+                    &:hover{
+                        transition: $iconDuration;
+                        background-color: $text;
+                        color: $bezh;
+                    }
                 }
                 
         }

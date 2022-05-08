@@ -11,7 +11,7 @@
     align-items: center;
     margin-bottom: 40px;
     .leftSide{
-        width: 70%;
+        width: 100%;
         display: flex;
         justify-content: start;
         align-items: center;
@@ -40,7 +40,7 @@
     }
 
     .rightSide{
-        width: 30%;
+        width: 100%;
         display: flex;
         justify-content: end;
         align-items: center;
@@ -55,27 +55,21 @@
             transition: $iconDuration;
             transform: rotate(90deg);
           }
-          .closeBlock{
-            .closeBtn{
-              width: 30px;
-              height: 30px;
-            }
-          }
         
     }
   }
   //Laptop
   @media screen and (max-width: 992px){
     .card{
-      padding: 15px 25px;
+      padding: 15px 30px;
       margin-bottom: 30px;
       .leftSide{
           .imgBlock{
               width: 100%;
-              max-width: 120px;
+              max-width: 140px;
               img{
                 width: 100%;
-                height: 200px;
+                height: 220px;
               }
             }
         
@@ -95,15 +89,9 @@
   
       .rightSide{
           .interactBlock{
-              margin-right: 70px;
+              margin-right: 100px;
               p{
                 font-size: 18px;
-              }
-            }
-            .closeBlock{
-              .closeBtn{
-                width: 25px;
-                height: 25px;
               }
             }
       }
@@ -119,35 +107,30 @@
       .leftSide{
           .imgBlock{
               width: 100%;
-              max-width: 90px;
+              max-width: 120px;
               img{
                 width: 100%;
-                height: 160px;
+                height: 200px;
               }
             }
         
           .infoBlock{
-            margin-left: 10px;
+            margin-left: 15px;
             h6{
-              font-size: 14px;
+              font-size: 16px;
             }
             p{
-              font-size: 10px;;
+              font-size: 12px;;
+              font-family: "Monserat";
             }
           }
       }
   
       .rightSide{
           .interactBlock{
-              margin-right: 50px;
+              margin-right: 80px;
               p{
-                font-size: 14px;
-              }
-            }
-            .closeBlock{
-              .closeBtn{
-                width: 20px;
-                height: 20px;
+                font-size: 16px;
               }
             }
       }
@@ -165,45 +148,41 @@
       .orderInfo{
         margin-top: 10px;
         font-size: 14px;
-      }
+    }
+    .favoriteBlock{
+      margin: 10px 0px 10px 0px;
     }
     .card{
-      padding: 8px 10px;
-      margin-bottom: 15px;
-      .leftSide{
-          .imgBlock{
-              width: 100%;
-              max-width: 90px;
-              img{
-                width: 100%;
-                height: 140px;
-              }
-            }
+      max-width: 260px;
+      margin: 0px 8px 15px 8px;
+      padding: 16px;
+        .imgBlock{
+          height: 385px;
+        }
         
-          .infoBlock{
-            margin-left: 8px;
-            h6{
-              font-size: 12px;
-            }
-            p{
-              font-size: 10px;;
-            }
+        .infoBlock{
+          padding: 8px;
+          margin-bottom: 20px;
+          h6{
+            font-size: 14px;
+            margin-bottom: 10px;
           }
-      }
-  
-      .rightSide{
-          .interactBlock{
-              margin-right: 30px;
-              p{
-                font-size: 12px;
-              }
-            }
-            .closeBlock{
-              .closeBtn{
-                width: 15px;
-                height: 15px;
-              }
-            }
+          p{
+            font-size: 10px;
+          }
+        }
+        
+        .interactBlock{
+          .price{
+            font-size: 14px;
+            font-family: 'Oswald';
+          }
+          .icon{
+            margin-left: 10px;
+            width: 16px;
+            height: 16px;
+          }
+        }
       }
     }
   }
