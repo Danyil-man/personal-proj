@@ -1,0 +1,36 @@
+@import '../../styles/styles.scss';
+@import '../../styles/variables.scss';
+
+.card{
+  width: 100%;
+  max-width: 240px;
+  margin: 0px 20px 20px 20px;
+  border-radius: 20px;
+  border: 1px solid $text;
+  background-color: $white;
+  padding: 20px;
+.imgBlock{
+  width: 100%;
+  max-width: 200px;
+    img{
+      width: 200px;
+      height: 280px;
+      border-radius: 14px;
+    }
+}
+      
+.infoBlock{
+  padding: 10px;
+  text-align: center;
+  .bookName{
+    font-size: 18px;
+    font-family: "Oswald";
+    margin-bottom: 15px;
+  }
+  .subItems{
+    font-size: 14px;
+    text-align: start;
+    font-family: "Monserat";
+    }
+  }
+}

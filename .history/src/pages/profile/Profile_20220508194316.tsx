@@ -17,7 +17,7 @@ const Profile = () => {
     }, [])
 
     return (
-        <div className={orderLength[0] ? style.container : style.phoneContainer}>
+        <div className={style.container}>
             <h4 className={style.headText}>Мої замовлення</h4>
             {orderLength[0] ? <>
                 <p className={style.orderInfo}>Всього було замовлено товарів: {orderLength[0]}</p>
