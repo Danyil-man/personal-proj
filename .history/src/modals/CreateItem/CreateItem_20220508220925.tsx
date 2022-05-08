@@ -2,8 +2,7 @@ import { Field, Form, Formik } from 'formik';
 import React, { FC, useEffect, useState } from 'react';
 import { Button, Dropdown, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewBook, addNewGenre, bookAuthor, bookCount, bookDescription, bookName, bookPhoto, bookPrice, chooseBookGenre, genreName } from '../../consts/createItemModal';
-import { add, close } from '../../consts/generalConsts';
+import { addNewBook, addNewGenre } from '../../consts/createItemModal';
 import { chooseGenreBook, createBook } from '../../store/redux/reducers/booksReducer';
 import { createGenre, getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
@@ -78,33 +77,33 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                 <Modal.Body>
                     <form className={style.formBlock}>
                         <div className={style.formItem}>
-                            <label className={style.formItemName}>{bookName}</label>
+                            <label className={style.formItemName}>Назва</label>
                             <input className={style.formItemInput} type='text' onChange={(e: any) => setName(e.target.value)} />
                         </div>
                         <div className={style.formItem}>
-                            <label className={style.formItemName}>{bookAuthor}</label>
+                            <label className={style.formItemName}>Автор</label>
                             <input className={style.formItemInput} type='text' onChange={(e: any) => setAuthor(e.target.value)} />
                         </div>
                         <div className={style.formItem}>
-                            <label className={style.formItemName}>{bookDescription}</label>
+                            <label className={style.formItemName}>Опис</label>
                             <input className={style.formItemInput} type='text' onChange={(e: any) => setDescription(e.target.value)} />
                         </div>
                         <div className={style.formItem}>
-                            <label className={style.formItemName}>{bookPrice}</label>
+                            <label className={style.formItemName}>Ціна</label>
                             <input className={style.formItemInput} type='text' onChange={(e: any) => setPrice(e.target.value)} />
                         </div>
                         <div className={style.formItem}>
-                            <label className={style.formItemName}>{bookCount}</label>
+                            <label className={style.formItemName}>Кількість</label>
                             <input className={style.formItemInput} type='text' onChange={(e: any) => setCount(e.target.value)} />
                         </div>
                         <div className={style.formItem}>
-                            <label className={style.formItemName}>{bookPhoto}</label>
+                            <label className={style.formItemName}>Фото</label>
                             <input className={style.formItemInput} type='file' onChange={addFile} />
                         </div>
                         <div>
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                    {genreBook.name ? genreBook.name : chooseBookGenre}
+                                    {genreBook.name ? genreBook.name : 'Вибрати жанр'}
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
@@ -116,7 +115,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                             </Dropdown>
                         </div>
                         <Button className='mt-2' type='submit' onClick={addBook}>
-                            {add}
+                            Добавити
                         </Button>
                     </form>
 
@@ -134,16 +133,16 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                         <Form>
                             <div className={style.formBlock}>
                                 <div className={style.formItem}>
-                                    <label className={style.formItemName}>{genreName}</label>
+                                    <label className={style.formItemName}>Назва жанру</label>
                                     <Field name="genre" className={style.formItemInput} />
                                 </div>
-                                <Button type='submit'>{add}</Button>
+                                <Button type='submit'>Добавити</Button>
                             </div>
                         </Form>
                     </Formik>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={onHide}>{close}</Button>
+                    <Button onClick={onHide}>Закрити</Button>
                 </Modal.Footer>
             </Modal>
         </>

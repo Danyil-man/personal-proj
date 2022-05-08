@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { allBooks } from '../../consts/generalConsts';
 import { getAllBooks } from '../../store/redux/reducers/booksReducer';
 import { AppStateType } from '../../store/redux/store';
+import { GenresType } from '../../types/generalTypes';
 import style from './Categories.module.scss'
 
 type Categories = {
