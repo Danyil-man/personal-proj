@@ -52,7 +52,7 @@ const Cart = () => {
                 </> : <EmptyBlock
                     title={'Ваша корзина пуста'}
                     subTitle={'Перейдіть на головну, щоб замовити товар.'}
-                    image={'https://res.cloudinary.com/wunu/image/upload/v1652002538/personalproject/Lovepik_com-400499244-shopping-cart_n0cdns.png'} />
+                    image={'https://res.cloudinary.com/wunu/image/upload/v1652002538/personalproject/Lovepik_com-400499244-shopping-cart_n0cdns.pnghttps://res.cloudinary.com/wunu/image/upload/v1652002538/personalproject/Lovepik_com-400499244-shopping-cart_n0cdns.png'} />
             }
 
 
