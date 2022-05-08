@@ -45,7 +45,7 @@ const Cart = () => {
                     <div className={style.cartFooter}>
                         <div className={style.infoBlock}>
                             <p className={style.cartInfoItem}>Кількість товарів в корзині: <span className={style.counter}>{cartLength[0] ? cartLength[0] : 0}</span></p>
-                            <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{totalCartPrice ? totalCartPrice : 0}</span>грн.</p>
+                            <p className={style.cartInfoItem}>Загальна сума: <span className={style.counter}>{totalCartPrice ? totalCartPrice : 0}</span></p>
                         </div>
                         <button onClick={() => setIsBuy(true)} className={style.buyBtn}>Купити</button>
                     </div>

@@ -103,7 +103,10 @@
         .cartFooter{
             .infoBlock{
                 .cartInfoItem{
-                    font-size: 16px;
+                    margin-right: 10px;
+                    color: $text;
+                    font-family: 'Monserat';
+                    font-size: 18px;
                     &:last-child{
                         margin-right: 0px;
                     }
@@ -113,11 +116,17 @@
                 }
             }
                 .buyBtn{
+                    font-family: 'Monserat';
                     font-size: 16px;
-                    padding: 3px 10px;
+                    padding: 5px 15px;
                     border-radius: 18px;
                     background: none;
                     border: $standartBoard;
+                    &:hover{
+                        transition: $iconDuration;
+                        background-color: $text;
+                        color: $bezh;
+                    }
                 }
                 
         }

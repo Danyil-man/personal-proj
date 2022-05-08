@@ -27,6 +27,7 @@
             justify-content: center;
             .cartInfoItem{
                 margin-right: 20px;
+                color: $text;
                 font-family: 'Monserat';
                 font-size: 18px;
                 &:last-child{
@@ -57,12 +58,22 @@
     .container{
         margin: 30px 0px 30px 0px;
         .cartBlock{
-            margin: 30px 0px 30px 0px;
+            margin: 20px 0px 30px 0px;
+           
+        }
+        .headText{
+            text-align: center;
+            font-family: 'Monserat';
         }
         .cartFooter{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             .infoBlock{
+                display: flex;
+                justify-content: center;
                 .cartInfoItem{
-                    margin-right: 10px;
+                    margin-right: 20px;
                     color: $text;
                     font-family: 'Monserat';
                     font-size: 18px;
@@ -96,31 +107,40 @@
   //Tablet 
   @media screen and (max-width: 768px) {
     .container{
-        margin: 20px 0px 20px 0px;
-        .cartBlock{
-            margin: 20px 0px 20px 0px;
+      margin: 20px 0px 20px 0px;
+      .orderInfo{
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    .favoriteBlock{
+      margin: 20px 0px 20px 0px;
+    }
+    .card{
+      max-width: 280px;
+      margin: 0px 8px 15px 8px;
+      padding: 16px;
+        .imgBlock{
+          height: 405px;
         }
-        .cartFooter{
-            .infoBlock{
-                .cartInfoItem{
-                    font-size: 16px;
-                    &:last-child{
-                        margin-right: 0px;
-                    }
-                    .counter{
-                        font-weight: bold;
-                    }
-                }
-            }
-                .buyBtn{
-                    font-size: 16px;
-                    padding: 3px 10px;
-                    border-radius: 18px;
-                    background: none;
-                    border: $standartBoard;
-                }
-                
+        
+        .infoBlock{
+          padding: 10px;
+          margin-bottom: 20px;
+          h6{
+            font-size: 16px;
+            margin-bottom: 12px;
+          }
+          p{
+            font-size: 12px;
+          }
         }
+        
+      .interactBlock{
+          .price{
+            font-size: 16px;
+          }
+        }
+      }
     }
   }
   
