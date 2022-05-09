@@ -3,7 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Button, Dropdown, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewBook, addNewGenre, bookAuthor, bookCount, bookDescription, bookName, bookPhoto, bookPrice, chooseBookGenre, genreName } from '../../consts/createItemModal';
-import { add, close, fillAllField, fillFieldSuccess } from '../../consts/generalConsts';
+import { add, close, fillAllField } from '../../consts/generalConsts';
 import { chooseGenreBook, createBook } from '../../store/redux/reducers/booksReducer';
 import { createGenre, getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
@@ -35,15 +35,26 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
 
     const addBook = () => {
         const formData = new FormData()
-        formData.append('name', name),
-            formData.append('author', author),
-            formData.append('description', description),
-            formData.append('price', `${price}`),
-            formData.append('image', file),
-            formData.append('genreId', `${genreBook.id}`)
-        formData.append('count', `${count}`),
+        if ((file || name || author || description === '') && (price || count === 0)) {
+            alert(fillAllField)
+        } else {
+            formData.append('name', name),
+                formData.append('author', author),
+                formData.append('description', description),
+                formData.append('price', `${price}`),
+                formData.append('image', file),
+                formData.append('genreId', `${genreBook.id}`)
+            formData.append('count', `${count}`),
 
-            dispatch(createBook(formData))
+                dispatch(createBook(formData))
+            setFile('')
+            setName('')
+            setAuthor('')
+            setDescription('')
+            setPrice(0)
+            setCount(0)
+        }
+
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
@@ -51,8 +62,11 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
     }
 
     const addGenre = (values: any) => {
-        dispatch(createGenre({ name: values.genre }))
-        alert(fillFieldSuccess)
+        if (values.genre === '') {
+            alert(fillAllField)
+        } else {
+            dispatch(createGenre({ name: values.genre }))
+        }
 
     }
 
@@ -74,12 +88,27 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                 </Modal.Header>
                 <Modal.Body>
                     <form className={style.formBlock}>
-                        <CreateItemField labelText={bookName} type={'text'} setOnChange={(e: any) => setName(e.target.value)} />
-                        <CreateItemField labelText={bookAuthor} type={'text'} setOnChange={(e: any) => setAuthor(e.target.value)} />
-                        <CreateItemField labelText={bookDescription} type={'text'} setOnChange={(e: any) => setDescription(e.target.value)} />
-                        <CreateItemField labelText={bookPrice} type={'text'} setOnChange={(e: any) => setPrice(e.target.value)} />
-                        <CreateItemField labelText={bookCount} type={'text'} setOnChange={(e: any) => setCount(e.target.value)} />
-                        <CreateItemField labelText={bookPhoto} type={'file'} setOnChange={addFile} />
+                        <CreateItemField labelText={bookName} type={'text'} onChange={(e: any) => setName(e.target.value)} />
+                        <div className={style.formItem}>
+                            <label className={style.formItemName}>{bookAuthor}</label>
+                            <input className={style.formItemInput} type='text' onChange={(e: any) => setAuthor(e.target.value)} required />
+                        </div>
+                        <div className={style.formItem}>
+                            <label className={style.formItemName}>{bookDescription}</label>
+                            <input className={style.formItemInput} type='text' onChange={(e: any) => setDescription(e.target.value)} required />
+                        </div>
+                        <div className={style.formItem}>
+                            <label className={style.formItemName}>{bookPrice}</label>
+                            <input className={style.formItemInput} type='text' onChange={(e: any) => setPrice(e.target.value)} required />
+                        </div>
+                        <div className={style.formItem}>
+                            <label className={style.formItemName}>{bookCount}</label>
+                            <input className={style.formItemInput} type='text' onChange={(e: any) => setCount(e.target.value)} required />
+                        </div>
+                        <div className={style.formItem}>
+                            <label className={style.formItemName}>{bookPhoto}</label>
+                            <input className={style.formItemInput} type='file' onChange={addFile} required />
+                        </div>
                         <div>
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">

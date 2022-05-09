@@ -3,7 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Button, Dropdown, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewBook, addNewGenre, bookAuthor, bookCount, bookDescription, bookName, bookPhoto, bookPrice, chooseBookGenre, genreName } from '../../consts/createItemModal';
-import { add, close, fillAllField, fillFieldSuccess } from '../../consts/generalConsts';
+import { add, close, fillAllField } from '../../consts/generalConsts';
 import { chooseGenreBook, createBook } from '../../store/redux/reducers/booksReducer';
 import { createGenre, getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
@@ -35,6 +35,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
 
     const addBook = () => {
         const formData = new FormData()
+
         formData.append('name', name),
             formData.append('author', author),
             formData.append('description', description),
@@ -52,8 +53,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
 
     const addGenre = (values: any) => {
         dispatch(createGenre({ name: values.genre }))
-        alert(fillFieldSuccess)
-
+        alert('success')
     }
 
 

@@ -5,4 +5,4 @@ export const carouselSecondBlock1st = 'Читання чарівної книг�
 export const carouselSecondBlock2nd = 'покращить твоє самопочуття'
 export const carouselFirstBlock1st = 'Ласкаво просимо'
 export const carouselFirstBlock2nd = 'до'
-export const carouselThirdBlock = 'у'
+export const carouselThirdBlock = 'carouselFirstBlock2nd'

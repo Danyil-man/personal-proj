@@ -3,7 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Button, Dropdown, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewBook, addNewGenre, bookAuthor, bookCount, bookDescription, bookName, bookPhoto, bookPrice, chooseBookGenre, genreName } from '../../consts/createItemModal';
-import { add, close, fillAllField, fillFieldSuccess } from '../../consts/generalConsts';
+import { add, close, fillAllField } from '../../consts/generalConsts';
 import { chooseGenreBook, createBook } from '../../store/redux/reducers/booksReducer';
 import { createGenre, getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
@@ -33,17 +33,26 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
         console.log(file)
     }
 
-    const addBook = () => {
-        const formData = new FormData()
-        formData.append('name', name),
-            formData.append('author', author),
-            formData.append('description', description),
-            formData.append('price', `${price}`),
-            formData.append('image', file),
-            formData.append('genreId', `${genreBook.id}`)
-        formData.append('count', `${count}`),
+    const addBook = (e: any) => {
+        e.preventDefault()
+        try {
+            const formData = new FormData()
 
-            dispatch(createBook(formData))
+            formData.append('name', name),
+                formData.append('author', author),
+                formData.append('description', description),
+                formData.append('price', `${price}`),
+                formData.append('image', file),
+                formData.append('genreId', `${genreBook.id}`)
+            formData.append('count', `${count}`),
+
+                dispatch(createBook(formData))
+        } catch {
+            alert('Виберіть та заповніть всі дані')
+        }
+
+
+
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
@@ -51,8 +60,11 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
     }
 
     const addGenre = (values: any) => {
-        dispatch(createGenre({ name: values.genre }))
-        alert(fillFieldSuccess)
+        if (values.genre === '') {
+            alert(fillAllField)
+        } else {
+            dispatch(createGenre({ name: values.genre }))
+        }
 
     }
 

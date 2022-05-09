@@ -78,6 +78,16 @@
     &:first-child{
       margin-left: 0px;
     }
+    &:hover{
+      cursor: pointer;
+      transition: $iconDuration;
+      &:first-child{
+          color: $heart;
+      }
+      &:last-child{
+          color: $buy;
+      }
+  }
   }
 }
   @media screen and (max-width: 992px){

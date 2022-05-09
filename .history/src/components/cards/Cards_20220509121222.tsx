@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { skeletonArr } from '../../consts/generalConsts';
+import OpenedBookModal from '../../modals/OpenedBookModal/OpenedBookModal';
 import { AppStateType } from '../../store/redux/store';
 import Card from '../card/Card';
 import SkeletonLoader from '../common/SkeletonLoader/SkeletonLoader';

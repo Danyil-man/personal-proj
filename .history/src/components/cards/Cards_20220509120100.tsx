@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { skeletonArr } from '../../consts/generalConsts';
+import OpenedBookModal from '../../modals/OpenedBookModal/OpenedBookModal';
 import { AppStateType } from '../../store/redux/store';
 import Card from '../card/Card';
 import SkeletonLoader from '../common/SkeletonLoader/SkeletonLoader';
@@ -12,6 +12,9 @@ type CardsType = {
 
 const Cards: FC<CardsType> = ({ searchBook }) => {
     const { books, isLoading } = useSelector((state: AppStateType) => state.books)
+    const skeletonArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    const skeletonKeys = skeletonArr.keys()
+    console.log(skeletonKeys);
 
     return (
         <div className={style.container}>
