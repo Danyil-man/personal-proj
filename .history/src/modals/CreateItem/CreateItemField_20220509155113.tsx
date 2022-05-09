@@ -6,15 +6,15 @@ import style from './CreateItem.module.scss'
 type CreateItemFieldType = {
     labelText: string
     type: string
-    value: string | number
+    value: string
     setOnChange: (e: any) => void
 }
 
-const CreateItemField: FC<CreateItemFieldType> = ({ labelText, type, value, setOnChange }) => {
+const CreateItemField: FC<CreateItemFieldType> = ({ labelText, type, setOnChange }) => {
     return (
         <div className={style.formItem}>
             <label className={style.formItemName}>{labelText}</label>
-            <input className={style.formItemInput} type={type} value={value} onChange={setOnChange} required />
+            <input className={style.formItemInput} type={type} onChange={setOnChange} required />
         </div>
     )
 }

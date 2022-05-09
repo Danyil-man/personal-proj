@@ -42,13 +42,8 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
             formData.append('image', file),
             formData.append('genreId', `${genreBook.id}`)
         formData.append('count', `${count}`),
-            dispatch(createBook(formData))
 
-        setName('')
-        setAuthor('')
-        setDescription('')
-        setPrice(0)
-        setCount(0)
+            dispatch(createBook(formData))
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
@@ -84,7 +79,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                         <CreateItemField labelText={bookDescription} value={description} type={'text'} setOnChange={(e: any) => setDescription(e.target.value)} />
                         <CreateItemField labelText={bookPrice} value={price} type={'text'} setOnChange={(e: any) => setPrice(e.target.value)} />
                         <CreateItemField labelText={bookCount} value={count} type={'text'} setOnChange={(e: any) => setCount(e.target.value)} />
-                        <CreateItemField labelText={bookPhoto} value={''} type={'file'} setOnChange={addFile} />
+                        <CreateItemField labelText={bookPhoto} value={file} type={'file'} setOnChange={addFile} />
                         <div>
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">

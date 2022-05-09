@@ -42,8 +42,8 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
             formData.append('image', file),
             formData.append('genreId', `${genreBook.id}`)
         formData.append('count', `${count}`),
-            dispatch(createBook(formData))
 
+            dispatch(createBook(formData))
         setName('')
         setAuthor('')
         setDescription('')

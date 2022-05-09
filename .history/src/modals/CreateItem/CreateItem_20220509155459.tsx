@@ -42,13 +42,8 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
             formData.append('image', file),
             formData.append('genreId', `${genreBook.id}`)
         formData.append('count', `${count}`),
-            dispatch(createBook(formData))
 
-        setName('')
-        setAuthor('')
-        setDescription('')
-        setPrice(0)
-        setCount(0)
+            dispatch(createBook(formData))
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
