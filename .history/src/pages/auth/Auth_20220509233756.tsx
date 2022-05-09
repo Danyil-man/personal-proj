@@ -63,7 +63,7 @@ const Auth = () => {
                         <div className={style.formItem}>
                             <label className={style.label}>{password}</label>
                             <div className={style.inputField}>
-                                <Field maxlength={21} className={style.inputItem} name="password" placeholder="Your password" type={`${showPassword ? 'text' : 'password'}`} required />
+                                <Field className={style.inputItem} name="password" placeholder="Your password" type={`${showPassword ? 'text' : 'password'}`} required />
                                 <p className={style.error}>{errors.password}</p>
                                 <div className={style.hidePassword}>
                                     {showPassword ? <EyeFill size={18} onClick={() => setShowPassword(!showPassword)} /> : <EyeSlashFill size={18} onClick={() => setShowPassword(!showPassword)} />}

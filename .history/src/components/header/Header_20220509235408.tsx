@@ -29,9 +29,16 @@ const Header = () => {
             </div>
             {isAuth ? <>
                 <div className={style.headerRightSide}>
-                    <NavItem path={FAVORITE_ROUTE}><Heart size={20} className={style.icon} /></NavItem>
-                    <NavItem path={CART_ROUTE}><Cart2 size={20} className={style.icon} /></NavItem>
-                    <NavItem path={PROFILE_ROUTE}><Person size={20} className={style.icon} /></NavItem>
+                    <NavItem path={FAVORITE_ROUTE} icon={<Heart />} />
+                    <Link to={FAVORITE_ROUTE} className={style.link}>
+                        <Heart size={20} className={style.icon} />
+                    </Link>
+                    <Link to={CART_ROUTE} className={style.link}>
+                        <Cart2 size={20} className={style.icon} />
+                    </Link>
+                    <Link to={PROFILE_ROUTE} className={style.link}>
+                        <Person size={20} className={style.icon} />
+                    </Link>
                     <p className={style.userInfo}> {signedAs} {user.email}</p>
                     {user.role === 'ADMIN' ? <button className={style.navigateBtn} onClick={() => { navigate(ADMIN_ROUTE) }}>{adminPanel}</button> : null}
                     <button className={style.navigateBtn} onClick={LogOut}>{btnLogOut}</button>

@@ -11,16 +11,16 @@ import { EyeFill, EyeSlashFill } from 'react-bootstrap-icons';
 import { AppStateType } from '../../store/redux/store';
 import PageLoader from '../../components/common/PageLoader/PageLoader';
 import { email, haveAcc, haveNotAcc, logInLink, logInText, password, registerLink, signUpText } from '../../consts/auth';
-import { authEmailLong, authEmailShort, authPasswordLong, authPasswordShort } from '../../consts/yupValidationText';
+import { authEmailShort } from '../../consts/yupValidationText';
 
 
 const AuthSchema = Yup.object().shape({
     email: Yup.string()
         .min(10, authEmailShort)
-        .max(50, authEmailLong),
+        .max(50, 'Too Long! Maximum 50 letters'),
     password: Yup.string()
-        .min(4, authPasswordShort)
-        .max(20, authPasswordLong),
+        .min(4, 'Too Short! Minimum 4 characters')
+        .max(20, 'Too Long! Miximum 20 characters'),
 })
 const Auth = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -56,14 +56,14 @@ const Auth = () => {
                         <div className={style.formItem} >
                             <label className={style.label} >{email}</label>
                             <div className={style.inputField}>
-                                <Field maxlength={51} className={style.inputItem} name="email" type="email" placeholder="example@mail.com" required />
+                                <Field className={style.inputItem} name="email" type="email" placeholder="example@mail.com" required />
                                 <p className={style.error}>{errors.email}</p>
                             </div>
                         </div>
                         <div className={style.formItem}>
                             <label className={style.label}>{password}</label>
                             <div className={style.inputField}>
-                                <Field maxlength={21} className={style.inputItem} name="password" placeholder="Your password" type={`${showPassword ? 'text' : 'password'}`} required />
+                                <Field className={style.inputItem} name="password" placeholder="Your password" type={`${showPassword ? 'text' : 'password'}`} required />
                                 <p className={style.error}>{errors.password}</p>
                                 <div className={style.hidePassword}>
                                     {showPassword ? <EyeFill size={18} onClick={() => setShowPassword(!showPassword)} /> : <EyeSlashFill size={18} onClick={() => setShowPassword(!showPassword)} />}
