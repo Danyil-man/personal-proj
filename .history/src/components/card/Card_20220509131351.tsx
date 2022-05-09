@@ -1,9 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Cart2, Heart } from 'react-bootstrap-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { price } from '../../consts/bookInfo';
-import { uah } from '../../consts/currency';
-import { noAvaliable } from '../../consts/generalConsts';
 import { genreObj } from '../../consts/genre';
 import OpenedBookModal from '../../modals/OpenedBookModal/OpenedBookModal';
 import { addBookCart } from '../../store/redux/reducers/cartReducer';
@@ -41,7 +38,7 @@ const Card: FC<CardType> = ({ book }) => {
             </div>
 
             <div className={style.interactBlock}>
-                <p>{book.count !== 0 ? `${price} ${book.price}${uah}` : noAvaliable} </p>
+                <p>{book.count !== 0 ? `Ціна: ${book.price}грн.` : 'Немає в наявності'} </p>
                 <div className='d-flex'>
                     <Heart onClick={(e: any) => addBookToFavorite(book.id, e)} className={style.icon} />
                     <Cart2 onClick={(e: any) => addBookToCart(book.id, e)} className={style.icon} />

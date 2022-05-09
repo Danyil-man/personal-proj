@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { createOrder } from '../../store/redux/reducers/orderReducer';
 import { CartType } from '../../types/generalTypes';
 import { city, confirmingOrder, confirmOrder, mail, name, street } from '../../consts/buyModal';
-import { close, fillAllField } from '../../consts/generalConsts';
+import { close } from '../../consts/generalConsts';
 
 type BuyModalType = {
     show: boolean
@@ -29,12 +29,13 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
         bookId: orderId,
         bookName: orderBookName
     })
+    console.log(orders);
 
 
-    const sendEmail = (e: any) => {
-        e.preventDefault();
+    const sendEmail = () => {
+        //e.preventDefault();
         if (values.name === '' || values.email === '' || values.street === '' || values.city === '') {
-            alert(fillAllField)
+            alert('Всі поля повинні бути заповнені')
         } else {
             emailjs.send('service_hxod138', 'template_ioxwesk', values, 'hIa6EbQItOhL_Sxmg')
                 .then((result) => {
@@ -70,6 +71,7 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                 </Modal.Header>
                 <Modal.Body>
                     <form className={style.formBlock}>
+
                         <div className={style.formItem}>
                             <label className={style.formItemName}>{name}</label>
                             <input className={style.formItemInput} type="text"
@@ -90,6 +92,7 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                             <input className={style.formItemInput} type="text"
                                 name="city" onChange={handleChange} required />
                         </div>
+
                         <Button type='submit' onClick={sendEmail}>{confirmOrder}</Button>
                     </form>
                 </Modal.Body>

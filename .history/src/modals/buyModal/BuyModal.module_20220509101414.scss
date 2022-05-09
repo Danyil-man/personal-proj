@@ -1,0 +1,40 @@
+.formBlock{
+    width: 100%;
+    text-align: center;
+    .formItem{
+        width: 100%;
+        padding: 10px 50px 10px 0px;
+        .formItemName{
+            width: 20%;
+            font-family: 'Monserat';
+        }
+        .formItemInput{
+            width: 80%;
+            font-family: 'Monserat';
+            padding: 5px;
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .formBlock{
+        .formItem{
+            padding: 10px 40px 10px 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    .formBlock{
+        .formItem{
+            padding: 5px 20px 5px 0px;
+            .formItemName{
+                width: 30%;
+            }
+            .formItemInput{
+                width: 70%;
+            }
+        }
+    }
+}

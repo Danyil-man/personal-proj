@@ -35,6 +35,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
 
     const addBook = () => {
         const formData = new FormData()
+
         formData.append('name', name),
             formData.append('author', author),
             formData.append('description', description),
@@ -53,7 +54,6 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
     const addGenre = (values: any) => {
         dispatch(createGenre({ name: values.genre }))
         alert(fillFieldSuccess)
-
     }
 
 
