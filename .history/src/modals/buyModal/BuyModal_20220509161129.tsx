@@ -71,10 +71,22 @@ const BuyModal: FC<BuyModalType> = ({ show, cartId, totalCartPrice, orders, onHi
                 </Modal.Header>
                 <Modal.Body>
                     <form className={style.formBlock}>
-                        <BuyBookModalField labelText={name} name='name' type={'text'} setOnChange={(e: any) => handleChange(e)} />
-                        <BuyBookModalField labelText={mail} name='email' type={'email'} setOnChange={(e: any) => handleChange(e)} />
-                        <BuyBookModalField labelText={street} name='street' type={'text'} setOnChange={(e: any) => handleChange(e)} />
-                        <BuyBookModalField labelText={city} name='city' type={'text'} setOnChange={(e: any) => handleChange(e)} />
+                        <BuyBookModalField labelText={name} type={'text'} setOnChange={(e: any) => handleChange(e)} />
+                        <div className={style.formItem}>
+                            <label className={style.formItemName}>{mail}</label>
+                            <input className={style.formItemInput} type="email"
+                                name="email" onChange={handleChange} required />
+                        </div>
+                        <div className={style.formItem}>
+                            <label className={style.formItemName}>{street}</label>
+                            <input className={style.formItemInput} type="text"
+                                name="street" onChange={handleChange} required />
+                        </div>
+                        <div className={style.formItem}>
+                            <label className={style.formItemName}>{city}</label>
+                            <input className={style.formItemInput} type="text"
+                                name="city" onChange={handleChange} required />
+                        </div>
                         <Button type='submit' onClick={sendEmail}>{confirmOrder}</Button>
                     </form>
                 </Modal.Body>
