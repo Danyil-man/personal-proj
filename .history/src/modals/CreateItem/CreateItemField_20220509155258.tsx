@@ -14,7 +14,7 @@ const CreateItemField: FC<CreateItemFieldType> = ({ labelText, type, value, setO
     return (
         <div className={style.formItem}>
             <label className={style.formItemName}>{labelText}</label>
-            <input className={style.formItemInput} type={type} value={value} onChange={setOnChange} required />
+            <input className={style.formItemInput} type={type} onChange={setOnChange} required />
         </div>
     )
 }

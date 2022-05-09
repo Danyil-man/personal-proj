@@ -42,13 +42,8 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
             formData.append('image', file),
             formData.append('genreId', `${genreBook.id}`)
         formData.append('count', `${count}`),
-            dispatch(createBook(formData))
 
-        setName('')
-        setAuthor('')
-        setDescription('')
-        setPrice(0)
-        setCount(0)
+            dispatch(createBook(formData))
     }
 
     const chooseGenre = (genreBookName: GenresType) => {
@@ -80,11 +75,11 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                 <Modal.Body>
                     <form className={style.formBlock}>
                         <CreateItemField labelText={bookName} value={name} type={'text'} setOnChange={(e: any) => setName(e.target.value)} />
-                        <CreateItemField labelText={bookAuthor} value={author} type={'text'} setOnChange={(e: any) => setAuthor(e.target.value)} />
-                        <CreateItemField labelText={bookDescription} value={description} type={'text'} setOnChange={(e: any) => setDescription(e.target.value)} />
-                        <CreateItemField labelText={bookPrice} value={price} type={'text'} setOnChange={(e: any) => setPrice(e.target.value)} />
-                        <CreateItemField labelText={bookCount} value={count} type={'text'} setOnChange={(e: any) => setCount(e.target.value)} />
-                        <CreateItemField labelText={bookPhoto} value={''} type={'file'} setOnChange={addFile} />
+                        <CreateItemField labelText={bookAuthor} type={'text'} setOnChange={(e: any) => setAuthor(e.target.value)} />
+                        <CreateItemField labelText={bookDescription} type={'text'} setOnChange={(e: any) => setDescription(e.target.value)} />
+                        <CreateItemField labelText={bookPrice} type={'text'} setOnChange={(e: any) => setPrice(e.target.value)} />
+                        <CreateItemField labelText={bookCount} type={'text'} setOnChange={(e: any) => setCount(e.target.value)} />
+                        <CreateItemField labelText={bookPhoto} type={'file'} setOnChange={addFile} />
                         <div>
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">
