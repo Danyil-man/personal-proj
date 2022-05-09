@@ -12,7 +12,7 @@ import genreReducer from './reducers/genreReducer';
 
 const reducerPack = combineReducers({
     books: booksReducer,
-    genre: genreReducer,
+    filter: genreReducer,
     user: userReducer,
     favorite: favoriteReducer,
     cart: cartReducer,

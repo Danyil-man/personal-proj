@@ -5,29 +5,34 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addNewBook, addNewGenre, bookAuthor, bookCount, bookDescription, bookName, bookPhoto, bookPrice, chooseBookGenre, genreName } from '../../consts/createItemModal';
 import { add, close, fillAllField, fillFieldSuccess } from '../../consts/generalConsts';
 import { chooseGenreBook, createBook } from '../../store/redux/reducers/booksReducer';
-import { createGenre, getAllGenres } from '../../store/redux/reducers/genreReducer';
+import { createGenre, getAllGenres } from '../../store/redux/reducers/filterReducer';
 import { AppStateType } from '../../store/redux/store';
 import { GenresType } from '../../types/generalTypes';
 import style from './CreateItem.module.scss'
 import CreateItemField from './CreateItemField';
 type CreateItemType = {
     show: boolean
-    onHide: () => void
 }
 
-const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
+const CreateItem: FC<CreateItemType> = ({ show }) => {
     const [file, setFile] = useState('')
     const [name, setName] = useState('')
     const [author, setAuthor] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState(0)
     const [count, setCount] = useState(0)
+    const [hide, onHide] = useState(show)
 
-    const { genres } = useSelector((state: AppStateType) => state.genre)
+
+    const { genres } = useSelector((state: AppStateType) => state.filter)
     const { genreBook } = useSelector((state: AppStateType) => state.books)
 
     const dispatch = useDispatch()
+    const closeModal = () => {
+        onHide(false)
+        console.log(hide);
 
+    }
     const addFile = (e: any) => {
         setFile(e.target.files[0])
         console.log(file)
@@ -127,7 +132,7 @@ const CreateItem: FC<CreateItemType> = ({ show, onHide }) => {
                     </Formik>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={onHide}>{close}</Button>
+                    <Button onClick={closeModal}>{close}</Button>
                 </Modal.Footer>
             </Modal>
         </>

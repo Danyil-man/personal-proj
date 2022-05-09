@@ -10,7 +10,7 @@ type Categories = {
 }
 
 const Categories: FC<Categories> = ({ filterGenres }) => {
-    const genres = useSelector((state: AppStateType) => state.genre.genres)
+    const genres = useSelector((state: AppStateType) => state.filter.genres)
     const { filterId, page, limit, filteredName, filteredPrice } = useSelector((state: AppStateType) => state.books)
     const dispatch = useDispatch()
     const getAll = (filterAll = '' || 0, nameAll = '', priceAll = '') => {
@@ -20,7 +20,7 @@ const Categories: FC<Categories> = ({ filterGenres }) => {
     return (
         <div className={style.container}>
             <ul className={style.ulBlock}>
-                <li onClick={() => getAll(filterId, filteredName, filteredPrice)}
+                <li onClick={() => dispatch(getAll(filterId, filteredName, filteredPrice))}
                     className={filterId === 0 || '' ? style.active : style.liBlock}>{allBooks}</li>
                 {genres.map((genre) => (
                     <li onClick={() => filterGenres(genre.id)}
