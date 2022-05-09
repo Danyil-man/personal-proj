@@ -10,7 +10,7 @@ type Categories = {
 }
 
 const Categories: FC<Categories> = ({ filterGenres }) => {
-    const genres = useSelector((state: AppStateType) => state.genre.genres)
+    const genres = useSelector((state: AppStateType) => state.filter.genres)
     const { filterId, page, limit, filteredName, filteredPrice } = useSelector((state: AppStateType) => state.books)
     const dispatch = useDispatch()
     const getAll = (filterAll = '' || 0, nameAll = '', priceAll = '') => {
