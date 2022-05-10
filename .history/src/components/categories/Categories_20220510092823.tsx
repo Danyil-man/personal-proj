@@ -21,7 +21,7 @@ const Categories: FC<Categories> = ({ filterGenres }) => {
         <div className={style.container}>
             <ul className={style.ulBlock}>
                 <li onClick={() => getAll(filterId, filteredName, filteredPrice)}
-                    className={filterId === 0 ? style.active : style.liBlock}>{allBooks}</li>
+                    className={filterId === 0 || '' ? style.active : style.liBlock}>{allBooks}</li>
                 {genres.map((genre) => (
                     <li onClick={() => filterGenres(genre.id)}
                         className={`
