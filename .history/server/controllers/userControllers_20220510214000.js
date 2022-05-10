@@ -3,9 +3,8 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const ApiError = require("../error/ApiError");
-const ErrorStatus = require("../consts/error");
 const { User, Cart } = require("../models/models");
-
+const { errorStatus } = require("../consts/error");
 const generateJWT = (id, email, role) => {
   return jwt.sign({ id, email, role }, process.env.KEY, { expiresIn: "3h" });
 };
@@ -14,13 +13,11 @@ class UserController {
     try {
       const { email, password, role } = req.body;
       if (!email || !password) {
-        return next(
-          ApiError.badRequest(ErrorStatus.incorrectEmailOrPassword())
-        );
+        return next(ApiError.badRequest(incorrectEmailPassword));
       }
       const existUser = await User.findOne({ where: { email } });
       if (existUser) {
-        return next(ApiError.badRequest(ErrorStatus.alreadyExist()));
+        return next(ApiError.badRequest("User with this email already exist"));
       }
       const hashPassword = await bcrypt.hash(password, 5);
       const user = await User.create({ email, role, password: hashPassword });
@@ -35,11 +32,11 @@ class UserController {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email } });
     if (!user) {
-      return next(ApiError.badRequest(ErrorStatus.userNotFound()));
+      return next(ApiError.badRequest("User not found"));
     }
     let checkPassword = bcrypt.compareSync(password, user.password);
     if (!checkPassword) {
-      return next(ApiError.badRequest(ErrorStatus.userNotFound()));
+      return next(ApiError.badRequest("User not found"));
     }
     const token = generateJWT(user.id, user.email, user.role);
     return res.json({ token });

@@ -1,4 +1,11 @@
 @import './variables.scss';
+// @mixin container ($color, $font) {
+//     width: 100%;
+//     max-width: 1440px;
+//     font-size: 16px;
+//     font-weight: 700;
+//     color: $color;
+// }
 
 
 @mixin disabled {
@@ -108,11 +115,11 @@
       .infoBlock{
         padding: 10px;
         margin-bottom: 20px;
-        .authorName{
+        h6{
           font-size: 16px;
           margin-bottom: 12px;
         }
-        .descText{
+        p{
           font-size: 12px;
         }
       }
@@ -144,18 +151,18 @@
       .infoBlock{
         padding: 8px;
         margin-bottom: 20px;
-        .authorName{
+        h6{
           font-size: 14px;
           margin-bottom: 10px;
         }
-        .descText{
+        p{
           font-size: 10px;
         }
       }
     
       .interactBlock{
         padding: 16px;
-        .priceBlock{
+        p{
           font-size: 14px;
           font-family: 'Oswald';
         }
