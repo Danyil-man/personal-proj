@@ -30,7 +30,7 @@ const Card: FC<CardType> = ({ book }) => {
     }
 
     return (<>
-        <div className={`${style.card} ${book.count === 0 ? style.disabled : ''} `} onClick={() => setOpenBookModal(!openBookModal)}>
+        <div className={`${style.card} ${book.count === 0 ? style.disabled : null} `} onClick={() => setOpenBookModal(!openBookModal)}>
             <div className={style.imgBlock}>
                 <img src={`http://localhost:5000/${book.image}`} alt="book-img" />
             </div>

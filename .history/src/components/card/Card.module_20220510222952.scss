@@ -2,14 +2,9 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/mixins.scss';
 
-.disabledCard{
-  @include disabled;
-}
-
-.card.disabled {
-  pointer-events: none;
-  opacity: 0.4;
-}
+// .disabled{
+//   @include disabled;
+// }
 
 .card {
   position: relative;
@@ -21,7 +16,11 @@
   background-color: $white;
   padding: 20px;
   cursor: pointer;
-  
+  .disabled{
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
   &:hover{
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-10px);
