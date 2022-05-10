@@ -41,7 +41,7 @@ const Card: FC<CardType> = ({ book }) => {
             </div>
 
             <div className={style.interactBlock}>
-                <p className={style.priceBlock}>{book.count !== 0 ? `${price} ${book.price}${uah}` : noAvaliable} </p>
+                <p>{book.count !== 0 ? `${price} ${book.price}${uah}` : noAvaliable} </p>
                 <div className='d-flex'>
                     <Heart onClick={(e: any) => addBookToFavorite(book.id, e)} className={style.icon} />
                     <Cart2 onClick={(e: any) => addBookToCart(book.id, e)} className={style.icon} />

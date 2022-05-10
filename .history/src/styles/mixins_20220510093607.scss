@@ -1,10 +1,10 @@
-// @mixin container ($color, $font) {
-//     width: 100%;
-//     max-width: 1440px;
-//     font-size: 16px;
-//     font-weight: 700;
-//     color: $color;
-// }
+@mixin container ($color, $font) {
+    width: 100%;
+    max-width: 1440px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $color;
+}
 
 // @mixin block {
 //     width: 100%;

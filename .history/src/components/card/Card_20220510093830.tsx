@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Cart2, Heart } from 'react-bootstrap-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { author, genre, price } from '../../consts/bookInfo';
+import { price } from '../../consts/bookInfo';
 import { uah } from '../../consts/currency';
 import { noAvaliable } from '../../consts/generalConsts';
 import { genreObj } from '../../consts/genre';
@@ -36,12 +36,12 @@ const Card: FC<CardType> = ({ book }) => {
             </div>
             <div className={style.infoBlock}>
                 <h6 className={style.authorName}>{book.name}</h6>
-                <p className={style.descText}>{author} {book.author}</p>
-                <p className={style.descText}>{genre} {genreObj[book.genreId]}</p>
+                <p className={style.descText}>Автор: {book.author}</p>
+                <p className={style.descText}>Жанр: {genreObj[book.genreId]}</p>
             </div>
 
             <div className={style.interactBlock}>
-                <p className={style.priceBlock}>{book.count !== 0 ? `${price} ${book.price}${uah}` : noAvaliable} </p>
+                <p>{book.count !== 0 ? `${price} ${book.price}${uah}` : noAvaliable} </p>
                 <div className='d-flex'>
                     <Heart onClick={(e: any) => addBookToFavorite(book.id, e)} className={style.icon} />
                     <Cart2 onClick={(e: any) => addBookToCart(book.id, e)} className={style.icon} />

@@ -12,7 +12,7 @@
   max-width: 320px;
   margin: 0px 20px 20px 20px;
   border-radius: 20px;
-  border: $standartBoard;
+  border: 1px solid $text;
   background-color: $white;
   padding: 20px;
   cursor: pointer;
@@ -103,8 +103,9 @@
   
     .interactBlock{
       padding: 20px;
-      .priceBlock{
+      p{
         font-size: 16px;
+        font-family: 'Oswald';
       }
       .icon{
         margin-left: 12px;
@@ -140,8 +141,9 @@
   
     .interactBlock{
       padding: 20px;
-      .priceBlock{
+      p{
         font-size: 16px;
+        font-family: 'Oswald';
       }
       .icon{
         margin-left: 12px;
@@ -176,8 +178,9 @@
   
     .interactBlock{
       padding: 16px;
-      .priceBlock{
+      p{
         font-size: 14px;
+        font-family: 'Oswald';
       }
       .icon{
         margin-left: 10px;
